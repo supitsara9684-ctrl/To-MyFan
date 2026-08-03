@@ -60,8 +60,8 @@
     }
 
     body.sunrise-pastel .glass-card {
-      background: rgba(255, 255, 255, 0.5);
-      border: 2px solid rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.55);
+      border: 2px solid rgba(255, 255, 255, 0.85);
       box-shadow: 0 20px 40px rgba(255, 133, 162, 0.35);
     }
 
@@ -92,9 +92,18 @@
     }
 
     .start-subtitle {
-      font-size: 1.1rem;
-      margin-top: 20px;
-      opacity: 0.9;
+      font-size: 1.2rem;
+      margin-top: 18px;
+      opacity: 0.95;
+      letter-spacing: 0.5px;
+    }
+
+    .th-sub {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      font-weight: normal;
+      display: block;
+      margin-top: 3px;
     }
 
     /* Slides */
@@ -112,11 +121,23 @@
     }
 
     .cute-text {
-      font-size: 1.5rem;
-      line-height: 1.6;
+      font-size: 1.35rem;
+      line-height: 1.5;
       margin-bottom: 20px;
       white-space: pre-line;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+
+    .cute-text-th {
+      font-size: 1.05rem;
+      color: #ffd1dc;
+      margin-top: 6px;
+      display: block;
+      font-weight: normal;
+    }
+
+    body.sunrise-pastel .cute-text-th {
+      color: #880e4f;
     }
 
     /* Next Button */
@@ -124,9 +145,9 @@
       background: linear-gradient(135deg, #ff85a2, #ff5c8a);
       border: none;
       color: white;
-      font-family: 'Itim', cursive;
-      font-size: 1.25rem;
-      padding: 10px 28px;
+      font-family: 'Itim', 'Fredoka', cursive;
+      font-size: 1.1rem;
+      padding: 10px 26px;
       border-radius: 25px;
       cursor: pointer;
       box-shadow: 0 6px 18px rgba(255, 92, 138, 0.4);
@@ -140,14 +161,14 @@
     /* Cute Walking Koala Animation */
     .koala-container {
       width: 100%;
-      height: 60px;
+      height: 55px;
       position: relative;
       overflow: hidden;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .cute-koala {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       position: absolute;
       left: -60px;
       animation: koalaWalk 4s linear infinite;
@@ -161,10 +182,22 @@
       100% { left: 100%; transform: rotate(0deg); }
     }
 
+    /* Travel Map SVG Graphic */
+    .map-svg {
+      width: 100%;
+      max-width: 320px;
+      height: 140px;
+      margin: 0 auto 15px auto;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      border: 1px dashed rgba(255, 255, 255, 0.3);
+      padding: 10px;
+    }
+
     /* Vector Art Couple Recreation */
     .couple-svg {
-      width: 170px;
-      height: 170px;
+      width: 160px;
+      height: 160px;
       margin: 0 auto 10px auto;
       filter: drop-shadow(0 8px 15px rgba(255, 71, 126, 0.3));
       animation: floatArt 3s ease-in-out infinite alternate;
@@ -225,91 +258,122 @@
   <!-- Music Control -->
   <div class="music-btn" onclick="toggleAudio()">🎵</div>
 
-  <!-- Music Audio -->
-  <audio id="bgMusic" loop preload="auto" src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112191.mp3"></audio>
+  <!-- Acoustic Sweet Romantic Music Audio -->
+  <audio id="bgMusic" loop preload="auto" src="https://cdn.pixabay.com/download/audio/2022/10/14/audio_9939f61b0c.mp3?filename=sweet-romantic-acoustic-123472.mp3"></audio>
 
   <div class="glass-card">
     
     <!-- START / SEAL -->
     <div class="slide active" id="s0">
       <div class="seal-btn" onclick="startExperience()">R × A</div>
-      <div class="start-subtitle">กดตรงนี้สิคนดี ♡</div>
+      <div class="start-subtitle">
+        Tócame, amor ♡
+        <span class="th-sub">( แตะตรงนี้สิคะ ที่รัก ♡ )</span>
+      </div>
     </div>
 
     <!-- SLIDE 1 -->
     <div class="slide" id="s1">
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
-      <div class="cute-text">Hay algo esperándote…<br>มีบางอย่างรอเธออยู่นะคะ ♡</div>
-      <button class="btn-next" onclick="nextSlide(2)">ไปต่อกันเลย ➔</button>
+      <div class="cute-text">
+        Hay algo muy especial esperándote… ♡
+        <span class="cute-text-th">( มีบางอย่างที่พิเศษมากๆ รอเธออยู่นะคะ )</span>
+      </div>
+      <button class="btn-next" onclick="nextSlide(2)">Siguiente (ไปกันเลย) ➔</button>
     </div>
 
-    <!-- SLIDE 2 -->
+    <!-- SLIDE 2 (TRAVEL MAP / DISTANCE) -->
     <div class="slide" id="s2">
-      <div class="koala-container"><div class="cute-koala">🐨🌿</div></div>
-      <div class="cute-text">Nunca imaginé que alguien tan lejos…<br><br>pudiera sentirse tan cerca.<br>ไม่เคยคิดเลยว่าคนที่อยู่ไกลขนาดนี้<br>จะทำให้รู้สึกใกล้ได้ขนาดนี้</div>
-      <button class="btn-next" onclick="nextSlide(3)">กดไปอีกหน่อย ➔</button>
+      <!-- MAP ROUTE SVG -->
+      <svg class="map-svg" viewBox="0 0 300 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- World Map Silhouette Dots -->
+        <circle cx="50" cy="50" r="12" fill="#ffffff" opacity="0.15"/>
+        <circle cx="240" cy="70" r="14" fill="#ffffff" opacity="0.15"/>
+        
+        <!-- Spain Pin (Valencia) -->
+        <circle cx="60" cy="45" r="5" fill="#ff477e"/>
+        <circle cx="60" cy="45" r="9" fill="#ff477e" opacity="0.4"/>
+        <text x="32" y="32" fill="#ffd1dc" font-size="11" font-weight="bold">🇪🇸 España</text>
+
+        <!-- Thailand Pin (Bangkok) -->
+        <circle cx="240" cy="75" r="5" fill="#ff85a2"/>
+        <circle cx="240" cy="75" r="9" fill="#ff85a2" opacity="0.4"/>
+        <text x="215" y="98" fill="#ffd1dc" font-size="11" font-weight="bold">🇹🇭 Tailandia</text>
+
+        <!-- Curved Flight Path -->
+        <path d="M 235 70 Q 150 10, 65 42" stroke="#ff85a2" stroke-width="2.5" stroke-dasharray="5 4" fill="none"/>
+
+        <!-- Airplane Icon on Path -->
+        <g transform="translate(140, 26) rotate(-165)">
+          <text font-size="16">✈️</text>
+        </g>
+      </svg>
+
+      <div class="cute-text">
+        Nunca imaginé que alguien tan lejos…<br>pudiera sentirse tan cerca.
+        <span class="cute-text-th">( ไม่เคยคิดเลยว่าคนที่อยู่ไกลขนาดนี้... จะทำให้รู้สึกใกล้หัวใจได้ขนาดนี้ )</span>
+      </div>
+      <button class="btn-next" onclick="nextSlide(3)">Siguiente (หน้าถัดไป) ➔</button>
     </div>
 
     <!-- SLIDE 3 -->
     <div class="slide" id="s3">
       <div class="koala-container"><div class="cute-koala">🐨💖</div></div>
-      <div class="cute-text">Gracias…<br>por cada sonrisa.<br>por cada llamada.<br>por cada momento.<br>ขอบคุณสำหรับทุกรอยยิ้มและทุกนาทีเลยนะ</div>
-      <button class="btn-next" onclick="nextSlide(4)">หน้าต่อไปนะ ➔</button>
+      <div class="cute-text">
+        Gracias por cada sonrisa,<br>por cada llamada<br>y por cada hermoso momento.
+        <span class="cute-text-th">( ขอบคุณสำหรับทุกรอยยิ้ม ทุกสายที่คุยกัน และทุกช่วงเวลาที่แสนพิเศษนะคะ )</span>
+      </div>
+      <button class="btn-next" onclick="nextSlide(4)">Siguiente (ไปต่อเลย) ➔</button>
     </div>
 
     <!-- SLIDE 4 -->
     <div class="slide" id="s4">
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
-      <div class="cute-text">Dicen que la distancia cambia las cosas…<br><br>Pero nunca cambió lo que siento por ti.<br>ระยะทางอาจเปลี่ยนหลายอย่าง<br>แต่ไม่เคยเปลี่ยนหัวใจฉันได้เลย</div>
-      <button class="btn-next" onclick="triggerFinal()">เปิดความลับกัน ✨</button>
+      <div class="cute-text">
+        Dicen que la distancia cambia las cosas…<br>Pero nunca cambió lo que siento por ti.
+        <span class="cute-text-th">( ใครๆ ก็บอกว่าระยะทางทำให้เปลี่ยนไป... แต่ไม่เคยเปลี่ยนความรู้สึกที่มีให้เธอได้เลย )</span>
+      </div>
+      <button class="btn-next" onclick="triggerFinal()">Descubrir el secreto ✨<br><span style="font-size:0.85rem; font-weight:normal;">( เปิดดูความลับกัน )</span></button>
     </div>
 
     <!-- SLIDE 5 (FINAL) -->
     <div class="slide" id="s5">
-      <!-- Cute Vector Art recreate from Elevator Photo -->
+      <!-- Vector Art Elevator Photo -->
       <svg class="couple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Sun & Heart Glow Background -->
         <circle cx="100" cy="100" r="85" fill="#ffe5ec" opacity="0.8"/>
         <circle cx="100" cy="100" r="65" fill="#ffb3c6" opacity="0.5"/>
         <text x="145" y="50" font-size="22">🌻</text>
         <text x="30" y="60" font-size="20">✨</text>
         <text x="150" y="140" font-size="18">💖</text>
 
-        <!-- Boy with Cap Kissing Head -->
-        <!-- Cap -->
+        <!-- Boy Cap & Kiss -->
         <path d="M100 65 C100 48, 135 48, 145 68 L155 72 C158 73, 155 77, 145 75 Z" fill="#7d746d"/>
-        <!-- Boy Head & Neck -->
         <circle cx="120" cy="72" r="15" fill="#fcd5ce"/>
-        <!-- Glasses -->
         <path d="M110 70 Q 115 68 120 70" stroke="#4a4e69" stroke-width="2" fill="none"/>
-        <!-- Jacket/Backpack -->
         <path d="M108 87 L145 92 L140 150 L95 145 Z" fill="#1d2d44"/>
         <path d="M112 95 Q 128 100 132 135" stroke="#0077b6" stroke-width="8" fill="none" stroke-linecap="round"/>
 
-        <!-- Girl Holding Phone Selfie -->
-        <!-- Girl Hair -->
+        <!-- Girl Selfie -->
         <path d="M60 78 C55 90, 58 120, 68 135 C75 120, 80 90, 75 78 Z" fill="#2b2d42"/>
-        <!-- Girl Head -->
         <circle cx="70" cy="85" r="14" fill="#fcd5ce"/>
-        <!-- Headphones on Neck -->
         <path d="M58 98 C58 106, 80 106, 80 98" stroke="#f8f9fa" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <!-- Green Jacket -->
         <path d="M48 105 L88 105 L82 150 L42 150 Z" fill="#6b705c"/>
-        <!-- Phone in Girl's Hand -->
         <rect x="74" y="92" width="16" height="26" rx="4" fill="#6a4c93"/>
         <circle cx="82" cy="100" r="3" fill="#ffb703"/>
 
-        <!-- Little Floating Heart between Heads -->
+        <!-- Heart -->
         <path d="M98 62 C 98 58, 93 56, 90 59 C 87 62, 90 67, 98 71 C 106 67, 109 62, 106 59 C 103 56, 98 58, 98 62 Z" fill="#ff477e"/>
       </svg>
 
-      <div class="cute-text" style="font-size: 1.45rem; line-height: 1.7;">
+      <div class="cute-text" style="font-size: 1.35rem; line-height: 1.6;">
         Gracias por aparecer en mi vida.<br>
         Gracias por elegirme.<br>
         Gracias por ser tú.<br>
-        <strong style="font-size: 2rem; color: #d81b60; display: block; margin-top: 8px;">Te amo. ❤️</strong>
+        <span class="cute-text-th" style="margin-bottom: 8px;">( ขอบคุณที่เข้ามาในชีวิต ขอบคุณที่เลือกกัน และขอบคุณที่เป็นเธอนะคะ )</span>
+        <strong style="font-size: 2.1rem; color: #d81b60; display: block; margin-top: 8px;">Te amo. ❤️</strong>
+        <span style="font-size: 1.1rem; color: #ad1457; font-weight: normal;">( รักเธอนะคะ )</span>
       </div>
-      <div style="font-size: 1.35rem; font-weight: 600; margin-top: 10px; color: #880e4f;">
+      <div style="font-size: 1.25rem; font-weight: 600; margin-top: 12px; color: #880e4f;">
         Con todo mi amor, Renita 🌸
       </div>
     </div>
