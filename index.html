@@ -141,23 +141,40 @@
       color: #880e4f;
     }
 
-    /* Next Button */
+    /* Buttons */
     .btn-next {
       background: linear-gradient(135deg, #ff85a2, #ff5c8a);
       border: none;
       color: white;
       font-family: 'Itim', 'Fredoka', cursive;
       font-size: 1.1rem;
-      padding: 10px 26px;
+      padding: 10px 24px;
       border-radius: 25px;
       cursor: pointer;
       box-shadow: 0 6px 18px rgba(255, 92, 138, 0.4);
       transition: all 0.3s ease;
       outline: none;
+      margin: 5px;
       -webkit-tap-highlight-color: transparent;
     }
 
     .btn-next:active { transform: scale(0.95); }
+
+    .btn-choice-group {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .btn-love {
+      background: linear-gradient(135deg, #ff477e, #ff0055);
+    }
+
+    .btn-not-love {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
 
     /* Cute Walking Mascot Animation */
     .koala-container {
@@ -262,12 +279,6 @@
   <!-- Music Control Button -->
   <div class="music-btn" id="musicToggleBtn" onclick="toggleAudio()">🎵</div>
 
-  <!-- Audio Element with High Reliability CDN Links -->
-  <audio id="bgMusic" loop preload="auto" crossorigin="anonymous">
-    <source src="https://codeskulptor-demos.commondatastorage.googleapis.com/rigel/sparkle.mp3" type="audio/mpeg">
-    <source src="https://actions.google.com/sounds/v1/ambiences/soft_piano_ambient.ogg" type="audio/ogg">
-  </audio>
-
   <div class="glass-card">
     
     <!-- START / SEAL -->
@@ -286,40 +297,29 @@
         Hay algo muy especial para mi Fan… ♡
         <span class="cute-text-th">( มีบางอย่างที่พิเศษมากๆ ทำมาให้แฟนนะคะ )</span>
       </div>
-      <button class="btn-next" onclick="nextSlide(2)">Siguiente (ไปดูกันเลย) ➔</button>
+      <button class="btn-next" onclick="goToSlide('s2')">Siguiente (ไปดูกันเลย) ➔</button>
     </div>
 
     <!-- SLIDE 2 (TRAVEL MAP / DISTANCE) -->
     <div class="slide" id="s2">
-      <!-- MAP ROUTE SVG -->
       <svg class="map-svg" viewBox="0 0 300 120" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="50" cy="50" r="12" fill="#ffffff" opacity="0.15"/>
         <circle cx="240" cy="70" r="14" fill="#ffffff" opacity="0.15"/>
-        
-        <!-- Spain Pin (Valencia) -->
         <circle cx="60" cy="45" r="5" fill="#ff477e"/>
         <circle cx="60" cy="45" r="9" fill="#ff477e" opacity="0.4"/>
         <text x="32" y="32" fill="#ffd1dc" font-size="11" font-weight="bold">🇪🇸 España</text>
-
-        <!-- Thailand Pin (Bangkok) -->
         <circle cx="240" cy="75" r="5" fill="#ff85a2"/>
         <circle cx="240" cy="75" r="9" fill="#ff85a2" opacity="0.4"/>
         <text x="215" y="98" fill="#ffd1dc" font-size="11" font-weight="bold">🇹🇭 Tailandia</text>
-
-        <!-- Curved Flight Path -->
         <path d="M 235 70 Q 150 10, 65 42" stroke="#ff85a2" stroke-width="2.5" stroke-dasharray="5 4" fill="none"/>
-
-        <!-- Airplane Icon on Path -->
-        <g transform="translate(140, 26) rotate(-165)">
-          <text font-size="16">✈️</text>
-        </g>
+        <g transform="translate(140, 26) rotate(-165)"><text font-size="16">✈️</text></g>
       </svg>
 
       <div class="cute-text">
         Aunque esté lejos de mi Fan…<br>mi corazón siempre está contigo.
         <span class="cute-text-th">( ถึงจะอยู่ไกลจากแฟนขนาดไหน... แต่หัวใจก็อยู่กับแฟนเสมอนะ )</span>
       </div>
-      <button class="btn-next" onclick="nextSlide(3)">Siguiente (หน้าถัดไป) ➔</button>
+      <button class="btn-next" onclick="goToSlide('s3')">Siguiente (หน้าถัดไป) ➔</button>
     </div>
 
     <!-- SLIDE 3 -->
@@ -329,17 +329,50 @@
         Gracias por ser el mejor Fan,<br>por cada sonrisa<br>y por cuidarme tan bien.
         <span class="cute-text-th">( ขอบคุณที่เป็นแฟนที่ดีที่สุด ขอบคุณทุกรอยยิ้ม และขอบคุณที่ดูแลกันอย่างดีนะคะ )</span>
       </div>
-      <button class="btn-next" onclick="nextSlide(4)">Siguiente (ไปต่อเลย) ➔</button>
+      <button class="btn-next" onclick="goToSlide('s4')">Siguiente (ไปต่อเลย) ➔</button>
     </div>
 
     <!-- SLIDE 4 -->
     <div class="slide" id="s4">
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
       <div class="cute-text">
-        La distancia no es nada…<br>cuando mi Fan lo es todo para mí.
+        La distancia no es nada…<br>cuando mi Fan lo me importa tanto.
         <span class="cute-text-th">( ระยะทางก็แค่ตัวเลข... เพราะแฟนคือทุกอย่างของเค้าอยู่แล้ว )</span>
       </div>
-      <button class="btn-next" onclick="triggerFinal()">Descubrir el secreto ✨<br><span style="font-size:0.85rem; font-weight:normal;">( เปิดดูความลับกัน )</span></button>
+      <button class="btn-next" onclick="goToSlide('s_question')">Siguiente (ไปตอบคำถามกัน) ➔</button>
+    </div>
+
+    <!-- SLIDE QUESTION: RAK / MAI RAK -->
+    <div class="slide" id="s_question">
+      <div class="koala-container"><div class="cute-koala">🐨❓</div></div>
+      <div class="cute-text">
+        ¿Me amas, mi Fan? ❤️
+        <span class="cute-text-th">( แฟนรักเค้ามั้ยคะ? )</span>
+      </div>
+      <div class="btn-choice-group">
+        <button class="btn-next btn-love" onclick="goToSlide('s_love')">รักนะ ❤️</button>
+        <button class="btn-next btn-not-love" onclick="goToSlide('s_not_love')">ไม่รัก 🙈</button>
+      </div>
+    </div>
+
+    <!-- SLIDE: ANSWER - LOVE -->
+    <div class="slide" id="s_love">
+      <div class="koala-container"><div class="cute-koala">🐨🥰</div></div>
+      <div class="cute-text">
+        ¡Ya lo sabía! 😜💖
+        <span class="cute-text-th">( รู้อยู่แล้วน้า~ ว่ารักเค้าที่สุดเลย 🥰 )</span>
+      </div>
+      <button class="btn-next" onclick="triggerFinal()">Descubrir el secreto ✨<br><span style="font-size:0.85rem; font-weight:normal;">( ไปดูความลับกัน )</span></button>
+    </div>
+
+    <!-- SLIDE: ANSWER - NOT LOVE -->
+    <div class="slide" id="s_not_love">
+      <div class="koala-container"><div class="cute-koala">🐨😜</div></div>
+      <div class="cute-text">
+        ¡Mentira! Sé que me amas mucho, mi Fan 😚
+        <span class="cute-text-th">( โกหก! ฉันรู้ว่าเธอรักฉันมากนะแฟน 😜 )</span>
+      </div>
+      <button class="btn-next" onclick="triggerFinal()">ถ้าอยากอยู่กับเค้าไปนานๆ กดตรงนี้สิ ✨</button>
     </div>
 
     <!-- SLIDE 5 (FINAL PAGE WITH RISING SUN & DANCING MASCOT) -->
@@ -347,12 +380,10 @@
       
       <div class="sunrise-art-container">
         <svg viewBox="0 0 280 180" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Soft Clouds Background -->
           <path d="M -10 110 Q 20 90 50 110 Q 90 85 130 110 Q 170 90 210 110 Q 250 85 290 110 L 290 180 L -10 180 Z" fill="#ffffff" opacity="0.6"/>
 
           <!-- RISING SUN ANIMATION -->
           <g id="risingSun">
-            <!-- Sun Rays -->
             <g opacity="0.7">
               <circle cx="140" cy="85" r="48" fill="#ffe082" opacity="0.3"/>
               <line x1="140" y1="20" x2="140" y2="30" stroke="#ffb74d" stroke-width="3" stroke-linecap="round"/>
@@ -362,11 +393,8 @@
               <line x1="75" y1="85" x2="85" y2="85" stroke="#ffb74d" stroke-width="3" stroke-linecap="round"/>
             </g>
 
-            <!-- Cute Smiling Sun Body -->
             <circle cx="140" cy="85" r="32" fill="#ffb74d"/>
             <circle cx="140" cy="85" r="28" fill="#ffe082"/>
-            
-            <!-- Eyes & Cute Smile -->
             <circle cx="130" cy="82" r="3" fill="#5d4037"/>
             <circle cx="150" cy="82" r="3" fill="#5d4037"/>
             <circle cx="128" cy="88" r="3" fill="#ff8a65" opacity="0.6"/>
@@ -375,24 +403,20 @@
           </g>
           <animateTransform href="#risingSun" attributeName="transform" type="translate" from="0, 70" to="0, 0" dur="2.5s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1.0"/>
 
-          <!-- Front Pastel Hills -->
           <path d="M -10 145 Q 60 115 140 140 Q 210 120 290 145 L 290 180 L -10 180 Z" fill="#ff85a2" opacity="0.85"/>
           <path d="M -10 158 Q 80 135 180 155 Q 240 140 290 160 L 290 180 L -10 180 Z" fill="#ff477e"/>
 
-          <!-- CUTEY DANCING KOALA MASCOT -->
+          <!-- DANCING KOALA MASCOT -->
           <g id="dancingMascot" transform="translate(195, 105)">
             <text x="10" y="-8" font-size="14">💖
               <animate attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="1.2s" repeatCount="indefinite"/>
             </text>
-            
             <circle cx="18" cy="28" r="14" fill="#a1a1aa"/>
             <circle cx="18" cy="28" r="9" fill="#f4f4f5"/>
             <circle cx="42" cy="28" r="14" fill="#a1a1aa"/>
             <circle cx="42" cy="28" r="9" fill="#f4f4f5"/>
-            
             <circle cx="30" cy="35" r="16" fill="#d4d4d8"/>
             <ellipse cx="30" cy="37" rx="4" ry="6" fill="#3f3f46"/>
-            
             <path d="M 22 33 Q 25 30 27 33" stroke="#27272a" stroke-width="2" stroke-linecap="round" fill="none"/>
             <path d="M 33 33 Q 35 30 38 33" stroke="#27272a" stroke-width="2" stroke-linecap="round" fill="none"/>
             <circle cx="21" cy="38" r="3" fill="#fda4af"/>
@@ -401,7 +425,6 @@
             <animateTransform attributeName="transform" type="rotate" values="-6 30 50; 6 30 50; -6 30 50" dur="1.5s" repeatCount="indefinite"/>
           </g>
 
-          <!-- COUPLE SILHOUETTE -->
           <g transform="translate(45, 115)">
             <text x="0" y="25" font-size="28">👩‍❤️‍👨</text>
           </g>
@@ -424,44 +447,80 @@
   </div>
 
   <script>
-    let currentSlide = 0;
-    const audio = document.getElementById('bgMusic');
-    const musicBtn = document.getElementById('musicToggleBtn');
+    let currentSlideId = 's0';
+    let isPlaying = false;
+    let audioCtx = null;
+    let musicInterval = null;
 
-    function playAudio() {
-      if (audio.paused) {
-        audio.play().then(() => {
-          musicBtn.innerHTML = '🎵';
-        }).catch(err => {
-          console.log("Autoplay waiting for click:", err);
-        });
+    /* Web Audio Synthesizer - 100% Guaranteed Music Sound */
+    function playMelody() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
       }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      const notes = [
+        261.63, 329.63, 392.00, 523.25, 392.00, 329.63,
+        293.66, 349.23, 440.00, 523.25, 440.00, 349.23
+      ];
+      let noteIndex = 0;
+
+      if (musicInterval) clearInterval(musicInterval);
+
+      musicInterval = setInterval(() => {
+        if (!isPlaying) return;
+        try {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(notes[noteIndex], audioCtx.currentTime);
+          
+          gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.8);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.8);
+
+          noteIndex = (noteIndex + 1) % notes.length;
+        } catch(e) {}
+      }, 400);
+
+      isPlaying = true;
+      document.getElementById('musicToggleBtn').innerHTML = '🎵';
     }
 
     function toggleAudio() {
-      if (audio.paused) {
-        audio.play();
-        musicBtn.innerHTML = '🎵';
+      if (isPlaying) {
+        isPlaying = false;
+        if (musicInterval) clearInterval(musicInterval);
+        document.getElementById('musicToggleBtn').innerHTML = '🔇';
       } else {
-        audio.pause();
-        musicBtn.innerHTML = '🔇';
+        isPlaying = true;
+        playMelody();
       }
     }
 
     function startExperience(e) {
       if (e) e.preventDefault();
-      playAudio();
-      nextSlide(1);
+      playMelody();
+      goToSlide('s1');
     }
 
-    function nextSlide(num) {
-      playAudio();
-      document.getElementById(`s${currentSlide}`).classList.remove('active');
+    function goToSlide(targetId) {
+      playMelody();
+      const current = document.getElementById(currentSlideId);
+      current.classList.remove('active');
       
       setTimeout(() => {
-        document.getElementById(`s${currentSlide}`).style.display = 'none';
-        currentSlide = num;
-        const next = document.getElementById(`s${num}`);
+        current.style.display = 'none';
+        currentSlideId = targetId;
+        const next = document.getElementById(targetId);
         next.style.display = 'block';
         setTimeout(() => next.classList.add('active'), 50);
       }, 400);
@@ -550,12 +609,13 @@
     }
 
     function triggerFinal() {
-      playAudio();
-      document.getElementById(`s${currentSlide}`).classList.remove('active');
+      playMelody();
+      const current = document.getElementById(currentSlideId);
+      current.classList.remove('active');
       
       setTimeout(() => {
-        document.getElementById(`s${currentSlide}`).style.display = 'none';
-        currentSlide = 5;
+        current.style.display = 'none';
+        currentSlideId = 's5';
         
         document.body.classList.add('sunrise-pastel');
         
