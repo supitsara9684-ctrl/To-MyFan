@@ -216,15 +216,15 @@
 
     /* General Typography */
     .cute-text {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       line-height: 1.5;
       margin-bottom: 16px;
       white-space: pre-line;
     }
 
-    .es-text { font-size: 1.15rem; font-weight: 500; color: #fff; display: block; margin-bottom: 4px; }
+    .es-text { font-size: 1.1rem; font-weight: 500; color: #fff; display: block; margin-bottom: 4px; }
     body.sunrise-pastel .es-text { color: #5d4037; }
-    .th-sub { font-size: 0.9rem; opacity: 0.85; display: block; font-weight: normal; }
+    .th-sub { font-size: 0.88rem; opacity: 0.9; display: block; font-weight: normal; }
 
     .btn-next {
       background: linear-gradient(135deg, #ff85a2, #ff5c8a);
@@ -286,8 +286,8 @@
     .map-svg {
       width: 100%;
       max-width: 350px;
-      height: 160px;
-      margin: 0 auto 12px auto;
+      height: 140px;
+      margin: 0 auto 10px auto;
       background: rgba(255, 255, 255, 0.08);
       border-radius: 18px;
       border: 1px dashed rgba(255, 255, 255, 0.3);
@@ -427,7 +427,6 @@
       gap: 8px;
     }
 
-    /* Cute Signature Text */
     .cute-tagline { 
       font-family: 'Dancing Script', cursive; 
       font-size: 1.9rem; 
@@ -594,7 +593,7 @@
       </div>
     </div>
 
-    <!-- 🌌 SLIDE ARIES & SPACE (ฉากใหม่เรื่องราศีเมษและดาวประจำตัว) -->
+    <!-- 🌌 SLIDE ARIES & SPACE -->
     <div class="slide" id="s_aries">
       <div class="aries-icon-box">♈️✨🪐</div>
       <div class="cute-text">
@@ -614,7 +613,6 @@
         <button class="btn-next btn-love" onclick="showDukdikMsg()">Sí 😜<br><span style="font-size:0.75rem; font-weight:normal;">(กดชอบอยู่ดี)</span></button>
       </div>
 
-      <!-- ข้อความเด้งดุ๊กดิ๊กเมื่อกดปุ่ม -->
       <div id="dukdikArea" style="display: none;">
         <div class="bounce-dukdik">
           ¡Avancemos juntos, mi amor! 🚀💖<br>
@@ -635,7 +633,7 @@
       <button class="btn-next" onclick="goToSlide('s2')">Siguiente ➔</button>
     </div>
 
-    <!-- SLIDE 2: MAPS SPAIN & THAILAND -->
+    <!-- 🗺️ SLIDE 2: MAPS SPAIN & THAILAND (อัปเดตข้อความเรื่องพิสูจน์รักทางไกล) -->
     <div class="slide" id="s2">
       <svg class="map-svg" viewBox="0 0 320 150" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g opacity="0.85">
@@ -655,8 +653,13 @@
       </svg>
 
       <div class="cute-text">
-        <span class="es-text">No importa cuán lejos estemos...<br>mi corazón siempre está contigo.</span>
-        <span class="th-sub">( ถึงจะอยู่ไกลจากแฟนขนาดไหน... แต่หัวใจก็อยู่กับแฟนเสมอนะ )</span>
+        <span class="es-text">
+          Muchos dicen: "Ríndete, la distancia no funciona"... 💔<br>
+          Pero les demostraré que te amo lo suficiente para ser fiel y estar a tu lado para siempre, ¡hasta que tengan que aceptarlo! 🔥💖
+        </span>
+        <span class="th-sub" style="margin-top: 8px; line-height: 1.4; color: #ffe5ec;">
+          ( ใครๆ ก็บอกว่ายอมแพ้ซะเถอะ รักทางไกลมันไม่รอดหรอก... แต่เค้าจะบอกแฟนว่า เค้าจะทำให้คนพวกนั้นดูว่าเค้ารักเธอมากพอที่จะมั่นคงกับเธอไปตลอด จนพวกนั้นต้องยอมแพ้และยอมรับเลยล่ะ! ✨ )
+        </span>
       </div>
       <button class="btn-next" onclick="goToSlide('s3')">Siguiente ➔</button>
     </div>
@@ -743,7 +746,7 @@
       <button class="btn-next" onclick="triggerFinal()">Ver mi carta final ✨<br><span style="font-size:0.8rem; font-weight:normal;">( เปิดการ์ดใบสุดท้าย )</span></button>
     </div>
 
-    <!-- 💌 SLIDE 6: FINAL CARD SLIDE (KOALA & MONKEY DANCING) -->
+    <!-- 💌 SLIDE 6: FINAL CARD SLIDE -->
     <div class="slide" id="s5">
       <div class="illustration-box">
         <div class="couple-friends">
@@ -768,7 +771,6 @@
         Te amo, mi Fan ❤️
       </div>
 
-      <!-- CUTE FONT TEXT -->
       <div class="cute-tagline">
         Renita rak Alejandro eiei ✨
         <div class="cute-tagline-sub">
@@ -870,7 +872,6 @@
       });
     }
 
-    /* สุ่มคำพูดงอนๆ + หน้าบูด ตอนรหัสผิด */
     const poutingMessages = [
       { es: "¿Cómo que te equivocaste? 😤", th: "ใส่รหัสผิดได้ไงเนี่ย! งอนแล้วนะ 😤<br>ใส่ใหม่อีกทีเลยค่ะ!" },
       { es: "¿¡Olvidaste nuestra fecha!? 😡", th: "ลืมวันครบรอบของเราเหรอเนี่ย!? 😡<br>เค้าจะบูดแล้วนะ กดใหม่อีกรอบเลย!" },
@@ -882,7 +883,7 @@
 
     function checkPasscode() {
       if (inputPass === CORRECT_PASS) {
-        goToSlide('s_aries'); // ปลดล็อกแล้วไปที่หน้า Aries & Space ก่อน
+        goToSlide('s_aries');
       } else {
         const card = document.getElementById('cardContainer');
         const hint = document.getElementById('hintText');
@@ -904,12 +905,10 @@
       }
     }
 
-    /* ฟังก์ชันแสดงข้อความดุ๊กดิ๊กแล้วเปลี่ยนหน้า */
     function showDukdikMsg() {
       const dukdik = document.getElementById('dukdikArea');
       dukdik.style.display = 'block';
       
-      // หน่วงเวลา 1.8 วินาทีให้แฟนอ่านข้อความดุ๊กดิ๊กก่อนพาเข้าสไลด์เนื้อหาหลัก
       setTimeout(() => {
         goToSlide('s1');
       }, 1800);
