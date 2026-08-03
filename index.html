@@ -333,7 +333,7 @@
       100% { transform: scale(1.05) rotate(2deg); }
     }
 
-    /* MAP SLIDE BACKGROUND CONTAINER & SVG */
+    /* MAP SLIDE BACKGROUND CONTAINER & SVG (ขยายแผนที่ใหญ่ขึ้นที่แบ็คกราวด์) */
     .map-slide-bg {
       position: relative;
       border-radius: 22px;
@@ -345,11 +345,12 @@
     
     .map-bg-svg {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: -20px; left: -20px;
+      width: calc(100% + 40px); height: calc(100% + 40px);
       z-index: 1;
-      opacity: 0.35;
+      opacity: 0.6; /* เพิ่มความชัดเจนของแบ็คกราวด์ขึ้นเล็กน้อย */
       pointer-events: none;
+      transform: scale(1.2); /* ขยายขนาดใหญ่ขึ้น */
     }
 
     .map-slide-content {
@@ -366,60 +367,6 @@
       border-radius: 14px;
       border: 1.5px dashed rgba(255, 255, 255, 0.4);
       padding: 6px;
-    }
-
-    /* YOUTUBE MUSIC SECTION */
-    .music-card-box {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 10px;
-      margin: 4px 0 10px 0;
-      box-shadow: 0 6px 15px rgba(255, 182, 193, 0.4);
-      border: 2px solid #ffe3ec;
-      color: #4a2e4d;
-    }
-
-    .music-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
-      text-align: left;
-    }
-
-    .cd-spin {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 15px;
-      animation: spinCD 4s linear infinite;
-    }
-
-    @keyframes spinCD { 100% { transform: rotate(360deg); } }
-
-    .music-title-info h4 { font-size: 0.9rem; color: #4a3e3d; margin-bottom: 1px; }
-    .music-title-info p { font-size: 0.78rem; color: #ff4b72; font-weight: 500; }
-
-    .youtube-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 48%;
-      height: 0;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-
-    .youtube-container iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: 0;
     }
 
     /* FINAL CARD SLIDE */
@@ -653,17 +600,23 @@
       <button class="btn-next" onclick="goToSlide('s2')">Siguiente (ถัดไป) ➔</button>
     </div>
 
-    <!-- 🗺️ SLIDE 2: MAPS SPAIN & THAILAND -->
+    <!-- 🗺️ SLIDE 2: MAPS SPAIN & THAILAND (ขยายแผนที่สเปนและไทยใหญ่ๆ ที่แบ็คกราวด์) -->
     <div class="slide" id="s2">
       <div class="map-slide-bg">
-        <!-- SVG แผนที่ไทย-สเปน เป็นแบคกราวน์จางๆ เฉพาะหน้านี้ -->
-        <svg class="map-bg-svg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- สเปน (ซ้ายบน) -->
-          <path d="M 80 50 Q 120 40 140 80 Q 130 130 90 120 Q 50 110 60 70 Z" fill="#ff85a2" stroke="#ff85a2" stroke-width="2"/>
-          <circle cx="100" cy="85" r="5" fill="#fff"/>
-          <!-- ไทย (ขวาล่าง) -->
-          <path d="M 280 160 Q 320 170 330 220 Q 310 260 270 240 Q 250 200 270 170 Z" fill="#ff85a2" stroke="#ff85a2" stroke-width="2"/>
-          <circle cx="295" cy="205" r="5" fill="#fff"/>
+        <!-- SVG แผนที่ไทย-สเปน ขนาดใหญ่เป็นแบคกราวน์ -->
+        <svg class="map-bg-svg" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- สเปน ใหญ่ขึ้น (ซ้ายบน) -->
+          <g transform="scale(1.5) translate(-20, -10)">
+            <path d="M 60 40 Q 110 30 140 80 Q 120 140 70 120 Q 30 100 40 60 Z" fill="#ff85a2" opacity="0.45" stroke="#ff85a2" stroke-width="2.5"/>
+            <circle cx="90" cy="80" r="7" fill="#fff"/>
+            <text x="50" y="30" fill="#ffd1dc" font-size="14" font-weight="bold">🇪🇸 España</text>
+          </g>
+          <!-- ไทย ใหญ่ขึ้น (ขวาล่าง) -->
+          <g transform="scale(1.5) translate(40, 40)">
+            <path d="M 180 120 Q 230 130 245 190 Q 220 230 170 210 Q 150 170 165 140 Z" fill="#ff85a2" opacity="0.45" stroke="#ff85a2" stroke-width="2.5"/>
+            <circle cx="195" cy="165" r="7" fill="#fff"/>
+            <text x="145" y="110" fill="#ffd1dc" font-size="14" font-weight="bold">🇹🇭 Tailandia</text>
+          </g>
         </svg>
 
         <div class="map-slide-content">
@@ -760,7 +713,7 @@
         <div style="margin-top: 6px; border-top: 1px dotted rgba(255,255,255,0.25); padding-top: 6px;"></div>
         <span class="th-sub" style="border-top: none; padding-top: 0; margin-top: 0;">Lo sabía. (รู้อยู่แล้วล่ะ เค้าก็รักแฟนเหมือนกันนะ 😌❤️)</span>
       </div>
-      <button class="btn-next" onclick="goToSlide('s_music')">Nuestra canción 🎶</button>
+      <button class="btn-next" onclick="triggerFinal()">Ver carta final ✨</button>
     </div>
 
     <!-- SLIDE ANSWER NOT LOVE -->
@@ -771,36 +724,7 @@
         <div style="margin-top: 6px; border-top: 1px dotted rgba(255,255,255,0.25); padding-top: 6px;"></div>
         <span class="th-sub" style="border-top: none; padding-top: 0; margin-top: 0;">No te creo… Estoy segura de que sí. (ไม่เชื่อหรอก… เค้ามั่นใจว่าแฟนรักและคิดถึงเค้าแหละ 😜)</span>
       </div>
-      <button class="btn-next" onclick="goToSlide('s_music')">Escuchar canción ✨</button>
-    </div>
-
-    <!-- 🎶 SLIDE 5: YOUTUBE MUSIC -->
-    <div class="slide" id="s_music">
-      <div class="content-box-original" style="margin-bottom: 6px;">
-        <span class="es-main" style="font-size: 0.92rem;">Quiero que escuches esta canción con atención. Me encanta escucharla, aunque tenga que tirar de Google Translator para entenderlo todo. ❤️</span>
-        <span class="th-sub">Quiero que escuches esta canción con atención. (อยากให้แฟนตั้งใจฟังเพลงนี้นะ เค้าชอบฟังเพลงนี้มากๆ ถึงแม้บางทีจะต้องเปิดกูเกิลทรานสเลเตอร์แปลก็ตาม อิอิ ♡)</span>
-      </div>
-
-      <div class="music-card-box">
-        <div class="music-header">
-          <div class="cd-spin"><i class="fa-solid fa-compact-disc"></i></div>
-          <div class="music-title-info">
-            <h4>Toca para ver y pasar a la página siguiente ➔ (กดดูสิแล้วไปหน้าถัดไป)</h4>
-            <p>Nuestra propia canción (เพลงของเราเอง)</p>
-          </div>
-        </div>
-
-        <div class="youtube-container">
-          <iframe 
-            src="https://www.youtube.com/embed/98Akpf1ph2o?enablejsapi=1&rel=0" 
-            title="Nuestra Canción" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-
-      <button class="btn-next" onclick="triggerFinal()" style="font-size: 1rem; padding: 9px 20px;">Ver carta final ✨</button>
+      <button class="btn-next" onclick="triggerFinal()">Ver carta final ✨</button>
     </div>
 
     <!-- 💌 SLIDE 6: FINAL CARD SLIDE -->
@@ -854,7 +778,7 @@
         <p style="margin-top: 8px;">Gracias por acompañarme incluso cuando estamos lejos. Hay días fáciles y otros más difíciles, pero contigo siempre siento que merece la pena seguir.</p>
         <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">Gracias por acompañarme... (ขอบคุณที่คอยอยู่เคียงข้างกันแม้ว่าเราจะอยู่ไกลกัน มีทั้งวันที่ราบรื่นและวันที่ยากลำบาก แต่พอมีแฟนแล้วเค้ารู้สึกว่ามันคุ้มค่าที่จะสู้ต่อเสมอ)</p>
 
-        <p style="margin-top: 8px;">Espero que algún día podamos ver هذا momento juntos y reírnos de toda la distancia que tuvimos que superar.</p>
+        <p style="margin-top: 8px;">Espero que algún día podamos ver este momento juntos y reírnos de toda la distancia que tuvimos que superar.</p>
         <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">Espero que algún día... (หวังว่าสักวันหนึ่งเราจะได้มานั่งดูช่วงเวลานี้ด้วยกัน แล้วหัวเราะให้กับระยะทางทั้งหมดที่เราผ่านพ้นมาด้วยกันนะ)</p>
         
         <p style="font-weight: bold; color: #ff4b72; margin-top: 10px;">¡Te amo muchísimo! 🥰✨</p>
@@ -966,12 +890,6 @@
       const current = document.getElementById(currentSlideId);
       current.classList.remove('active');
       
-      if (targetId === 's_music') {
-        bgm.volume = 0.08;
-      } else {
-        bgm.volume = 0.35;
-      }
-
       setTimeout(() => {
         current.style.display = 'none';
         currentSlideId = targetId;
