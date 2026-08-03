@@ -214,7 +214,7 @@
       40%, 80% { transform: translateX(12px); }
     }
 
-    /* General Typography & Clean Separation Block */
+    /* General Typography & Clean Separation Block (Combined ES + TH in one box) */
     .cute-text {
       font-size: 1.12rem;
       line-height: 1.5;
@@ -226,7 +226,7 @@
       background: rgba(255, 255, 255, 0.08);
       border: 1px dashed rgba(255, 255, 255, 0.25);
       border-radius: 16px;
-      padding: 10px 14px;
+      padding: 12px 14px;
       margin-bottom: 10px;
       text-align: left;
     }
@@ -236,7 +236,7 @@
       border-color: #ffccd5;
     }
 
-    .es-text { font-size: 1.02rem; font-weight: 500; color: #fff; display: block; margin-bottom: 2px; }
+    .es-text { font-size: 1.02rem; font-weight: 500; color: #fff; display: block; margin-bottom: 4px; }
     body.sunrise-pastel .es-text { color: #5d4037; }
     .th-sub { font-size: 0.88rem; opacity: 0.95; display: block; font-weight: normal; color: #ffe5ec; }
     body.sunrise-pastel .th-sub { color: #8c6d73; }
@@ -325,7 +325,7 @@
       padding: 6px;
     }
 
-    /* 🎶 YOUTUBE MUSIC SECTION (คงข้อความเดิมตามที่ขอ) */
+    /* 🎶 YOUTUBE MUSIC SECTION (คงโค้ดเดิมแบบเป๊ะๆ) */
     .music-card-box {
       background: #ffffff;
       border-radius: 20px;
@@ -571,10 +571,8 @@
       <div class="passcode-header">Escribe nuestra contraseña</div>
       
       <div class="hint-box" id="hintText">
-        <div class="lang-block" style="margin-bottom: 6px;">
-          <span class="es-text" style="font-weight: bold;">¿Recuerdas nuestro aniversario, mi amor? 😡</span>
-        </div>
         <div class="lang-block" style="margin-bottom: 0;">
+          <span class="es-text" style="font-weight: bold;">¿Recuerdas nuestro aniversario, mi amor? 😡</span>
           <span class="th-sub">(ถ้าลืมวันครบรอบก็ไม่ต้องเข้าไปดูข้างในเลยนะจ๊ะ! 😡😡😡)</span>
         </div>
       </div>
@@ -616,24 +614,14 @@
       </div>
 
       <div class="cute-text">
-        <div class="lang-block">
+        <div class="lang-block" style="margin-bottom: 10px;">
           <span class="es-text">¿Sabías por qué elegí este fondo del espacio? 🌌</span>
-        </div>
-        <div class="lang-block" style="margin-bottom: 0;">
           <span class="th-sub">(รู้มั้ยคะว่าทำไมเค้าถึงเลือกพื้นหลังธีมอวกาศดาวตกแบบนี้?)</span>
         </div>
-      </div>
 
-      <div class="hint-box" style="margin-bottom: 12px; background: rgba(255, 133, 162, 0.25); border-color: rgba(255, 255, 255, 0.4);">
-        <div class="lang-block" style="margin-bottom: 6px;">
-          <span class="es-text" style="font-weight: bold; color: #ffd1dc;">
-            ¡Porque es Aries, tu signo zodiacal! ♈️✨<br>Te encantan las estrellas, ¿verdad, mi amor? 🌟
-          </span>
-        </div>
-        <div class="lang-block" style="margin-bottom: 0;">
-          <span class="th-sub">
-            (ก็เพราะมันคือราศีเมษ (Aries) ราศีของแฟนยังไงล่ะคะ! ♈️ แฟนชอบดวงดาวใช่มั้ยล่ะคะเนี่ย?)
-          </span>
+        <div class="lang-block" style="margin-bottom: 0; background: rgba(255, 133, 162, 0.25); border-color: rgba(255, 255, 255, 0.4);">
+          <span class="es-text" style="font-weight: bold; color: #ffd1dc;">¡Porque es Aries, tu signo zodiacal! ♈️✨<br>Te encantan las estrellas, ¿verdad, mi amor? 🌟</span>
+          <span class="th-sub" style="color: #ffe5ec;">(ก็เพราะมันคือราศีเมษ (Aries) ราศีของแฟนยังไงล่ะคะ! ♈️ แฟนชอบดวงดาวใช่มั้ยล่ะคะเนี่ย?)</span>
         </div>
       </div>
 
@@ -656,10 +644,8 @@
     <div class="slide" id="s1">
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
       <div class="cute-text">
-        <div class="lang-block">
-          <span class="es-text">Tengo algo muy especial para ti, mi Fan ♡</span>
-        </div>
         <div class="lang-block" style="margin-bottom: 0;">
+          <span class="es-text">Tengo algo muy especial para ti, mi Fan ♡</span>
           <span class="th-sub">(เค้ามีอะไรพิเศษๆ จะเซอร์ไพรส์แฟนด้วยน้า ♡)</span>
         </div>
       </div>
@@ -686,11 +672,14 @@
       </svg>
 
       <div class="cute-text">
-        <div class="lang-block">
-          <span class="es-text">Todo el mundo dice: "Ríndete, una relación a distancia no funciona"... 💔<br>Pero le diré a mi Fan que les demostraré a todos que te amo lo suficiente como para mantenerme fiel y estar a tu lado para siempre, ¡hasta que tengan que rendirse ante nosotros! 🔥💖</span>
+        <div class="lang-block" style="margin-bottom: 10px;">
+          <span class="es-text">Todo el mundo dice: "Ríndete, una relación a distancia no funciona"... 💔</span>
+          <span class="th-sub">(ใครๆ ก็บอกว่ายอมแพ้เถอะ รักทางไกลไม่มีทางรอดหรอก...)</span>
         </div>
+
         <div class="lang-block" style="margin-bottom: 0;">
-          <span class="th-sub">(ใครๆ ก็บอกว่ายอมแพ้เถอะ รักทางไกลไม่มีทางรอดหรอก... แต่เค้าจะทำให้คนพวกนั้นเห็นเองค่ะว่า เค้าแคร์และรักแฟนมากแค่ไหน จะมั่นคงและอยู่ข้างๆ ตลอดไปจนกว่าคนพวกนั้นจะต้องยอมแพ้เราเลยล่ะ! 🔥✨)</span>
+          <span class="es-text">Pero le diré a mi Fan que les demostraré a todos que te amo lo suficiente como para mantenerme fiel y estar a tu lado para siempre, ¡hasta que tengan que rendirse ante nosotros! 🔥💖</span>
+          <span class="th-sub">(แต่เค้าจะทำให้คนพวกนั้นเห็นเองค่ะว่า เค้าแคร์และรักแฟนมากแค่ไหน จะมั่นคงและอยู่ข้างๆ ตลอดไปจนกว่าคนพวกนั้นจะต้องยอมแพ้เราเลยล่ะ! 🔥✨)</span>
         </div>
       </div>
       <button class="btn-next" onclick="goToSlide('s_distance_feel')">Siguiente (ถัดไป) ➔</button>
@@ -700,11 +689,14 @@
     <div class="slide" id="s_distance_feel">
       <div class="koala-container"><div class="cute-koala">🐨🥺</div></div>
       <div class="cute-text">
-        <div class="lang-block">
-          <span class="es-text">Perdón por hacerte sentir solo. Como estamos lejos, no tenemos momentos tan lindos como otras parejas... 🥺<br>Pero intentaré entrar en tu mundo cueste lo que cueste, haré todo lo posible para estar cerca de ti. Por favor, espérame, porque estar juntos siempre será mucho mejor... 💖✨</span>
+        <div class="lang-block" style="margin-bottom: 10px;">
+          <span class="es-text">Perdón por hacerte sentir solo. Como estamos lejos, no tenemos momentos tan lindos como otras parejas... 🥺</span>
+          <span class="th-sub">(ขอโทษนะคะที่บางทีทำให้รู้สึกเหงา เพราะเราอยู่ไกลกันเลยไม่ได้มีโมเมนต์หวานๆ เหมือนคู่อื่นเขา...)</span>
         </div>
+
         <div class="lang-block" style="margin-bottom: 0;">
-          <span class="th-sub">(ขอโทษนะคะที่บางทีทำให้รู้สึกเหงา เพราะเราอยู่ไกลกันเลยไม่ได้มีโมเมนต์หวานๆ เหมือนคู่อื่นเขา... แต่เค้าจะพยายามเข้าไปอยู่ในโลกของแฟนให้ได้ จะทำทุกอย่างเพื่อให้ได้อยู่ใกล้ๆ นะคะ รอเค้าหน่อยน้า เพราะการที่เราได้อยู่ด้วยกันมันดีที่สุดแล้วล่ะค่ะ 🥺💕)</span>
+          <span class="es-text">Pero intentaré entrar en tu mundo cueste lo que cueste, haré todo lo posible para estar cerca de ti. Por favor, espérame, porque estar juntos siempre será mucho mejor... 💖✨</span>
+          <span class="th-sub">(แต่เค้าจะพยายามเข้าไปอยู่ในโลกของแฟนให้ได้ จะทำทุกอย่างเพื่อให้ได้อยู่ใกล้ๆ นะคะ รอเค้าหน่อยน้า เพราะการที่เราได้อยู่ด้วยกันมันดีที่สุดแล้วล่ะค่ะ 🥺💕)</span>
         </div>
       </div>
       <button class="btn-next" onclick="goToSlide('s3')">Siguiente (ถัดไป) ➔</button>
@@ -714,10 +706,8 @@
     <div class="slide" id="s3">
       <div class="koala-container"><div class="cute-koala">🐨💖</div></div>
       <div class="cute-text">
-        <div class="lang-block">
-          <span class="es-text">Gracias por ser el mejor novio del mundo, por cada sonrisa y por cuidarme tan bien.</span>
-        </div>
         <div class="lang-block" style="margin-bottom: 0;">
+          <span class="es-text">Gracias por ser el mejor novio del mundo, por cada sonrisa y por cuidarme tan bien.</span>
           <span class="th-sub">(ขอบคุณที่เป็นแฟนที่ดีที่สุดในโลก ขอบคุณสำหรับทุกรอยยิ้ม และขอบคุณที่คอยดูแลเค้าอย่างดีเสมอนะคะ)</span>
         </div>
       </div>
@@ -728,10 +718,8 @@
     <div class="slide" id="s4">
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
       <div class="cute-text">
-        <div class="lang-block">
-          <span class="es-text">La distancia es solo un número... porque tú lo eres todo para mí.</span>
-        </div>
         <div class="lang-block" style="margin-bottom: 0;">
+          <span class="es-text">La distancia es solo un número... porque tú lo eres todo para mí.</span>
           <span class="th-sub">(ระยะทางก็เป็นแค่ตัวเลขเท่านั้นแหละค่ะ... เพราะสำหรับเค้าแล้ว แฟนคือทุกสิ่งทุกอย่างเลยนะ)</span>
         </div>
       </div>
@@ -742,10 +730,8 @@
     <div class="slide" id="s_question">
       <div class="koala-container"><div class="cute-koala">🐨❓</div></div>
       <div class="cute-text">
-        <div class="lang-block">
-          <span class="es-text">¿Me amas, mi Fan? ❤️</span>
-        </div>
         <div class="lang-block" style="margin-bottom: 0;">
+          <span class="es-text">¿Me amas, mi Fan? ❤️</span>
           <span class="th-sub">(แฟนรักเค้ามั้ยคะเนี่ย?)</span>
         </div>
       </div>
@@ -759,10 +745,8 @@
     <div class="slide" id="s_love">
       <div class="koala-container"><div class="cute-koala">🐨🥰</div></div>
       <div class="cute-text">
-        <div class="lang-block">
-          <span class="es-text">¡Ya lo sabía! Te amo muchísimo 😜💖</span>
-        </div>
         <div class="lang-block" style="margin-bottom: 0;">
+          <span class="es-text">¡Ya lo sabía! Te amo muchísimo 😜💖</span>
           <span class="th-sub">(รู้อยู่แล้วล่ะสิคะ! เค้าก็รักแฟนมากๆ เหมือนกันน้า 🥰)</span>
         </div>
       </div>
@@ -773,23 +757,19 @@
     <div class="slide" id="s_not_love">
       <div class="koala-container"><div class="cute-koala">🐨😜</div></div>
       <div class="cute-text">
-        <div class="lang-block">
-          <span class="es-text">¡Mentira! Sé que me amas mucho, mi Fan 😚</span>
-        </div>
         <div class="lang-block" style="margin-bottom: 0;">
+          <span class="es-text">¡Mentira! Sé que me amas mucho, mi Fan 😚</span>
           <span class="th-sub">(แอบโกหกแน่ๆ เค้าดูออกหรอกว่าแฟนรักเค้าจะตาย 😜)</span>
         </div>
       </div>
       <button class="btn-next" onclick="goToSlide('s_music')">Ven a escuchar la canción ✨<br><span style="font-size:0.8rem; font-weight:normal;">(มาฟังเพลงนี้ด้วยกันก่อนเร็ว)</span></button>
     </div>
 
-    <!-- 🎶 SLIDE 5: YOUTUBE MUSIC (คงข้อความเดิมตามที่ขอ) -->
+    <!-- 🎶 SLIDE 5: YOUTUBE MUSIC (คงโครงสร้างเดิมแบบเป๊ะๆ) -->
     <div class="slide" id="s_music">
       <div class="cute-text">
-        <div class="lang-block">
-          <span class="es-text">Escucho esta canción y siempre pienso en ti ♡</span>
-        </div>
         <div class="lang-block" style="margin-bottom: 0;">
+          <span class="es-text">Escucho esta canción y siempre pienso en ti ♡</span>
           <span class="th-sub">(ฟังเพลงนี้ทีไรก็นึกถึงแฟนทุกทีเลยนะ ♡)</span>
         </div>
       </div>
@@ -963,11 +943,9 @@
         icon.innerHTML = randomIcon + "💔";
         
         hint.innerHTML = `
-          <div class="lang-block" style="margin-bottom: 6px;">
-            <span style='color:#ff477e; font-weight:bold; font-size: 1.05rem;'>${randomPout.es}</span>
-          </div>
           <div class="lang-block" style="margin-bottom: 0;">
-            <span style='color:#ff85a2; font-size:0.88rem; display:block;'>(${randomPout.th})</span>
+            <span class="es-text" style='color:#ff477e; font-weight:bold; font-size: 1.05rem;'>${randomPout.es}</span>
+            <span class="th-sub" style='color:#ff85a2;'>(${randomPout.th})</span>
           </div>
         `;
         
