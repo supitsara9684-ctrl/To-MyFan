@@ -83,8 +83,8 @@
       position: relative;
       z-index: 10;
       width: 100%;
-      max-width: 380px;
-      padding: 22px 18px;
+      max-width: 400px;
+      padding: 24px 20px;
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
@@ -102,7 +102,6 @@
       outline-offset: -12px;
       box-shadow: 0 25px 50px rgba(255, 133, 162, 0.35) !important;
       border-radius: 28px !important;
-      padding: 24px 18px !important;
     }
 
     .slide {
@@ -123,7 +122,6 @@
       font-size: 2.5rem;
       margin-bottom: 4px;
       animation: pulseLock 2s infinite ease-in-out;
-      transition: all 0.3s ease;
     }
 
     @keyframes pulseLock {
@@ -152,7 +150,6 @@
       padding: 8px 10px;
       border-radius: 14px;
       border: 1px dashed rgba(255, 255, 255, 0.25);
-      transition: all 0.3s ease;
     }
 
     .keypad-container {
@@ -214,24 +211,38 @@
       40%, 80% { transform: translateX(12px); }
     }
 
-    /* Compact Unified Separation Blocks */
-    .lang-block {
+    /* Original Long Content Structured Boxes */
+    .content-box-original {
       background: rgba(255, 255, 255, 0.08);
-      border: 1px dashed rgba(255, 255, 255, 0.25);
-      border-radius: 16px;
-      padding: 12px 14px;
-      margin-bottom: 12px;
+      border: 1.5px dashed rgba(255, 255, 255, 0.3);
+      border-radius: 18px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
       text-align: left;
     }
 
-    body.sunrise-pastel .lang-block {
+    body.sunrise-pastel .content-box-original {
       background: rgba(255, 182, 193, 0.15);
       border-color: #ffccd5;
     }
 
-    .es-text { font-size: 0.98rem; font-weight: 500; color: #fff; display: block; margin-bottom: 4px; line-height: 1.35; }
-    body.sunrise-pastel .es-text { color: #5d4037; }
-    .th-sub { font-size: 0.84rem; opacity: 0.95; display: block; font-weight: normal; color: #ffe5ec; line-height: 1.35; }
+    .es-main {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.45;
+      margin-bottom: 8px;
+      display: block;
+    }
+    body.sunrise-pastel .es-main { color: #5d4037; }
+
+    .th-sub {
+      font-size: 0.9rem;
+      color: #ffe5ec;
+      line-height: 1.4;
+      display: block;
+      opacity: 0.95;
+    }
     body.sunrise-pastel .th-sub { color: #8c6d73; }
 
     .btn-next {
@@ -240,7 +251,7 @@
       color: white;
       font-family: 'Itim', cursive;
       font-size: 1.05rem;
-      padding: 9px 20px;
+      padding: 10px 24px;
       border-radius: 25px;
       cursor: pointer;
       box-shadow: 0 5px 15px rgba(255, 92, 138, 0.4);
@@ -248,12 +259,12 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    .btn-choice-group { display: flex; justify-content: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+    .btn-choice-group { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
     .btn-love { background: linear-gradient(135deg, #ff477e, #ff0055); }
     .btn-not-love { background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4); }
 
-    .koala-container { width: 100%; height: 38px; position: relative; overflow: hidden; margin-bottom: 4px; }
-    .cute-koala { font-size: 2.2rem; position: absolute; left: -50px; animation: koalaWalk 4s linear infinite; }
+    .koala-container { width: 100%; height: 40px; position: relative; overflow: hidden; margin-bottom: 4px; }
+    .cute-koala { font-size: 2.3rem; position: absolute; left: -50px; animation: koalaWalk 4s linear infinite; }
     @keyframes koalaWalk {
       0% { left: -50px; transform: rotate(0deg); }
       50% { transform: rotate(5deg) translateY(-2px); }
@@ -290,13 +301,13 @@
       display: inline-block;
       animation: dukdikAnim 0.6s infinite alternate cubic-bezier(0.175, 0.885, 0.32, 1.275);
       background: rgba(255, 117, 143, 0.3);
-      padding: 8px 12px;
+      padding: 8px 14px;
       border-radius: 16px;
       border: 1.5px dashed #ff85a2;
       color: #ffe5ec;
       font-size: 1.05rem;
       font-weight: bold;
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     @keyframes dukdikAnim {
@@ -308,7 +319,7 @@
     .map-svg {
       width: 100%;
       max-width: 280px;
-      height: 100px;
+      height: 95px;
       margin: 0 auto 8px auto;
       background: rgba(255, 255, 255, 0.08);
       border-radius: 14px;
@@ -376,7 +387,7 @@
       border-radius: 18px;
       padding: 12px 8px;
       position: relative;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       border: 2px solid rgba(255, 255, 255, 0.9);
       box-shadow: inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 12px rgba(255, 133, 162, 0.2);
     }
@@ -408,52 +419,32 @@
       50% { transform: scale(1.25); }
     }
 
-    .spanish-quote {
-      font-family: 'Itim', sans-serif;
-      font-size: 1rem;
-      color: #5c4348;
-      margin-bottom: 4px;
-      line-height: 1.4;
-    }
-
-    .thai-translation {
-      font-size: 0.82rem;
-      color: #8c6d73;
-      margin-bottom: 10px;
-      line-height: 1.35;
-    }
-
     .big-love-text {
       font-family: 'Dancing Script', cursive;
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: #ff4b72;
-      margin: 8px 0 8px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
+      margin: 10px 0;
     }
 
     .action-buttons {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       justify-content: center;
-      margin-top: 12px;
-      flex-wrap: wrap;
+      margin-top: 14px;
     }
 
     .btn-pill {
       background: #ffffff;
       border: 1.5px solid #ffccd5;
-      padding: 8px 12px;
+      padding: 9px 16px;
       border-radius: 20px;
       color: #5a4045;
-      font-size: 0.82rem;
+      font-size: 0.9rem;
       font-family: 'Itim', sans-serif;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       box-shadow: 0 3px 8px rgba(255, 117, 140, 0.15);
       transition: all 0.3s ease;
     }
@@ -481,9 +472,9 @@
     .modal-content {
       background: #fff0f5;
       border-radius: 22px;
-      max-width: 340px;
+      max-width: 360px;
       width: 100%;
-      padding: 18px;
+      padding: 20px;
       position: relative;
       box-shadow: 0 15px 30px rgba(0,0,0,0.2);
       border: 3px solid #ffccd5;
@@ -509,10 +500,10 @@
     }
 
     .modal-body {
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       color: #5a4045;
-      line-height: 1.45;
-      margin-top: 8px;
+      line-height: 1.5;
+      margin-top: 10px;
       text-align: left;
       max-height: 65vh;
       overflow-y: auto;
@@ -591,19 +582,19 @@
         <div class="aries-constellation-title">Constelación de Aries ✨</div>
       </div>
 
-      <div class="lang-block">
-        <span class="es-text">¿Sabías por qué elegí este fondo del espacio? 🌌</span>
+      <div class="content-box-original">
+        <span class="es-main">¿Sabías por qué elegí este fondo del espacio? 🌌</span>
         <span class="th-sub">(รู้มั้ยคะว่าทำไมเค้าถึงเลือกพื้นหลังธีมอวกาศดาวตกแบบนี้?)</span>
       </div>
 
-      <div class="lang-block" style="background: rgba(255, 133, 162, 0.25); border-color: rgba(255, 255, 255, 0.4);">
-        <span class="es-text" style="color: #ffd1dc;">¡Porque es Aries, tu signo zodiacal! ♈️✨<br>Te encantan las estrellas, ¿verdad, mi amor? 🌟</span>
+      <div class="content-box-original" style="background: rgba(255, 133, 162, 0.25); border-color: rgba(255, 255, 255, 0.4);">
+        <span class="es-main" style="color: #ffd1dc;">¡Porque es Aries, tu signo zodiacal! ♈️✨<br>Te encantan las estrellas, ¿verdad, mi amor? 🌟</span>
         <span class="th-sub" style="color: #ffe5ec;">(ก็เพราะมันคือราศีเมษ ราศีของแฟนเองค่ะ! ♈️)</span>
       </div>
 
       <div class="btn-choice-group">
-        <button class="btn-next btn-love" onclick="showDukdikMsg()" style="font-size: 0.9rem; padding: 7px 12px;">Sí, me encanta ♡</button>
-        <button class="btn-next btn-love" onclick="showDukdikMsg()" style="font-size: 0.9rem; padding: 7px 12px;">Sí 😜</button>
+        <button class="btn-next btn-love" onclick="showDukdikMsg()" style="font-size: 0.95rem; padding: 8px 16px;">Sí, me encanta ♡</button>
+        <button class="btn-next btn-love" onclick="showDukdikMsg()" style="font-size: 0.95rem; padding: 8px 16px;">Sí 😜</button>
       </div>
 
       <div id="dukdikArea" style="display: none;">
@@ -614,8 +605,8 @@
     <!-- SLIDE 1 -->
     <div class="slide" id="s1">
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
-      <div class="lang-block">
-        <span class="es-text">Tengo algo muy especial para ti, mi Fan ♡</span>
+      <div class="content-box-original">
+        <span class="es-main">Tengo algo muy especial para ti, mi Fan ♡</span>
         <span class="th-sub">(เค้ามีอะไรพิเศษๆ จะเซอร์ไพรส์แฟนด้วยน้า ♡)</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s2')">Siguiente (ถัดไป) ➔</button>
@@ -640,13 +631,13 @@
         <g transform="translate(145, 20) rotate(-170)"><text font-size="16">✈️</text></g>
       </svg>
 
-      <div class="lang-block" style="margin-bottom: 8px;">
-        <span class="es-text">"Ríndete, la distancia no funciona"... 💔</span>
+      <div class="content-box-original" style="margin-bottom: 8px;">
+        <span class="es-main">"Ríndete, la distancia no funciona"... 💔</span>
         <span class="th-sub">(ใครๆ ก็บอกว่ารักทางไกลไม่มีทางรอด...)</span>
       </div>
 
-      <div class="lang-block" style="margin-bottom: 10px;">
-        <span class="es-text">¡Te demostraré que mi amor es fiel hasta que se rindan! 🔥💖</span>
+      <div class="content-box-original" style="margin-bottom: 12px;">
+        <span class="es-main">¡Te demostraré que mi amor es fiel hasta que se rindan! 🔥💖</span>
         <span class="th-sub">(แต่เค้าจะทำให้เห็นเองว่าเราจะอยู่ด้วยกันตลอดไป! 🔥✨)</span>
       </div>
 
@@ -656,13 +647,13 @@
     <!-- 🥺 SLIDE: DISTANCE FEELINGS -->
     <div class="slide" id="s_distance_feel">
       <div class="koala-container"><div class="cute-koala">🐨🥺</div></div>
-      <div class="lang-block" style="margin-bottom: 8px;">
-        <span class="es-text">Perdón por hacerte sentir solo a veces... 🥺</span>
+      <div class="content-box-original" style="margin-bottom: 8px;">
+        <span class="es-main">Perdón por hacerte sentir solo a veces... 🥺</span>
         <span class="th-sub">(ขอโทษนะคะที่บางทีทำให้รู้สึกเหงา...)</span>
       </div>
 
-      <div class="lang-block" style="margin-bottom: 10px;">
-        <span class="es-text">Haré todo lo posible por estar cerca. ¡Espérame! 💖</span>
+      <div class="content-box-original" style="margin-bottom: 12px;">
+        <span class="es-main">Haré todo lo posible por estar cerca. ¡Espérame! 💖</span>
         <span class="th-sub">(จะทำทุกอย่างให้อยู่ใกล้แฟนนะ รอเค้าหน่อยน้า 🥺💕)</span>
       </div>
 
@@ -672,8 +663,8 @@
     <!-- SLIDE 3 -->
     <div class="slide" id="s3">
       <div class="koala-container"><div class="cute-koala">🐨💖</div></div>
-      <div class="lang-block">
-        <span class="es-text">Gracias por ser el mejor novio del mundo, por cada sonrisa y por cuidarme.</span>
+      <div class="content-box-original">
+        <span class="es-main">Gracias por ser el mejor novio del mundo, por cada sonrisa y por cuidarme.</span>
         <span class="th-sub">(ขอบคุณที่เป็นแฟนที่ดีที่สุด ขอบคุณสำหรับทุกรอยยิ้มและการดูแลนะคคะ)</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s4')">Siguiente (ถัดไป) ➔</button>
@@ -682,8 +673,8 @@
     <!-- SLIDE 4 -->
     <div class="slide" id="s4">
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
-      <div class="lang-block">
-        <span class="es-text">La distancia es solo un número... porque tú lo eres todo para mí.</span>
+      <div class="content-box-original">
+        <span class="es-main">La distancia es solo un número... porque tú lo eres todo para mí.</span>
         <span class="th-sub">(ระยะทางก็เป็นแค่ตัวเลข... เพราะสำหรับเค้าแฟนคือทุกสิ่งค่ะ)</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s_question')">Pregunta (คำถาม) ✨ ➔</button>
@@ -692,21 +683,21 @@
     <!-- SLIDE QUESTION -->
     <div class="slide" id="s_question">
       <div class="koala-container"><div class="cute-koala">🐨❓</div></div>
-      <div class="lang-block">
-        <span class="es-text">¿Me amas, mi Fan? ❤️</span>
+      <div class="content-box-original">
+        <span class="es-main">¿Me amas, mi Fan? ❤️</span>
         <span class="th-sub">(แฟนรักเค้ามั้ยคะเนี่ย?)</span>
       </div>
       <div class="btn-choice-group">
-        <button class="btn-next btn-love" onclick="goToSlide('s_love')" style="font-size: 0.9rem; padding: 7px 12px;">Sí, te amo ❤️</button>
-        <button class="btn-next btn-not-love" onclick="goToSlide('s_not_love')" style="font-size: 0.9rem; padding: 7px 12px;">No 🙈</button>
+        <button class="btn-next btn-love" onclick="goToSlide('s_love')" style="font-size: 0.95rem; padding: 8px 16px;">Sí, te amo ❤️</button>
+        <button class="btn-next btn-not-love" onclick="goToSlide('s_not_love')" style="font-size: 0.95rem; padding: 8px 16px;">No 🙈</button>
       </div>
     </div>
 
     <!-- SLIDE ANSWER LOVE -->
     <div class="slide" id="s_love">
       <div class="koala-container"><div class="cute-koala">🐨🥰</div></div>
-      <div class="lang-block">
-        <span class="es-text">¡Ya lo sabía! Te amo muchísimo 😜💖</span>
+      <div class="content-box-original">
+        <span class="es-main">¡Ya lo sabía! Te amo muchísimo 😜💖</span>
         <span class="th-sub">(รู้อยู่แล้วล่ะสิคะ! เค้าก็รักแฟนมากๆ เหมือนกัน 🥰)</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s_music')">Nuestra canción 🎶</button>
@@ -715,8 +706,8 @@
     <!-- SLIDE ANSWER NOT LOVE -->
     <div class="slide" id="s_not_love">
       <div class="koala-container"><div class="cute-koala">🐨😜</div></div>
-      <div class="lang-block">
-        <span class="es-text">¡Mentira! Sé que me amas mucho, mi Fan 😚</span>
+      <div class="content-box-original">
+        <span class="es-main">¡Mentira! Sé que me amas mucho, mi Fan 😚</span>
         <span class="th-sub">(แอบโกหกแน่ๆ เค้าดูออกหรอกว่ารักเค้าจะตาย 😜)</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s_music')">Escuchar canción ✨</button>
@@ -724,8 +715,8 @@
 
     <!-- 🎶 SLIDE 5: YOUTUBE MUSIC -->
     <div class="slide" id="s_music">
-      <div class="lang-block" style="margin-bottom: 6px;">
-        <span class="es-text" style="font-size: 0.9rem;">Escucho esta canción y siempre pienso en ti ♡</span>
+      <div class="content-box-original" style="margin-bottom: 8px;">
+        <span class="es-main" style="font-size: 0.95rem;">Escucho esta canción y siempre pienso en ti ♡</span>
         <span class="th-sub">(ฟังเพลงนี้ทีไรก็นึกถึงแฟนทุกทีเลยนะ ♡)</span>
       </div>
 
@@ -748,7 +739,7 @@
         </div>
       </div>
 
-      <button class="btn-next" onclick="triggerFinal()" style="font-size: 0.95rem; padding: 7px 16px;">Ver carta final ✨</button>
+      <button class="btn-next" onclick="triggerFinal()" style="font-size: 1rem; padding: 9px 20px;">Ver carta final ✨</button>
     </div>
 
     <!-- 💌 SLIDE 6: FINAL CARD SLIDE -->
@@ -759,15 +750,12 @@
           <span class="heart-center">💖</span>
           <span class="char-monkey">🐒</span>
         </div>
-        <div style="font-size: 0.9rem; color:#ff6b8b; font-weight:500;">Juntos para siempre ✨ (จะอยู่ด้วยกันตลอดไป)</div>
+        <div style="font-size: 0.92rem; color:#ff6b8b; font-weight:500;">Juntos para siempre ✨ (จะอยู่ด้วยกันตลอดไป)</div>
       </div>
 
-      <div class="spanish-quote">
-        "Gracias por aparecer en mi vida,<br>gracias por elegirnos, y gracias por ser tú. ♡"
-      </div>
-
-      <div class="thai-translation">
-        (ขอบคุณที่ก้าวเข้ามาในชีวิต และเลือกเราเสมอนะคะ ♡)
+      <div class="content-box-original" style="text-align: center; margin-bottom: 10px;">
+        <span class="es-main" style="font-size: 0.98rem;">"Gracias por aparecer en mi vida, gracias por elegirnos, y gracias por ser tú. ♡"</span>
+        <span class="th-sub" style="margin-top: 6px;">(ขอบคุณที่ก้าวเข้ามาในชีวิต และเลือกเราเสมอนะคะ ♡)</span>
       </div>
 
       <div class="big-love-text">
@@ -798,13 +786,13 @@
       <div class="modal-body">
         <p style="font-weight: bold; color: #ff4b72;">¡Hola mi Fan! 💖 (สวัสดีค่ะแฟนจ๋า)</p>
         <p style="margin-top: 6px;">Esta carta está hecha con todo mi amor para ti. Gracias por estar a mi lado cada día, por ser mi sonrisa y por cuidarme siempre tan bien.</p>
-        <p style="font-size: 0.8rem; color: #8c6d73; margin-top: 2px;">(จดหมายฉบับนี้ตั้งใจทำด้วยความรักทั้งหมด ขอบคุณสำหรับทุกวันที่อยู่ข้างกันนะคะ)</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">(จดหมายฉบับนี้ตั้งใจทำด้วยความรักทั้งหมด ขอบคุณสำหรับทุกวันที่อยู่ข้างกันนะคะ)</p>
         
-        <p style="margin-top: 6px;">Aunque estemos lejos, puedo sentir tu amor todo el tiempo.</p>
-        <p style="font-size: 0.8rem; color: #8c6d73; margin-top: 2px;">(ถึงอยู่ไกลกัน แต่เค้าสัมผัสความรักของแฟนได้ตลอดเวลาเลยนะ)</p>
+        <p style="margin-top: 8px;">Aunque estemos lejos, puedo sentir tu amor todo el tiempo.</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">(ถึงอยู่ไกลกัน แต่เค้าสัมผัสความรักของแฟนได้ตลอดเวลาเลยนะ)</p>
         
-        <p style="font-weight: bold; color: #ff4b72; margin-top: 8px;">¡Te amo muchísimo! Eres el mejor del mundo. 🥰✨</p>
-        <p style="font-size: 0.8rem; color: #8c6d73; margin-top: 2px;">(รักแฟนที่สุดในโลกเลยค่ะ 🥰✨)</p>
+        <p style="font-weight: bold; color: #ff4b72; margin-top: 10px;">¡Te amo muchísimo! Eres el mejor del mundo. 🥰✨</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">(รักแฟนที่สุดในโลกเลยค่ะ 🥰✨)</p>
       </div>
     </div>
   </div>
