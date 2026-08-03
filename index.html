@@ -83,8 +83,8 @@
       position: relative;
       z-index: 10;
       width: 100%;
-      max-width: 420px;
-      padding: 24px 18px;
+      max-width: 410px;
+      padding: 24px 20px;
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
@@ -102,14 +102,13 @@
       outline-offset: -12px;
       box-shadow: 0 25px 50px rgba(255, 133, 162, 0.35) !important;
       border-radius: 28px !important;
-      padding: 28px 18px !important;
     }
 
     .slide {
       display: none;
       opacity: 0;
       transform: translateY(12px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
     .slide.active {
@@ -121,9 +120,8 @@
     /* 🔒 PASSCODE LOCK */
     .passcode-icon {
       font-size: 2.8rem;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
       animation: pulseLock 2s infinite ease-in-out;
-      transition: all 0.3s ease;
     }
 
     @keyframes pulseLock {
@@ -135,43 +133,42 @@
       background: rgba(255, 133, 162, 0.3);
       border: 1px solid rgba(255, 133, 162, 0.5);
       color: #ffe5ec;
-      padding: 6px 18px;
+      padding: 4px 14px;
       border-radius: 20px;
       display: inline-block;
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: bold;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .hint-box {
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       color: #ffe5ec;
-      margin-bottom: 18px;
-      line-height: 1.4;
+      margin-bottom: 12px;
+      line-height: 1.3;
       background: rgba(0, 0, 0, 0.2);
-      padding: 10px 14px;
-      border-radius: 16px;
+      padding: 8px 10px;
+      border-radius: 14px;
       border: 1px dashed rgba(255, 255, 255, 0.25);
-      transition: all 0.3s ease;
     }
 
     .keypad-container {
-      max-width: 260px;
+      max-width: 240px;
       margin: 0 auto;
     }
 
     .passcode-dots {
       display: flex;
       justify-content: center;
-      gap: 8px;
-      margin-bottom: 18px;
-      height: 22px;
+      gap: 6px;
+      margin-bottom: 12px;
+      height: 18px;
       align-items: center;
     }
 
     .passcode-dot {
-      width: 13px;
-      height: 13px;
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
       border: 2px solid #ff85a2;
       background: transparent;
@@ -186,26 +183,26 @@
     .keypad-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+      gap: 8px;
     }
 
     .key-btn {
       background: rgba(255, 133, 162, 0.85);
       color: white;
       border: none;
-      border-radius: 16px;
-      padding: 14px 0;
-      font-size: 1.3rem;
+      border-radius: 14px;
+      padding: 10px 0;
+      font-size: 1.15rem;
       font-weight: bold;
       font-family: 'Itim', cursive;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
       transition: all 0.15s ease;
       -webkit-tap-highlight-color: transparent;
     }
 
     .key-btn:active { transform: scale(0.92); background: #ff477e; }
-    .key-btn.action-btn { background: rgba(255, 255, 255, 0.2); font-size: 1.05rem; }
+    .key-btn.action-btn { background: rgba(255, 255, 255, 0.2); font-size: 0.95rem; }
 
     .shake { animation: shakeAnim 0.4s ease-in-out; }
     @keyframes shakeAnim {
@@ -214,124 +211,154 @@
       40%, 80% { transform: translateX(12px); }
     }
 
-    /* General Typography & Clean Separation Block (Combined ES + TH in one box) */
-    .cute-text {
-      font-size: 1.12rem;
-      line-height: 1.5;
-      margin-bottom: 16px;
-      white-space: pre-line;
-    }
-
-    .lang-block {
+    /* Structured Boxes - Clean Spanish & Thai Separation */
+    .content-box-original {
       background: rgba(255, 255, 255, 0.08);
-      border: 1px dashed rgba(255, 255, 255, 0.25);
-      border-radius: 16px;
-      padding: 12px 14px;
-      margin-bottom: 10px;
+      border: 1.5px dashed rgba(255, 255, 255, 0.3);
+      border-radius: 18px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
       text-align: left;
     }
 
-    body.sunrise-pastel .lang-block {
+    body.sunrise-pastel .content-box-original {
       background: rgba(255, 182, 193, 0.15);
       border-color: #ffccd5;
     }
 
-    .es-text { font-size: 1.02rem; font-weight: 500; color: #fff; display: block; margin-bottom: 4px; }
-    body.sunrise-pastel .es-text { color: #5d4037; }
-    .th-sub { font-size: 0.88rem; opacity: 0.95; display: block; font-weight: normal; color: #ffe5ec; }
-    body.sunrise-pastel .th-sub { color: #8c6d73; }
+    .es-main {
+      font-size: 1.02rem;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.45;
+      margin-bottom: 8px;
+      display: block;
+    }
+    body.sunrise-pastel .es-main { color: #5d4037; }
+
+    .th-sub {
+      font-size: 0.88rem;
+      color: #ffe5ec;
+      line-height: 1.4;
+      display: block;
+      opacity: 0.95;
+      border-top: 1px dotted rgba(255,255,255,0.25);
+      padding-top: 8px;
+      margin-top: 4px;
+    }
+    body.sunrise-pastel .th-sub { color: #8c6d73; border-top-color: rgba(255,192,203,0.5); }
 
     .btn-next {
       background: linear-gradient(135deg, #ff85a2, #ff5c8a);
       border: none;
       color: white;
       font-family: 'Itim', cursive;
-      font-size: 1.1rem;
-      padding: 10px 22px;
+      font-size: 1.05rem;
+      padding: 10px 24px;
       border-radius: 25px;
       cursor: pointer;
-      box-shadow: 0 6px 18px rgba(255, 92, 138, 0.4);
+      box-shadow: 0 5px 15px rgba(255, 92, 138, 0.4);
       transition: all 0.3s ease;
       -webkit-tap-highlight-color: transparent;
     }
 
-    .btn-choice-group { display: flex; justify-content: center; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+    .btn-choice-group { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
     .btn-love { background: linear-gradient(135deg, #ff477e, #ff0055); }
     .btn-not-love { background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4); }
 
-    .koala-container { width: 100%; height: 50px; position: relative; overflow: hidden; margin-bottom: 6px; }
-    .cute-koala { font-size: 2.5rem; position: absolute; left: -60px; animation: koalaWalk 4s linear infinite; }
+    /* 🐨 ขนาดภาพแฟนใหญ่ขึ้นเด่นชัด */
+    .koala-container { 
+      width: 100%; 
+      height: 70px; 
+      position: relative; 
+      overflow: hidden; 
+      margin-bottom: 6px; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .cute-koala { 
+      font-size: 4rem; 
+      position: absolute; 
+      left: -60px; 
+      animation: koalaWalk 4s linear infinite; 
+    }
+    .cute-koala-static {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 4px;
+      animation: floatAries 3s ease-in-out infinite;
+    }
+
     @keyframes koalaWalk {
       0% { left: -60px; transform: rotate(0deg); }
       50% { transform: rotate(5deg) translateY(-3px); }
       100% { left: 100%; transform: rotate(0deg); }
     }
 
-    /* 🪐 ARIES & SPACE SLIDE SPECIAL ANIMATION */
+    /* ARIES & SPACE */
     .aries-box {
       background: rgba(255, 133, 162, 0.15);
       border: 2px dashed #ff85a2;
-      border-radius: 20px;
-      padding: 12px;
-      margin-bottom: 14px;
+      border-radius: 16px;
+      padding: 10px;
+      margin-bottom: 10px;
     }
 
     .aries-icon-box {
-      font-size: 3.8rem;
+      font-size: 3.5rem;
       margin-bottom: 4px;
       animation: floatAries 3s ease-in-out infinite;
-      text-shadow: 0 0 15px rgba(255, 133, 162, 0.8);
     }
 
     @keyframes floatAries {
       0%, 100% { transform: translateY(0) rotate(-3deg); }
-      50% { transform: translateY(-10px) rotate(3deg); }
+      50% { transform: translateY(-6px) rotate(3deg); }
     }
 
     .aries-constellation-title {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       color: #ffd1dc;
       font-weight: bold;
-      letter-spacing: 1px;
     }
 
     .bounce-dukdik {
       display: inline-block;
       animation: dukdikAnim 0.6s infinite alternate cubic-bezier(0.175, 0.885, 0.32, 1.275);
       background: rgba(255, 117, 143, 0.3);
-      padding: 10px 16px;
-      border-radius: 20px;
+      padding: 8px 14px;
+      border-radius: 16px;
       border: 1.5px dashed #ff85a2;
       color: #ffe5ec;
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       font-weight: bold;
-      margin-top: 14px;
+      margin-top: 10px;
     }
 
     @keyframes dukdikAnim {
       0% { transform: scale(0.95) rotate(-2deg); }
-      100% { transform: scale(1.08) rotate(2deg); }
+      100% { transform: scale(1.05) rotate(2deg); }
     }
 
     /* MAP SILHOUETTE */
     .map-svg {
       width: 100%;
-      max-width: 350px;
-      height: 140px;
-      margin: 0 auto 10px auto;
+      max-width: 280px;
+      height: 90px;
+      margin: 0 auto 8px auto;
       background: rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
+      border-radius: 14px;
       border: 1px dashed rgba(255, 255, 255, 0.3);
-      padding: 6px;
+      padding: 4px;
     }
 
-    /* 🎶 YOUTUBE MUSIC SECTION (คงโค้ดเดิมแบบเป๊ะๆ) */
+    /* YOUTUBE MUSIC SECTION */
     .music-card-box {
       background: #ffffff;
-      border-radius: 20px;
-      padding: 15px;
-      margin: 10px 0 16px 0;
-      box-shadow: 0 8px 20px rgba(255, 182, 193, 0.4);
+      border-radius: 16px;
+      padding: 10px;
+      margin: 4px 0 10px 0;
+      box-shadow: 0 6px 15px rgba(255, 182, 193, 0.4);
       border: 2px solid #ffe3ec;
       color: #4a2e4d;
     }
@@ -339,37 +366,37 @@
     .music-header {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
+      gap: 10px;
+      margin-bottom: 8px;
       text-align: left;
     }
 
     .cd-spin {
-      width: 44px;
-      height: 44px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: linear-gradient(135deg, #ff758c, #ff7eb3);
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 18px;
+      font-size: 15px;
       animation: spinCD 4s linear infinite;
     }
 
     @keyframes spinCD { 100% { transform: rotate(360deg); } }
 
-    .music-title-info h4 { font-size: 1rem; color: #4a3e3d; margin-bottom: 2px; }
-    .music-title-info p { font-size: 0.85rem; color: #ff4b72; font-weight: 500; }
+    .music-title-info h4 { font-size: 0.9rem; color: #4a3e3d; margin-bottom: 1px; }
+    .music-title-info p { font-size: 0.78rem; color: #ff4b72; font-weight: 500; }
 
     .youtube-container {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%;
+      padding-bottom: 48%;
       height: 0;
-      border-radius: 14px;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
 
     .youtube-container iframe {
@@ -379,15 +406,15 @@
       border: 0;
     }
 
-    /* 💌 FINAL CARD SLIDE & CUTE ANIMATED CHARACTERS */
+    /* FINAL CARD SLIDE */
     .illustration-box {
       background: linear-gradient(135deg, #ffeef2 0%, #ffd3e0 100%);
-      border-radius: 24px;
-      padding: 18px 10px;
+      border-radius: 18px;
+      padding: 14px 8px;
       position: relative;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
       border: 2px solid rgba(255, 255, 255, 0.9);
-      box-shadow: inset 0 2px 6px rgba(255,255,255,0.8), 0 8px 15px rgba(255, 133, 162, 0.2);
+      box-shadow: inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 12px rgba(255, 133, 162, 0.2);
     }
 
     .couple-friends {
@@ -395,90 +422,55 @@
       justify-content: center;
       align-items: center;
       gap: 12px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
-    .char-koala {
-      font-size: 3.2rem;
-      animation: danceKoala 1.6s infinite ease-in-out;
-      display: inline-block;
-    }
-
-    .char-monkey {
-      font-size: 3.2rem;
-      animation: danceMonkey 1.6s infinite ease-in-out;
-      display: inline-block;
-    }
-
-    .heart-center {
-      font-size: 1.8rem;
-      animation: pulseHeart 1.2s infinite ease-in-out;
-      display: inline-block;
-      margin: 0 -4px;
-    }
+    .char-koala { font-size: 4rem; animation: danceKoala 1.6s infinite ease-in-out; display: inline-block; }
+    .char-monkey { font-size: 4rem; animation: danceMonkey 1.6s infinite ease-in-out; display: inline-block; }
+    .heart-center { font-size: 2rem; animation: pulseHeart 1.2s infinite ease-in-out; display: inline-block; margin: 0 -3px; }
 
     @keyframes danceKoala {
       0%, 100% { transform: translateY(0) rotate(-6deg); }
-      50% { transform: translateY(-8px) rotate(4deg); }
+      50% { transform: translateY(-6px) rotate(4deg); }
     }
 
     @keyframes danceMonkey {
       0%, 100% { transform: translateY(0) rotate(6deg); }
-      50% { transform: translateY(-8px) rotate(-4deg); }
+      50% { transform: translateY(-6px) rotate(-4deg); }
     }
 
     @keyframes pulseHeart {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.3); }
-    }
-
-    .spanish-quote {
-      font-family: 'Itim', sans-serif;
-      font-size: 1.1rem;
-      color: #5c4348;
-      margin-bottom: 6px;
-      line-height: 1.5;
-    }
-
-    .thai-translation {
-      font-size: 0.88rem;
-      color: #8c6d73;
-      margin-bottom: 14px;
-      line-height: 1.4;
+      50% { transform: scale(1.25); }
     }
 
     .big-love-text {
       font-family: 'Dancing Script', cursive;
-      font-size: 2.3rem;
+      font-size: 2.1rem;
       color: #ff4b72;
-      margin: 14px 0 10px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+      margin: 8px 0;
     }
 
     .action-buttons {
       display: flex;
       gap: 10px;
       justify-content: center;
-      margin-top: 18px;
-      flex-wrap: wrap;
+      margin-top: 10px;
     }
 
     .btn-pill {
       background: #ffffff;
       border: 1.5px solid #ffccd5;
-      padding: 9px 15px;
-      border-radius: 25px;
+      padding: 8px 14px;
+      border-radius: 20px;
       color: #5a4045;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-family: 'Itim', sans-serif;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 6px;
-      box-shadow: 0 4px 10px rgba(255, 117, 140, 0.15);
+      box-shadow: 0 3px 8px rgba(255, 117, 140, 0.15);
       transition: all 0.3s ease;
     }
 
@@ -499,15 +491,15 @@
       z-index: 100;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 15px;
     }
 
     .modal-content {
       background: #fff0f5;
-      border-radius: 25px;
-      max-width: 380px;
+      border-radius: 22px;
+      max-width: 360px;
       width: 100%;
-      padding: 22px;
+      padding: 20px;
       position: relative;
       box-shadow: 0 15px 30px rgba(0,0,0,0.2);
       border: 3px solid #ffccd5;
@@ -521,27 +513,31 @@
 
     .close-modal {
       position: absolute;
-      top: 12px; right: 12px;
+      top: 10px; right: 10px;
       background: #ff4b72;
       color: white;
       border: none;
-      width: 30px; height: 30px;
+      width: 26px; height: 26px;
       border-radius: 50%;
       cursor: pointer;
       font-weight: bold;
+      font-size: 0.9rem;
     }
 
     .modal-body {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: #5a4045;
-      line-height: 1.6;
+      line-height: 1.5;
       margin-top: 10px;
       text-align: left;
+      max-height: 65vh;
+      overflow-y: auto;
+      padding-right: 4px;
     }
 
     /* Floating Hearts Background Animation */
     .floating-hearts { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 20; display: none; }
-    .heart-item { position: absolute; font-size: 1.8rem; animation: floatUp 4s linear infinite; opacity: 0; }
+    .heart-item { position: absolute; font-size: 1.5rem; animation: floatUp 4s linear infinite; opacity: 0; }
     @keyframes floatUp {
       0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
       100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
@@ -571,10 +567,8 @@
       <div class="passcode-header">Escribe nuestra contraseña</div>
       
       <div class="hint-box" id="hintText">
-        <div class="lang-block" style="margin-bottom: 0;">
-          <span class="es-text" style="font-weight: bold;">¿Recuerdas nuestro aniversario, mi amor? 😡</span>
-          <span class="th-sub">(ถ้าลืมวันครบรอบก็ไม่ต้องเข้าไปดูข้างในเลยนะจ๊ะ! 😡😡😡)</span>
-        </div>
+        <div style="font-weight: bold;">A ver si todavía te acuerdas de nuestra fecha… 😏❤️</div>
+        <div style="font-size: 0.8rem; opacity: 0.9;">(มาดูกันสิว่ายังจำวันของเราได้อยู่ไหม)</div>
       </div>
 
       <div class="keypad-container">
@@ -613,41 +607,32 @@
         <div class="aries-constellation-title">Constelación de Aries ✨</div>
       </div>
 
-      <div class="cute-text">
-        <div class="lang-block" style="margin-bottom: 10px;">
-          <span class="es-text">¿Sabías por qué elegí este fondo del espacio? 🌌</span>
-          <span class="th-sub">(รู้มั้ยคะว่าทำไมเค้าถึงเลือกพื้นหลังธีมอวกาศดาวตกแบบนี้?)</span>
-        </div>
+      <div class="content-box-original">
+        <span class="es-main">¿Sabes por qué elegí este fondo? 🌌</span>
+        <span class="th-sub">รู้ไหมว่าทำไมเค้าถึงเลือกพื้นหลังนี้? 🌌</span>
+      </div>
 
-        <div class="lang-block" style="margin-bottom: 0; background: rgba(255, 133, 162, 0.25); border-color: rgba(255, 255, 255, 0.4);">
-          <span class="es-text" style="font-weight: bold; color: #ffd1dc;">¡Porque es Aries, tu signo zodiacal! ♈️✨<br>Te encantan las estrellas, ¿verdad, mi amor? 🌟</span>
-          <span class="th-sub" style="color: #ffe5ec;">(ก็เพราะมันคือราศีเมษ (Aries) ราศีของแฟนยังไงล่ะคะ! ♈️ แฟนชอบดวงดาวใช่มั้ยล่ะคะเนี่ย?)</span>
-        </div>
+      <div class="content-box-original" style="background: rgba(255, 133, 162, 0.25); border-color: rgba(255, 255, 255, 0.4);">
+        <span class="es-main" style="color: #ffd1dc;">Porque me recuerda a ti. Sé que te gustan las estrellas, así que pensé que este fondo era perfecto para ti. ✨</span>
+        <span class="th-sub" style="color: #ffe5ec;">เพราะมันทำให้เค้านึกถึงแฟน เค้า Iรู้ว่าแฟนชอบดวงดาว เลยคิดว่าพื้นหลังนี้เหมาะกับแฟนที่สุด ✨</span>
       </div>
 
       <div class="btn-choice-group">
-        <button class="btn-next btn-love" onclick="showDukdikMsg()">Sí, me encanta ♡<br><span style="font-size:0.75rem; font-weight:normal;">(ชอบที่สุดเลยค่ะ)</span></button>
-        <button class="btn-next btn-love" onclick="showDukdikMsg()">Sí 😜<br><span style="font-size:0.75rem; font-weight:normal;">(ชอบสิคะ)</span></button>
+        <button class="btn-next btn-love" onclick="showDukdikMsg()" style="font-size: 0.95rem; padding: 8px 16px;">Sí, me gusta ♡</button>
+        <button class="btn-next btn-love" onclick="showDukdikMsg()" style="font-size: 0.95rem; padding: 8px 16px;">Sí 😜</button>
       </div>
 
       <div id="dukdikArea" style="display: none;">
-        <div class="bounce-dukdik">
-          <span style="display: block;">¡Avancemos juntos, mi amor! 🚀💖</span>
-          <span style="font-size: 0.88rem; font-weight: normal; display: block; margin-top: 2px;">
-            (งั้นเราไปลุยกันต่อเลยนะที่รัก 🚀✨)
-          </span>
-        </div>
+        <div class="bounce-dukdik">ไปดูกันต่อเลย 🚀💖</div>
       </div>
     </div>
 
-    <!-- SLIDE 1 -->
+    <!-- SLIDE 1: มีเซอร์ไพรส์ -->
     <div class="slide" id="s1">
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
-      <div class="cute-text">
-        <div class="lang-block" style="margin-bottom: 0;">
-          <span class="es-text">Tengo algo muy especial para ti, mi Fan ♡</span>
-          <span class="th-sub">(เค้ามีอะไรพิเศษๆ จะเซอร์ไพรส์แฟนด้วยน้า ♡)</span>
-        </div>
+      <div class="content-box-original">
+        <span class="es-main">He preparado una pequeña sorpresa para ti. Espero que te saque una sonrisa. 😊</span>
+        <span class="th-sub">เค้าเตรียมเซอร์ไพรส์เล็กๆ ไว้ให้ หวังว่าจะทำให้แฟนยิ้มได้นะ 😊</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s2')">Siguiente (ถัดไป) ➔</button>
     </div>
@@ -671,115 +656,96 @@
         <g transform="translate(145, 20) rotate(-170)"><text font-size="16">✈️</text></g>
       </svg>
 
-      <div class="cute-text">
-        <div class="lang-block" style="margin-bottom: 10px;">
-          <span class="es-text">Todo el mundo dice: "Ríndete, una relación a distancia no funciona"... 💔</span>
-          <span class="th-sub">(ใครๆ ก็บอกว่ายอมแพ้เถอะ รักทางไกลไม่มีทางรอดหรอก...)</span>
-        </div>
-
-        <div class="lang-block" style="margin-bottom: 0;">
-          <span class="es-text">Pero le diré a mi Fan que les demostraré a todos que te amo lo suficiente como para mantenerme fiel y estar a tu lado para siempre, ¡hasta que tengan que rendirse ante nosotros! 🔥💖</span>
-          <span class="th-sub">(แต่เค้าจะทำให้คนพวกนั้นเห็นเองค่ะว่า เค้าแคร์และรักแฟนมากแค่ไหน จะมั่นคงและอยู่ข้างๆ ตลอดไปจนกว่าคนพวกนั้นจะต้องยอมแพ้เราเลยล่ะ! 🔥✨)</span>
-        </div>
+      <div class="content-box-original" style="margin-bottom: 8px;">
+        <span class="es-main">Hay gente que piensa que las relaciones a distancia no funcionan. Yo prefiero demostrar lo contrario contigo. ❤️</span>
+        <span class="th-sub">มีหลายคนที่คิดว่าความสัมพันธ์ทางไกลไปไม่รอด แต่เค้าอยากพิสูจน์สิ่งตรงกันข้ามกับแฟนนะ</span>
       </div>
+
       <button class="btn-next" onclick="goToSlide('s_distance_feel')">Siguiente (ถัดไป) ➔</button>
     </div>
 
-    <!-- 🥺 SLIDE: DISTANCE FEELINGS -->
+    <!-- 🥺 SLIDE: DISTANCE FEELINGS & APOLOGY -->
     <div class="slide" id="s_distance_feel">
       <div class="koala-container"><div class="cute-koala">🐨🥺</div></div>
-      <div class="cute-text">
-        <div class="lang-block" style="margin-bottom: 10px;">
-          <span class="es-text">Perdón por hacerte sentir solo. Como estamos lejos, no tenemos momentos tan lindos como otras parejas... 🥺</span>
-          <span class="th-sub">(ขอโทษนะคะที่บางทีทำให้รู้สึกเหงา เพราะเราอยู่ไกลกันเลยไม่ได้มีโมเมนต์หวานๆ เหมือนคู่อื่นเขา...)</span>
-        </div>
-
-        <div class="lang-block" style="margin-bottom: 0;">
-          <span class="es-text">Pero intentaré entrar en tu mundo cueste lo que cueste, haré todo lo posible para estar cerca de ti. Por favor, espérame, porque estar juntos siempre será mucho mejor... 💖✨</span>
-          <span class="th-sub">(แต่เค้าจะพยายามเข้าไปอยู่ในโลกของแฟนให้ได้ จะทำทุกอย่างเพื่อให้ได้อยู่ใกล้ๆ นะคะ รอเค้าหน่อยน้า เพราะการที่เราได้อยู่ด้วยกันมันดีที่สุดแล้วล่ะค่ะ 🥺💕)</span>
-        </div>
+      <div class="content-box-original" style="margin-bottom: 8px;">
+        <span class="es-main">Sé que a veces la distancia no es fácil. Ojalá pudiera estar contigo mucho más. 🥺</span>
+        <span class="th-sub">เค้ารู้ว่าบางครั้งระยะทางก็ไม่ง่ายเลย เค้าอยากอยู่กับแฟนให้มากกว่านี้จัง</span>
       </div>
+
+      <div class="content-box-original" style="margin-bottom: 12px;">
+        <span class="es-main">Pero haré todo lo posible para que nunca dudes de lo importante que eres para mí. Solo ten un poquito de paciencia conmigo. ❤️</span>
+        <span class="th-sub">แต่เค้าจะทำทุกอย่างเพื่อให้แฟนไม่ต้องสงสัยเลยว่าแฟนสำคัญกับเค้าแค่ไหน ขอแค่อดทนกับเค้าอีกนิดนะ</span>
+      </div>
+
       <button class="btn-next" onclick="goToSlide('s3')">Siguiente (ถัดไป) ➔</button>
     </div>
 
-    <!-- SLIDE 3 -->
+    <!-- SLIDE 3: THANKS -->
     <div class="slide" id="s3">
       <div class="koala-container"><div class="cute-koala">🐨💖</div></div>
-      <div class="cute-text">
-        <div class="lang-block" style="margin-bottom: 0;">
-          <span class="es-text">Gracias por ser el mejor novio del mundo, por cada sonrisa y por cuidarme tan bien.</span>
-          <span class="th-sub">(ขอบคุณที่เป็นแฟนที่ดีที่สุดในโลก ขอบคุณสำหรับทุกรอยยิ้ม และขอบคุณที่คอยดูแลเค้าอย่างดีเสมอนะคะ)</span>
-        </div>
+      <div class="content-box-original">
+        <span class="es-main">Gracias por estar conmigo, por cuidarme y por hacerne sentir tan querida.</span>
+        <span class="th-sub">ขอบคุณที่อยู่กับเค้า คอยดูแล และทำให้เค้ารู้สึกว่าตัวเองเป็นคนที่ได้รับความรักนะ</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s4')">Siguiente (ถัดไป) ➔</button>
     </div>
 
-    <!-- SLIDE 4 -->
+    <!-- SLIDE 4: DISTANCE IS WORTH IT -->
     <div class="slide" id="s4">
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
-      <div class="cute-text">
-        <div class="lang-block" style="margin-bottom: 0;">
-          <span class="es-text">La distancia es solo un número... porque tú lo eres todo para mí.</span>
-          <span class="th-sub">(ระยะทางก็เป็นแค่ตัวเลขเท่านั้นแหละค่ะ... เพราะสำหรับเค้าแล้ว แฟนคือทุกสิ่งทุกอย่างเลยนะ)</span>
-        </div>
+      <div class="content-box-original">
+        <span class="es-main">No me gusta la distancia, pero me gustas tú. Así que merece la pena esperar. ❤️</span>
+        <span class="th-sub">เค้าไม่ชอบระยะทางหรอก แต่เค้าชอบแฟน เพราะงั้นการรอคอยมันก็คุ้มค่าเสมอ</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s_question')">Pregunta (คำถาม) ✨ ➔</button>
     </div>
 
-    <!-- SLIDE QUESTION -->
+    <!-- SLIDE QUESTION: LOVE? -->
     <div class="slide" id="s_question">
       <div class="koala-container"><div class="cute-koala">🐨❓</div></div>
-      <div class="cute-text">
-        <div class="lang-block" style="margin-bottom: 0;">
-          <span class="es-text">¿Me amas, mi Fan? ❤️</span>
-          <span class="th-sub">(แฟนรักเค้ามั้ยคะเนี่ย?)</span>
-        </div>
+      <div class="content-box-original">
+        <span class="es-main">Una pregunta… ¿todavía me quieres? 😜</span>
+        <span class="th-sub">ถามหน่อยสิ... แฟนยังรักเค้าอยู่ไหมนะ? 😜</span>
       </div>
       <div class="btn-choice-group">
-        <button class="btn-next btn-love" onclick="goToSlide('s_love')">Sí, te amo ❤️<br><span style="font-size:0.75rem; font-weight:normal;">(รักสิคะ รักที่สุดเลย)</span></button>
-        <button class="btn-next btn-not-love" onclick="goToSlide('s_not_love')">No 🙈<br><span style="font-size:0.75rem; font-weight:normal;">(ไม่รักหรอก)</span></button>
+        <button class="btn-next btn-love" onclick="goToSlide('s_love')" style="font-size: 0.95rem; padding: 8px 16px;">Sí, te quiero ❤️</button>
+        <button class="btn-next btn-not-love" onclick="goToSlide('s_not_love')" style="font-size: 0.95rem; padding: 8px 16px;">No 🙈</button>
       </div>
     </div>
 
     <!-- SLIDE ANSWER LOVE -->
     <div class="slide" id="s_love">
       <div class="koala-container"><div class="cute-koala">🐨🥰</div></div>
-      <div class="cute-text">
-        <div class="lang-block" style="margin-bottom: 0;">
-          <span class="es-text">¡Ya lo sabía! Te amo muchísimo 😜💖</span>
-          <span class="th-sub">(รู้อยู่แล้วล่ะสิคะ! เค้าก็รักแฟนมากๆ เหมือนกันน้า 🥰)</span>
-        </div>
+      <div class="content-box-original">
+        <span class="es-main">Lo sabía. 😌❤️</span>
+        <span class="th-sub">รู้อยู่แล้วล่ะ 😌❤️ (เค้าก็รักแฟนเหมือนกันนะ)</span>
       </div>
-      <button class="btn-next" onclick="goToSlide('s_music')">Escuchar nuestra canción 🎶<br><span style="font-size:0.8rem; font-weight:normal;">(ไปฟังเพลงของเรากันเถอะ)</span></button>
+      <button class="btn-next" onclick="goToSlide('s_music')">Nuestra canción 🎶</button>
     </div>
 
     <!-- SLIDE ANSWER NOT LOVE -->
     <div class="slide" id="s_not_love">
       <div class="koala-container"><div class="cute-koala">🐨😜</div></div>
-      <div class="cute-text">
-        <div class="lang-block" style="margin-bottom: 0;">
-          <span class="es-text">¡Mentira! Sé que me amas mucho, mi Fan 😚</span>
-          <span class="th-sub">(แอบโกหกแน่ๆ เค้าดูออกหรอกว่าแฟนรักเค้าจะตาย 😜)</span>
-        </div>
+      <div class="content-box-original">
+        <span class="es-main">No te creo… 😏 Estoy segura de que sí.</span>
+        <span class="th-sub">ไม่เชื่อหรอก… เค้ามั่นใจว่าแฟนรักและคิดถึงเค้าแหละ 😜</span>
       </div>
-      <button class="btn-next" onclick="goToSlide('s_music')">Ven a escuchar la canción ✨<br><span style="font-size:0.8rem; font-weight:normal;">(มาฟังเพลงนี้ด้วยกันก่อนเร็ว)</span></button>
+      <button class="btn-next" onclick="goToSlide('s_music')">Escuchar canción ✨</button>
     </div>
 
-    <!-- 🎶 SLIDE 5: YOUTUBE MUSIC (คงโครงสร้างเดิมแบบเป๊ะๆ) -->
+    <!-- 🎶 SLIDE 5: YOUTUBE MUSIC -->
     <div class="slide" id="s_music">
-      <div class="cute-text">
-        <div class="lang-block" style="margin-bottom: 0;">
-          <span class="es-text">Escucho esta canción y siempre pienso en ti ♡</span>
-          <span class="th-sub">(ฟังเพลงนี้ทีไรก็นึกถึงแฟนทุกทีเลยนะ ♡)</span>
-        </div>
+      <div class="content-box-original" style="margin-bottom: 6px;">
+        <span class="es-main" style="font-size: 0.92rem;">Cada vez que escucho esta canción me acuerdo de ti. ❤️</span>
+        <span class="th-sub">ทุกครั้งที่ฟังเพลงนี้ เค้าจะนึกถึงแฟนตลอดเลย ♡</span>
       </div>
 
       <div class="music-card-box">
         <div class="music-header">
           <div class="cd-spin"><i class="fa-solid fa-compact-disc"></i></div>
           <div class="music-title-info">
-            <h4>Me gusta esta canción, solo que no entiendo la letra 🎧</h4>
-            <p>เค้าชอบเพลงนี้นะ แค่ฟังไม่ออก</p>
+            <h4>Nuestra canción 🎧</h4>
+            <p>เพลงของเราเอง</p>
           </div>
         </div>
 
@@ -793,7 +759,7 @@
         </div>
       </div>
 
-      <button class="btn-next" onclick="triggerFinal()">Ver mi carta final ✨<br><span style="font-size:0.8rem; font-weight:normal;">(เปิดดูการ์ดใบสุดท้ายกัน)</span></button>
+      <button class="btn-next" onclick="triggerFinal()" style="font-size: 1rem; padding: 9px 20px;">Ver carta final ✨</button>
     </div>
 
     <!-- 💌 SLIDE 6: FINAL CARD SLIDE -->
@@ -804,30 +770,24 @@
           <span class="heart-center">💖</span>
           <span class="char-monkey">🐒</span>
         </div>
-        <div style="font-size:1rem; color:#ff6b8b; font-weight:500;">Juntos para siempre ✨</div>
-        <div style="font-size:0.8rem; color:#8c6d73;">(จะอยู่เคียงข้างกันตลอดไปนะคะ)</div>
+        <div style="font-size: 0.92rem; color:#ff6b8b; font-weight:500;">อยู่ข้างๆ กันแบบนี้นานๆ นะ ✨</div>
       </div>
 
-      <div class="spanish-quote">
-        "Gracias por aparecer en mi vida,<br>
-        gracias por elegirnos,<br>
-        y gracias por ser tú. ♡"
-      </div>
-
-      <div class="thai-translation">
-        (ขอบคุณที่ก้าวเข้ามาในชีวิตของเค้า ขอบคุณที่เลือกเราเสมอนะคะ<br>และขอบคุณที่เป็นแฟนที่น่ารักแบบนี้ ♡)
+      <div class="content-box-original" style="text-align: center; margin-bottom: 8px;">
+        <span class="es-main" style="font-size: 0.95rem;">Gracias por llegar a mi vida. Gracias por compartirla conmigo. Y, sobre todo, gracias por ser tú. ❤️</span>
+        <span class="th-sub" style="margin-top: 4px;">ขอบคุณที่เข้ามาในชีวิตของเค้า ขอบคุณที่แบ่งปันชีวิตนี้ร่วมกัน และที่สำคัญที่สุด ขอบคุณที่เป็นตัวของตัวเองนะ ❤️</span>
       </div>
 
       <div class="big-love-text">
-        Te amo, mi Fan ❤️
+        Te quiero, mi Fan ❤️
       </div>
 
-      <div class="action-buttons" style="margin-top: 22px;">
+      <div class="action-buttons">
         <button class="btn-pill" onclick="openLetter()">
-          <i class="fa-solid fa-envelope-open-text" style="color: #ff4b72;"></i> Leer la carta (เปิดอ่านความในใจ)
+          <i class="fa-solid fa-envelope-open-text" style="color: #ff4b72;"></i> Leer carta
         </button>
         <button class="btn-pill" onclick="popHeartExplosion()">
-          <i class="fa-solid fa-hand-holding-heart" style="color: #ff758c;"></i> Enviar corazón (ส่งหัวใจให้หน่อย)
+          <i class="fa-solid fa-hand-holding-heart" style="color: #ff758c;"></i> Enviar ❤️
         </button>
       </div>
     </div>
@@ -838,23 +798,26 @@
   <div class="modal" id="letterModal">
     <div class="modal-content">
       <button class="close-modal" onclick="closeLetter()">✕</button>
-      <h3 style="color: #ff4b72; font-family: 'Dancing Script', cursive; font-size: 2rem; text-align: center; margin-bottom: 4px;">
+      <h3 style="color: #ff4b72; font-family: 'Dancing Script', cursive; font-size: 1.8rem; text-align: center; margin-bottom: 2px;">
         Para Mi Amor 💌
       </h3>
-      <div style="text-align: center; font-size: 0.85rem; color: #ff758f; margin-bottom: 12px;">(ถึงแฟนที่รักของเค้า)</div>
+      <div style="text-align: center; font-size: 0.8rem; color: #ff758f; margin-bottom: 8px;">(ถึงแฟนที่รัก)</div>
 
       <div class="modal-body">
-        <p style="font-weight: bold; color: #ff4b72;">¡Hola mi Fan! 💖</p>
-        <p style="font-size: 0.85rem; color: #8c6d73; margin-bottom: 8px;">(สวัสดีค่ะแฟนจ๋า 💖)</p>
+        <p style="font-weight: bold; color: #ff4b72;">Hola, mi amor. 💖</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">(สวัสดีค่ะที่รัก)</p>
+
+        <p style="margin-top: 6px;">Quería hacerte esta pequeña sorpresa porque quería que supieras lo importante que eres para mí.</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">เค้าตั้งใจทำเซอร์ไพรส์ชิ้นนี้ขึ้นมาเพราะอยากให้แฟนรู้ว่าแฟนสำคัญกับเค้ามากแค่ไหน</p>
         
-        <p>Esta carta está hecha con todo mi amor para ti.</p>
-        <p style="font-size: 0.85rem; color: #8c6d73; margin-bottom: 8px;">(จดหมายฉบับนี้ตั้งใจทำขึ้นมาด้วยความรักทั้งหมดที่มีให้แฟนเลยนะคะ)</p>
+        <p style="margin-top: 8px;">Gracias por acompañarme incluso cuando estamos lejos. Hay días fáciles y otros más difíciles, pero contigo siempre siento que merece la pena seguir.</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">ขอบคุณที่คอยอยู่เคียงข้างกันแม้ว่าเราจะอยู่ไกลกัน มีทั้งวันที่ราบรื่นและวันที่ยากลำบาก แต่พอมีแฟนแล้วเค้ารู้สึกว่ามันคุ้มค่าที่จะสู้ต่อเสมอ</p>
+
+        <p style="margin-top: 8px;">Espero que algún día podamos ver este momento juntos y reírnos de toda la distancia que tuvimos que superar.</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">หวังว่าสักวันหนึ่งเราจะได้มานั่งดูช่วงเวลานี้ด้วยกัน แล้วหัวเราะให้กับระยะทางทั้งหมดที่เราผ่านพ้นมาด้วยกันนะ</p>
         
-        <p>Gracias por estar a mi lado cada día, por ser mi sonrisa y por cuidarme siempre tan bien. Aunque estemos lejos, puedo sentir tu amor todo el tiempo.</p>
-        <p style="font-size: 0.85rem; color: #8c6d73; margin-bottom: 8px;">(ขอบคุณสำหรับทุกๆ วันที่คอยอยู่ข้างกัน ขอบคุณที่เป็นรอยยิ้มและดูแลกันอย่างดีมาโดยตลอด ถึงแม้เราจะอยู่ไกลกัน แต่เค้าสัมผัสถึงความรักของแฟนได้ตลอดเวลาเลยนะ)</p>
-        
-        <p style="font-weight: bold; color: #ff4b72;">¡Te amo muchísimo! Eres el mejor del mundo. 🥰✨</p>
-        <p style="font-size: 0.85rem; color: #8c6d73;">(รักแฟนที่สุดในโลกเลยค่ะ เป็นแฟนที่ดีที่สุดของเค้าเลยนะ 🥰✨)</p>
+        <p style="font-weight: bold; color: #ff4b72; margin-top: 10px;">¡Te quiero muchísimo! 🥰✨</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">รักแฟนมากๆ เลยนะ 🥰✨</p>
       </div>
     </div>
   </div>
@@ -862,7 +825,6 @@
   <script>
     let currentSlideId = 's_passcode';
 
-    /* BACKGROUND MUSIC LOGIC */
     const bgm = document.getElementById('bgmAudio');
     const musicBtn = document.getElementById('musicBtn');
     let isBgmPlaying = false;
@@ -885,13 +847,11 @@
       }
     }
 
-    /* PASSCODE LOGIC */
     const CORRECT_PASS = "18022026";
     let inputPass = "";
 
     function pressKey(val) {
       if (!isBgmPlaying) playBgm();
-
       if (inputPass.length < 8) {
         inputPass += val;
         updateDots();
@@ -920,10 +880,10 @@
     }
 
     const poutingMessages = [
-      { es: "¿Cómo que te equivocaste? 😤", th: "ใส่รหัสผิดได้ยังไงคะเนี่ย! งอนแล้วนะ 😤 ลองใหม่อีกทีเร็วกว่า!" },
-      { es: "¿¡Olvidaste nuestra fecha!? 😡", th: "ลืมวันสำคัญของเราได้ยังไงคะเนี่ย!? 😡 แฟนตีมือแตกแน่ ใส่ใหม่อีกรอบเดี๋ยวนี้เลยนะ!" },
-      { es: "¡Incorrecto! Mi Fan feo 🥺", th: "อุ๊ย ผิดซะงั้น! แฟนใจร้าย 🥺 ตั้งสติแล้วกดใหม่อีกรอบน้า" },
-      { es: "¡No te creo! Inténtalo otra vez 😤", th: "ไม่จริงอะ กดผิดได้ไงเนี่ย! 😤 งอนจริงด้วย ลองใหม่อีกรอบนะจ๊ะ" }
+      { es: "¿Te equivocaste de contraseña? 😤", th: "ใส่รหัสผิดเหรอ ลองใหม่อีกทีนะ!" },
+      { es: "¿Ya olvidaste la fecha? 😡", th: "ลืมวันสำคัญเหรอเนี่ย ใส่ใหม่อีกรอบด่วน!" },
+      { es: "¡Ups, incorrecto! 🥺", th: "อ๊ะ ผิดซะงั้น ตั้งสติแล้วกดใหม่น้า" },
+      { es: "¡Inténtalo otra vez! 😤", th: "ลองใหม่อีกรอบนะจ๊ะ" }
     ];
 
     const poutIcons = ["😤", "😡", "🥺", "😖", "😠"];
@@ -943,10 +903,8 @@
         icon.innerHTML = randomIcon + "💔";
         
         hint.innerHTML = `
-          <div class="lang-block" style="margin-bottom: 0;">
-            <span class="es-text" style='color:#ff477e; font-weight:bold; font-size: 1.05rem;'>${randomPout.es}</span>
-            <span class="th-sub" style='color:#ff85a2;'>(${randomPout.th})</span>
-          </div>
+          <div style='color:#ff477e; font-weight:bold; font-size:0.9rem;'>${randomPout.es}</div>
+          <div style='color:#ff85a2; font-size:0.78rem;'>(${randomPout.th})</div>
         `;
         
         setTimeout(() => {
@@ -960,10 +918,7 @@
     function showDukdikMsg() {
       const dukdik = document.getElementById('dukdikArea');
       dukdik.style.display = 'block';
-      
-      setTimeout(() => {
-        goToSlide('s1');
-      }, 1800);
+      setTimeout(() => { goToSlide('s1'); }, 1500);
     }
 
     function goToSlide(targetId) {
@@ -982,10 +937,9 @@
         const next = document.getElementById(targetId);
         next.style.display = 'block';
         setTimeout(() => next.classList.add('active'), 50);
-      }, 400);
+      }, 350);
     }
 
-    /* Canvas Stars */
     const canvas = document.getElementById('starCanvas');
     const ctx = canvas.getContext('2d');
     
@@ -997,10 +951,10 @@
     resizeCanvas();
 
     let backgroundStars = [];
-    for(let i=0; i<70; i++){
+    for(let i=0; i<60; i++){
       backgroundStars.push({
         x: Math.random(), y: Math.random(),
-        r: Math.random() * 1.8, alpha: Math.random()
+        r: Math.random() * 1.5, alpha: Math.random()
       });
     }
 
@@ -1019,7 +973,6 @@
     }
     drawStars();
 
-    /* Final Card Slide Transition & Hearts */
     function createHearts() {
       const container = document.getElementById('heartsBg');
       container.style.display = 'block';
@@ -1051,7 +1004,7 @@
           finalSlide.classList.add('active');
           createHearts();
         }, 200);
-      }, 400);
+      }, 350);
     }
 
     function openLetter() {
@@ -1063,24 +1016,22 @@
     }
 
     function popHeartExplosion() {
-      for(let i = 0; i < 15; i++) {
+      for(let i = 0; i < 12; i++) {
         const heart = document.createElement('div');
         heart.innerHTML = '💖';
         heart.style.position = 'fixed';
-        heart.style.left = (window.innerWidth / 2 + (Math.random() * 200 - 100)) + 'px';
-        heart.style.top = (window.innerHeight / 2 + (Math.random() * 200 - 100)) + 'px';
-        heart.style.fontSize = '24px';
+        heart.style.left = (window.innerWidth / 2 + (Math.random() * 160 - 80)) + 'px';
+        heart.style.top = (window.innerHeight / 2 + (Math.random() * 160 - 80)) + 'px';
+        heart.style.fontSize = '22px';
         heart.style.zIndex = '999';
         heart.style.transition = 'all 1s ease-out';
         heart.style.pointerEvents = 'none';
         
         document.body.appendChild(heart);
-
         setTimeout(() => {
-          heart.style.transform = `translateY(-100px) scale(1.5)`;
+          heart.style.transform = `translateY(-90px) scale(1.4)`;
           heart.style.opacity = '0';
         }, 50);
-
         setTimeout(() => { heart.remove(); }, 1050);
       }
     }
