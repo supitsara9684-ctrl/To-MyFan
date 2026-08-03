@@ -11,7 +11,6 @@
       --pastel-pink: #ffd1dc;
       --soft-purple: #2a1b3d;
       --accent-pink: #ff85a2;
-      --gold-sparkle: #fff176;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,7 +33,7 @@
       color: #5c2c3b;
     }
 
-    /* Canvas for Aries Stars & Sparkles */
+    /* Canvas for Aries Stars */
     canvas#starCanvas {
       position: fixed;
       top: 0; left: 0;
@@ -49,7 +48,7 @@
       z-index: 10;
       width: 88%;
       max-width: 420px;
-      padding: 35px 25px;
+      padding: 35px 22px;
       background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
@@ -61,12 +60,12 @@
     }
 
     body.sunrise-pastel .glass-card {
-      background: rgba(255, 255, 255, 0.45);
-      border: 2px solid rgba(255, 255, 255, 0.7);
-      box-shadow: 0 20px 40px rgba(255, 133, 162, 0.3);
+      background: rgba(255, 255, 255, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 20px 40px rgba(255, 133, 162, 0.35);
     }
 
-    /* Envelope Wax Seal Start */
+    /* Wax Seal Start */
     .seal-btn {
       width: 90px;
       height: 90px;
@@ -96,7 +95,6 @@
       font-size: 1.1rem;
       margin-top: 20px;
       opacity: 0.9;
-      letter-spacing: 1px;
     }
 
     /* Slides */
@@ -114,9 +112,9 @@
     }
 
     .cute-text {
-      font-size: 1.55rem;
+      font-size: 1.5rem;
       line-height: 1.6;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       white-space: pre-line;
       text-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
@@ -139,43 +137,45 @@
 
     .btn-next:active { transform: scale(0.95); }
 
-    /* Cute Riding Bike Cartoon Animation */
-    .moto-container {
+    /* Cute Walking Koala Animation */
+    .koala-container {
       width: 100%;
-      height: 70px;
+      height: 60px;
       position: relative;
       overflow: hidden;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
-    .cute-moto {
+    .cute-koala {
       font-size: 2.8rem;
       position: absolute;
       left: -60px;
-      animation: drive 3.5s linear infinite;
+      animation: koalaWalk 4s linear infinite;
     }
 
-    @keyframes drive {
+    @keyframes koalaWalk {
       0% { left: -60px; transform: rotate(0deg); }
-      25% { transform: rotate(-3deg); }
-      50% { transform: rotate(3deg); }
-      75% { transform: rotate(-2deg); }
+      25% { transform: rotate(-5deg) translateY(-4px); }
+      50% { transform: rotate(5deg) translateY(0px); }
+      75% { transform: rotate(-5deg) translateY(-4px); }
       100% { left: 100%; transform: rotate(0deg); }
     }
 
-    /* Sunflower & Hearts Burst */
-    .sunflower-box {
-      font-size: 4.5rem;
-      margin-bottom: 10px;
-      animation: bounce 1.8s infinite alternate ease-in-out;
+    /* Vector Art Couple Recreation */
+    .couple-svg {
+      width: 170px;
+      height: 170px;
+      margin: 0 auto 10px auto;
+      filter: drop-shadow(0 8px 15px rgba(255, 71, 126, 0.3));
+      animation: floatArt 3s ease-in-out infinite alternate;
     }
 
-    @keyframes bounce {
-      0% { transform: translateY(0) scale(1); }
-      100% { transform: translateY(-12px) scale(1.08); }
+    @keyframes floatArt {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
     }
 
-    /* Floating Hearts & Sparkles Container */
+    /* Floating Hearts & Sparkles */
     .floating-hearts {
       position: fixed;
       top: 0; left: 0;
@@ -219,13 +219,13 @@
   <!-- Aries Constellation Canvas -->
   <canvas id="starCanvas"></canvas>
 
-  <!-- Floating Hearts & Sparkles for Final Page -->
+  <!-- Floating Hearts & Sparkles -->
   <div class="floating-hearts" id="heartsBg"></div>
 
   <!-- Music Control -->
   <div class="music-btn" onclick="toggleAudio()">🎵</div>
 
-  <!-- Modern Pop/Acoustic Instrumental Eres Tú Vibes -->
+  <!-- Music Audio -->
   <audio id="bgMusic" loop preload="auto" src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112191.mp3"></audio>
 
   <div class="glass-card">
@@ -238,42 +238,78 @@
 
     <!-- SLIDE 1 -->
     <div class="slide" id="s1">
-      <div class="moto-container"><div class="cute-moto">🛵💨</div></div>
+      <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
       <div class="cute-text">Hay algo esperándote…<br>มีบางอย่างรอเธออยู่นะคะ ♡</div>
       <button class="btn-next" onclick="nextSlide(2)">ไปต่อกันเลย ➔</button>
     </div>
 
     <!-- SLIDE 2 -->
     <div class="slide" id="s2">
-      <div class="moto-container"><div class="cute-moto">🛵💨</div></div>
+      <div class="koala-container"><div class="cute-koala">🐨🌿</div></div>
       <div class="cute-text">Nunca imaginé que alguien tan lejos…<br><br>pudiera sentirse tan cerca.<br>ไม่เคยคิดเลยว่าคนที่อยู่ไกลขนาดนี้<br>จะทำให้รู้สึกใกล้ได้ขนาดนี้</div>
       <button class="btn-next" onclick="nextSlide(3)">กดไปอีกหน่อย ➔</button>
     </div>
 
     <!-- SLIDE 3 -->
     <div class="slide" id="s3">
-      <div class="moto-container"><div class="cute-moto">🛵💨</div></div>
+      <div class="koala-container"><div class="cute-koala">🐨💖</div></div>
       <div class="cute-text">Gracias…<br>por cada sonrisa.<br>por cada llamada.<br>por cada momento.<br>ขอบคุณสำหรับทุกรอยยิ้มและทุกนาทีเลยนะ</div>
       <button class="btn-next" onclick="nextSlide(4)">หน้าต่อไปนะ ➔</button>
     </div>
 
     <!-- SLIDE 4 -->
     <div class="slide" id="s4">
-      <div class="moto-container"><div class="cute-moto">🛵💨</div></div>
+      <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
       <div class="cute-text">Dicen que la distancia cambia las cosas…<br><br>Pero nunca cambió lo que siento por ti.<br>ระยะทางอาจเปลี่ยนหลายอย่าง<br>แต่ไม่เคยเปลี่ยนหัวใจฉันได้เลย</div>
       <button class="btn-next" onclick="triggerFinal()">เปิดความลับกัน ✨</button>
     </div>
 
     <!-- SLIDE 5 (FINAL) -->
     <div class="slide" id="s5">
-      <div class="sunflower-box">🌻💖✨</div>
+      <!-- Cute Vector Art recreate from Elevator Photo -->
+      <svg class="couple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sun & Heart Glow Background -->
+        <circle cx="100" cy="100" r="85" fill="#ffe5ec" opacity="0.8"/>
+        <circle cx="100" cy="100" r="65" fill="#ffb3c6" opacity="0.5"/>
+        <text x="145" y="50" font-size="22">🌻</text>
+        <text x="30" y="60" font-size="20">✨</text>
+        <text x="150" y="140" font-size="18">💖</text>
+
+        <!-- Boy with Cap Kissing Head -->
+        <!-- Cap -->
+        <path d="M100 65 C100 48, 135 48, 145 68 L155 72 C158 73, 155 77, 145 75 Z" fill="#7d746d"/>
+        <!-- Boy Head & Neck -->
+        <circle cx="120" cy="72" r="15" fill="#fcd5ce"/>
+        <!-- Glasses -->
+        <path d="M110 70 Q 115 68 120 70" stroke="#4a4e69" stroke-width="2" fill="none"/>
+        <!-- Jacket/Backpack -->
+        <path d="M108 87 L145 92 L140 150 L95 145 Z" fill="#1d2d44"/>
+        <path d="M112 95 Q 128 100 132 135" stroke="#0077b6" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+        <!-- Girl Holding Phone Selfie -->
+        <!-- Girl Hair -->
+        <path d="M60 78 C55 90, 58 120, 68 135 C75 120, 80 90, 75 78 Z" fill="#2b2d42"/>
+        <!-- Girl Head -->
+        <circle cx="70" cy="85" r="14" fill="#fcd5ce"/>
+        <!-- Headphones on Neck -->
+        <path d="M58 98 C58 106, 80 106, 80 98" stroke="#f8f9fa" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <!-- Green Jacket -->
+        <path d="M48 105 L88 105 L82 150 L42 150 Z" fill="#6b705c"/>
+        <!-- Phone in Girl's Hand -->
+        <rect x="74" y="92" width="16" height="26" rx="4" fill="#6a4c93"/>
+        <circle cx="82" cy="100" r="3" fill="#ffb703"/>
+
+        <!-- Little Floating Heart between Heads -->
+        <path d="M98 62 C 98 58, 93 56, 90 59 C 87 62, 90 67, 98 71 C 106 67, 109 62, 106 59 C 103 56, 98 58, 98 62 Z" fill="#ff477e"/>
+      </svg>
+
       <div class="cute-text" style="font-size: 1.45rem; line-height: 1.7;">
         Gracias por aparecer en mi vida.<br>
         Gracias por elegirme.<br>
         Gracias por ser tú.<br>
-        <strong style="font-size: 2rem; color: #d81b60; display: block; margin-top: 10px;">Te amo. ❤️</strong>
+        <strong style="font-size: 2rem; color: #d81b60; display: block; margin-top: 8px;">Te amo. ❤️</strong>
       </div>
-      <div style="font-size: 1.4rem; font-weight: 600; margin-top: 15px; color: #880e4f;">
+      <div style="font-size: 1.35rem; font-weight: 600; margin-top: 10px; color: #880e4f;">
         Con todo mi amor, Renita 🌸
       </div>
     </div>
@@ -283,7 +319,7 @@
   <script>
     let currentSlide = 0;
 
-    /* Aries Constellation Drawing on Canvas */
+    /* Aries Constellation Canvas */
     const canvas = document.getElementById('starCanvas');
     const ctx = canvas.getContext('2d');
     
@@ -294,12 +330,11 @@
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    // Aries Star Coordinates (Normalized)
     const ariesStars = [
-      {x: 0.35, y: 0.28, r: 4, name: 'Hamal'},
-      {x: 0.48, y: 0.32, r: 3.5, name: 'Sheratan'},
-      {x: 0.58, y: 0.36, r: 3, name: 'Mesarthim'},
-      {x: 0.68, y: 0.42, r: 2.5, name: '41 Ari'}
+      {x: 0.35, y: 0.28, r: 4},
+      {x: 0.48, y: 0.32, r: 3.5},
+      {x: 0.58, y: 0.36, r: 3},
+      {x: 0.68, y: 0.42, r: 2.5}
     ];
 
     let backgroundStars = [];
@@ -315,7 +350,6 @@
     function drawStars() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Background Twinkling Stars
       backgroundStars.forEach(s => {
         s.alpha += (Math.random() - 0.5) * 0.05;
         if(s.alpha < 0.2) s.alpha = 0.2;
@@ -326,7 +360,6 @@
         ctx.fill();
       });
 
-      // Draw Aries Lines
       ctx.strokeStyle = "rgba(255, 182, 193, 0.5)";
       ctx.lineWidth = 1.5;
       ctx.beginPath();
@@ -336,16 +369,12 @@
       }
       ctx.stroke();
 
-      // Draw Aries Main Stars with Glow
       ariesStars.forEach(s => {
-        const sx = s.x * canvas.width;
-        const sy = s.y * canvas.height;
-
         ctx.shadowBlur = 12;
         ctx.shadowColor = "#fff176";
         ctx.fillStyle = "#ffffff";
         ctx.beginPath();
-        ctx.arc(sx, sy, s.r, 0, Math.PI*2);
+        ctx.arc(s.x * canvas.width, s.y * canvas.height, s.r, 0, Math.PI*2);
         ctx.fill();
         ctx.shadowBlur = 0;
       });
@@ -383,11 +412,11 @@
       }, 400);
     }
 
-    /* Final Page Effects: Hearts & Sparkles Burst */
+    /* Final Page Effects */
     function createHearts() {
       const container = document.getElementById('heartsBg');
       container.style.display = 'block';
-      const symbols = ['💖', '🌸', '🌻', '✨', '💕', '💗'];
+      const symbols = ['💖', '🌸', '🌻', '✨', '💕', '💗', '🐨'];
 
       setInterval(() => {
         const heart = document.createElement('div');
@@ -409,7 +438,6 @@
         document.getElementById(`s${currentSlide}`).style.display = 'none';
         currentSlide = 5;
         
-        // Change Theme to Pastel Sunrise
         document.body.classList.add('sunrise-pastel');
         
         const finalSlide = document.getElementById('s5');
