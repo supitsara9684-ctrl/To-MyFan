@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Hay algo esperándote...</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Great+Vibes&display=swap');
 
     :root {
       --bg-night: #05050e;
-      --accent-gold: #d4af37;
+      --accent-gold: #f39c12;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -17,7 +17,7 @@
     body {
       background-color: var(--bg-night);
       color: #ffffff;
-      font-family: 'Cinzel', serif;
+      font-family: 'Caveat', cursive; /* ฟอนต์ลายมือน่ารัก */
       min-height: 100vh;
       overflow: hidden;
       transition: background 4s ease-in-out;
@@ -39,7 +39,7 @@
       pointer-events: none;
     }
 
-    #hearts-container {
+    #hearts-container, #sunflower-container {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
@@ -49,7 +49,7 @@
 
     .heart {
       position: absolute;
-      font-size: 20px;
+      font-size: 22px;
       animation: floatUp 4s linear forwards;
       bottom: -30px;
     }
@@ -57,6 +57,65 @@
     @keyframes floatUp {
       0% { transform: translateY(0) scale(0.8); opacity: 1; }
       100% { transform: translateY(-105vh) scale(1.2); opacity: 0; }
+    }
+
+    /* Sunflowers Blooming from bottom */
+    .sunflower {
+      position: absolute;
+      bottom: -10px;
+      font-size: 45px;
+      transform-origin: bottom center;
+      animation: bloom 2s ease-out forwards;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+    }
+
+    @keyframes bloom {
+      0% { transform: scale(0) translateY(50px) rotate(-10deg); opacity: 0; }
+      70% { transform: scale(1.1) translateY(-5px) rotate(5deg); opacity: 1; }
+      100% { transform: scale(1) translateY(0) rotate(0deg); opacity: 1; }
+    }
+
+    /* Music Button */
+    .music-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 100;
+      font-size: 18px;
+      backdrop-filter: blur(5px);
+      transition: all 0.3s;
+    }
+
+    .music-btn.playing {
+      animation: spin 4s linear infinite;
+      box-shadow: 0 0 12px rgba(243, 156, 18, 0.5);
+    }
+
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+
+    /* Sparkles */
+    .sparkle {
+      position: fixed;
+      pointer-events: none;
+      background: #ffd700;
+      border-radius: 50%;
+      animation: sparkleFade 0.8s ease-out forwards;
+      z-index: 99;
+    }
+
+    @keyframes sparkleFade {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(0); opacity: 0; }
     }
 
     .main-container {
@@ -82,9 +141,9 @@
     }
 
     .text-box {
-      font-size: 1.2rem;
-      letter-spacing: 1.5px;
-      line-height: 1.9;
+      font-size: 1.8rem; /* ปรับขนาดให้เข้ากับฟอนต์ลายมือ */
+      letter-spacing: 1px;
+      line-height: 1.6;
       min-height: 100px;
       margin-bottom: 30px;
       text-shadow: 0 0 10px rgba(255,255,255,0.3);
@@ -93,16 +152,16 @@
 
     .btn-action {
       background: transparent;
-      border: 1px solid var(--accent-gold);
+      border: 2px solid var(--accent-gold);
       color: var(--accent-gold);
-      padding: 12px 32px;
-      font-family: 'Cinzel', serif;
-      font-size: 0.95rem;
-      letter-spacing: 2px;
+      padding: 10px 28px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
       cursor: pointer;
       border-radius: 30px;
       transition: all 0.4s;
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+      box-shadow: 0 0 15px rgba(243, 156, 18, 0.2);
       outline: none;
       -webkit-tap-highlight-color: transparent;
     }
@@ -110,7 +169,7 @@
     .btn-action:hover, .btn-action:active {
       background: var(--accent-gold);
       color: #000;
-      box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+      box-shadow: 0 0 25px rgba(243, 156, 18, 0.6);
     }
 
     .typewriter-cursor::after {
@@ -122,14 +181,14 @@
     .final-line {
       opacity: 0;
       transition: opacity 1.5s ease;
-      margin-bottom: 14px;
-      font-size: 1.2rem;
+      margin-bottom: 12px;
+      font-size: 1.9rem;
     }
 
     .final-line.show { opacity: 1; }
 
     .signature-box {
-      margin-top: 30px;
+      margin-top: 25px;
       opacity: 0;
       transition: opacity 2s ease;
     }
@@ -137,17 +196,16 @@
     .signature-box.show { opacity: 1; }
 
     .signature-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.2rem;
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
       color: #8b0000;
-      letter-spacing: 1px;
     }
 
     .signature-name {
       font-family: 'Great Vibes', cursive;
-      font-size: 3.5rem;
+      font-size: 3.8rem;
       color: #8b0000;
-      margin-top: 5px;
+      margin-top: 2px;
     }
   </style>
 </head>
@@ -155,9 +213,13 @@
 
   <canvas id="starsCanvas"></canvas>
   <div id="hearts-container"></div>
+  <div id="sunflower-container"></div>
 
-  <!-- Audio Background -->
-  <audio id="bgMusic" loop preload="auto" src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=soft-piano-113884.mp3"></audio>
+  <!-- Music Vinyl Toggle Button -->
+  <div class="music-btn" id="musicToggle" onclick="toggleAudio()">🎵</div>
+
+  <!-- Audio Background: Eres Tú (Acoustic / Piano Instrumental) -->
+  <audio id="bgMusic" loop preload="auto" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a816a7.mp3?filename=romantic-acoustic-guitar-10875.mp3"></audio>
 
   <div class="main-container">
     
@@ -191,7 +253,7 @@
         <div class="final-line" id="fl1">Gracias por aparecer en mi vida.</div>
         <div class="final-line" id="fl2">Gracias por elegirme.</div>
         <div class="final-line" id="fl3">Gracias por ser tú.</div>
-        <div class="final-line" id="fl4" style="font-size: 1.5rem; font-weight: bold; margin-top: 20px;">Te amo.</div>
+        <div class="final-line" id="fl4" style="font-size: 2.3rem; font-weight: bold; margin-top: 15px; color: #b30000;">Te amo.</div>
       </div>
 
       <div class="signature-box" id="sigBox">
@@ -203,7 +265,22 @@
   </div>
 
   <script>
-    /* --- AUDIO & SYNTH --- */
+    /* --- SPARKLES ON TAP/CLICK --- */
+    window.addEventListener('click', (e) => {
+      for (let i = 0; i < 5; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        const size = Math.random() * 6 + 4;
+        sparkle.style.width = size + 'px';
+        sparkle.style.height = size + 'px';
+        sparkle.style.left = (e.clientX + (Math.random() * 20 - 10)) + 'px';
+        sparkle.style.top = (e.clientY + (Math.random() * 20 - 10)) + 'px';
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 800);
+      }
+    });
+
+    /* --- AUDIO SYNTH & TOGGLE --- */
     let audioCtx = null;
     
     function initAudioContext() {
@@ -221,7 +298,7 @@
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
         osc.type = 'triangle';
-        osc.frequency.setValueAtTime(420, audioCtx.currentTime);
+        osc.frequency.setValueAtTime(450, audioCtx.currentTime);
         gain.gain.setValueAtTime(0.02, audioCtx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.04);
         osc.connect(gain);
@@ -234,8 +311,24 @@
     function startMusic() {
       initAudioContext();
       const bgMusic = document.getElementById('bgMusic');
+      const btn = document.getElementById('musicToggle');
       if (bgMusic && bgMusic.paused) {
-        bgMusic.play().catch(() => {});
+        bgMusic.play().then(() => {
+          btn.classList.add('playing');
+        }).catch(() => {});
+      }
+    }
+
+    function toggleAudio() {
+      initAudioContext();
+      const bgMusic = document.getElementById('bgMusic');
+      const btn = document.getElementById('musicToggle');
+      if (bgMusic.paused) {
+        bgMusic.play();
+        btn.classList.add('playing');
+      } else {
+        bgMusic.pause();
+        btn.classList.remove('playing');
       }
     }
 
@@ -304,7 +397,7 @@
     }
     animateStars();
 
-    /* --- FLOATING HEARTS --- */
+    /* --- FLOATING HEARTS & SUNFLOWERS --- */
     function spawnHeart() {
       const container = document.getElementById('hearts-container');
       const heart = document.createElement('div');
@@ -314,6 +407,21 @@
       heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
       container.appendChild(heart);
       setTimeout(() => heart.remove(), 4000);
+    }
+
+    function plantSunflowers() {
+      const container = document.getElementById('sunflower-container');
+      const flowerPositions = [5, 18, 32, 50, 68, 82, 92]; // ตำแหน่งการงอกของดอกไม้ด้านล่าง
+      
+      flowerPositions.forEach((pos, index) => {
+        setTimeout(() => {
+          const sf = document.createElement('div');
+          sf.className = 'sunflower';
+          sf.innerHTML = '🌻';
+          sf.style.left = pos + 'vw';
+          container.appendChild(sf);
+        }, index * 300); // ทยอยงอกทีละดอกอย่างเป็นธรรมชาติ
+      });
     }
 
     /* --- TYPEWRITER LOGIC --- */
@@ -368,6 +476,7 @@
       document.getElementById('sec5').classList.add('active');
       document.body.classList.add("sunrise-bg");
 
+      plantSunflowers(); // ดอกทานตะวันค่อยๆ บานสะพรั่งขึ้นมา
       setInterval(spawnHeart, 500);
 
       const lines = ['fl1', 'fl2', 'fl3', 'fl4'];
