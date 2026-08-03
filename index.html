@@ -194,16 +194,17 @@
       padding: 10px;
     }
 
-    /* Clearer & Cute Vector Art Couple Recreation */
+    /* Cute Romantic Kiss Illustration Container */
     .couple-svg-container {
-      width: 190px;
-      height: 190px;
+      width: 200px;
+      height: 200px;
       margin: 0 auto 10px auto;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 50%;
-      padding: 10px;
-      box-shadow: 0 10px 25px rgba(255, 133, 162, 0.4);
+      padding: 12px;
+      box-shadow: 0 12px 28px rgba(255, 133, 162, 0.45);
       animation: floatArt 3s ease-in-out infinite alternate;
+      position: relative;
     }
 
     @keyframes floatArt {
@@ -260,10 +261,13 @@
   <div class="floating-hearts" id="heartsBg"></div>
 
   <!-- Music Control -->
-  <div class="music-btn" onclick="toggleAudio()">🎵</div>
+  <div class="music-btn" id="musicToggleBtn" onclick="toggleAudio()">🎵</div>
 
-  <!-- Extra Sweet Romantic Music Audio -->
-  <audio id="bgMusic" loop preload="auto" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a88b77.mp3?filename=sweet-love-10878.mp3"></audio>
+  <!-- Audio Element -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a88b77.mp3?filename=sweet-love-10878.mp3" type="audio/mpeg">
+    <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-sun-680.mp3" type="audio/mpeg">
+  </audio>
 
   <div class="glass-card">
     
@@ -272,7 +276,7 @@
       <div class="seal-btn" onclick="startExperience()">R × A</div>
       <div class="start-subtitle">
         Tócame, mi Fan ♡
-        <span class="th-sub">( แตะตรงนี้สิคะ Fan ♡ )</span>
+        <span class="th-sub">( แตะตรงนี้สิคะแฟน ♡ )</span>
       </div>
     </div>
 
@@ -281,7 +285,7 @@
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
       <div class="cute-text">
         Hay algo muy especial para mi Fan… ♡
-        <span class="cute-text-th">( มีบางอย่างที่พิเศษมากๆ ทำมาให้ Fan นะคะ )</span>
+        <span class="cute-text-th">( มีบางอย่างที่พิเศษมากๆ ทำมาให้แฟนนะคะ )</span>
       </div>
       <button class="btn-next" onclick="nextSlide(2)">Siguiente (ไปดูกันเลย) ➔</button>
     </div>
@@ -314,7 +318,7 @@
 
       <div class="cute-text">
         Aunque esté lejos de mi Fan…<br>mi corazón siempre está contigo.
-        <span class="cute-text-th">( ถึงจะอยู่ไกลจาก Fan ขนาดไหน... แต่หัวใจก็อยู่กับ Fan เสมอนะ )</span>
+        <span class="cute-text-th">( ถึงจะอยู่ไกลจากแฟนขนาดไหน... แต่หัวใจก็อยู่กับแฟนเสมอนะ )</span>
       </div>
       <button class="btn-next" onclick="nextSlide(3)">Siguiente (หน้าถัดไป) ➔</button>
     </div>
@@ -334,43 +338,56 @@
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
       <div class="cute-text">
         La distancia no es nada…<br>cuando mi Fan lo es todo para mí.
-        <span class="cute-text-th">( ระยะทางก็แค่ตัวเลข... เพราะ Fan คือทุกอย่างของเค้าอยู่แล้ว )</span>
+        <span class="cute-text-th">( ระยะทางก็แค่ตัวเลข... เพราะแฟนคือทุกอย่างของเค้าอยู่แล้ว )</span>
       </div>
       <button class="btn-next" onclick="triggerFinal()">Descubrir el secreto ✨<br><span style="font-size:0.85rem; font-weight:normal;">( เปิดดูความลับกัน )</span></button>
     </div>
 
     <!-- SLIDE 5 (FINAL) -->
     <div class="slide" id="s5">
-      <!-- Clearer Minimalist Couple Illustration -->
+      
+      <!-- CUTE KISSING COUPLE ILLUSTRATION -->
       <div class="couple-svg-container">
-        <svg viewBox="0 0 160 160" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Background Sparkles -->
-          <text x="12" y="30" font-size="16">✨</text>
-          <text x="130" y="35" font-size="18">🌻</text>
-          <text x="135" y="125" font-size="16">💖</text>
+        <svg viewBox="0 0 180 180" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Sparkles & Flowers -->
+          <text x="10" y="30" font-size="18">🌸</text>
+          <text x="148" y="32" font-size="16">✨</text>
+          <text x="145" y="140" font-size="16">🌻</text>
 
-          <!-- BOY (Left side leaning in with Cap) -->
-          <path d="M 50 48 Q 72 32 90 48 L 98 52 C 102 54 98 58 90 56 Z" fill="#4a5568"/>
-          <circle cx="68" cy="58" r="18" fill="#fbd38d"/>
-          <path d="M 52 50 C 48 60 52 72 60 75" stroke="#2d3748" stroke-width="2.5" fill="none"/>
-          <path d="M 75 58 Q 83 58 85 62" stroke="#2d3748" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M 45 78 Q 68 76 78 85 L 72 135 L 35 135 Z" fill="#1a365d"/>
+          <!-- Floating Kiss Hearts -->
+          <path d="M 90 32 C 90 27 84 25 81 29 C 78 33 81 38 90 43 C 99 38 102 33 99 29 C 96 25 90 27 90 32 Z" fill="#ff477e">
+            <animate attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="2s" repeatCount="indefinite"/>
+          </path>
+          <text x="75" y="24" font-size="12">💖</text>
 
-          <!-- GIRL (Right side holding phone) -->
-          <path d="M 85 55 C 80 75 82 105 92 125 C 105 110 115 85 108 55 Z" fill="#2d3748"/>
-          <circle cx="95" cy="62" r="16" fill="#feebc8"/>
-          <path d="M 88 62 Q 91 65 94 62" stroke="#2d3748" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <circle cx="90" cy="67" r="3" fill="#feb2b2"/>
-          <path d="M 80 82 L 115 82 L 110 135 L 75 135 Z" fill="#525252"/>
-          <path d="M 82 82 Q 95 86 112 82" stroke="#ffffff" stroke-width="4" fill="none"/>
+          <!-- BOY (Left side leaning in to kiss) -->
+          <!-- Cap -->
+          <path d="M 38 52 C 45 38 68 38 78 48 L 88 51 C 92 53 88 57 78 55 Z" fill="#2d3748"/>
+          <!-- Head & Closed Eyes Kissing -->
+          <circle cx="58" cy="62" r="18" fill="#fed7aa"/>
+          <path d="M 64 62 Q 68 64 66 67" stroke="#4a5568" stroke-width="2" stroke-linecap="round" fill="none"/> <!-- Eye closed -->
+          <circle cx="68" cy="68" r="3" fill="#fca5a5" opacity="0.6"/> <!-- Blush -->
+          <!-- Hair back -->
+          <path d="M 42 58 C 38 68 42 78 50 82" stroke="#2d3748" stroke-width="3" fill="none"/>
+          <!-- Clothes / Body Leaning -->
+          <path d="M 35 88 Q 58 84 68 95 L 62 145 L 20 145 Z" fill="#1e3a8a"/>
 
-          <!-- Selfie Arm & Phone -->
-          <path d="M 100 88 L 122 80 L 115 105" stroke="#feebc8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <rect x="114" y="70" width="16" height="28" rx="4" fill="#805ad5" transform="rotate(12 114 70)"/>
-          <circle cx="122" cy="78" r="3" fill="#f6e05e" transform="rotate(12 114 70)"/>
+          <!-- GIRL (Right side leaning in to kiss) -->
+          <!-- Long Hair Back -->
+          <path d="M 122 55 C 145 70 140 120 125 145 C 105 145 100 110 102 85 Z" fill="#334155"/>
+          <!-- Head & Closed Eyes Kissing -->
+          <circle cx="112" cy="64" r="17" fill="#ffedd5"/>
+          <path d="M 104 63 Q 101 65 103 68" stroke="#4a5568" stroke-width="2" stroke-linecap="round" fill="none"/> <!-- Eye closed -->
+          <circle cx="103" cy="70" r="3.5" fill="#f43f5e" opacity="0.5"/> <!-- Blush -->
+          <!-- Front Hair Bangs -->
+          <path d="M 115 48 C 100 50 95 62 98 70 C 105 58 120 52 125 58 Z" fill="#334155"/>
+          <!-- Clothes / Body Leaning -->
+          <path d="M 98 92 Q 115 88 135 95 L 145 145 L 90 145 Z" fill="#ec4899"/>
+          <!-- Soft White Collar/Detail -->
+          <path d="M 100 92 Q 112 98 125 92" stroke="#ffffff" stroke-width="3" fill="none"/>
 
-          <!-- Heart -->
-          <path d="M 80 40 C 80 36 75 34 72 37 C 69 40 72 45 80 49 C 88 45 91 40 88 37 C 85 34 80 36 80 40 Z" fill="#e53e3e"/>
+          <!-- Hands / Hug Detail -->
+          <path d="M 62 105 Q 85 110 102 100" stroke="#fed7aa" stroke-width="6" stroke-linecap="round" fill="none"/>
         </svg>
       </div>
 
@@ -380,7 +397,7 @@
         Gracias por ser tú.<br>
         <span class="cute-text-th" style="margin-bottom: 6px;">( ขอบคุณที่เข้ามาในชีวิต ขอบคุณที่เลือกกัน และขอบคุณที่เป็นเธอนะคะ )</span>
         <strong style="font-size: 2rem; color: #d81b60; display: block; margin-top: 6px;">Te amo, mi Fan ❤️</strong>
-        <span style="font-size: 1.05rem; color: #ad1457; font-weight: normal;">( รัก Fan นะคะ )</span>
+        <span style="font-size: 1.05rem; color: #ad1457; font-weight: normal;">( รักแฟนนะคะ )</span>
       </div>
       <div style="font-size: 1.2rem; font-weight: 600; margin-top: 10px; color: #880e4f;">
         Con todo mi amor, Renita 🌸
@@ -391,6 +408,23 @@
 
   <script>
     let currentSlide = 0;
+    let audioStarted = false;
+
+    /* Global listener to unlock audio on first touch/click anywhere */
+    function unlockAudio() {
+      if (audioStarted) return;
+      const audio = document.getElementById('bgMusic');
+      audio.play().then(() => {
+        audioStarted = true;
+        document.removeEventListener('touchstart', unlockAudio);
+        document.removeEventListener('click', unlockAudio);
+      }).catch(err => {
+        console.log("Audio play error:", err);
+      });
+    }
+
+    document.addEventListener('touchstart', unlockAudio, { once: true });
+    document.addEventListener('click', unlockAudio, { once: true });
 
     /* Aries Constellation Canvas */
     const canvas = document.getElementById('starCanvas');
@@ -457,23 +491,30 @@
     drawStars();
 
     /* Music Control */
-    function startAudio() {
+    function playAudio() {
       const audio = document.getElementById('bgMusic');
-      if (audio.paused) audio.play().catch(() => {});
+      audio.play().then(() => {
+        audioStarted = true;
+      }).catch(e => console.log(e));
     }
 
     function toggleAudio() {
       const audio = document.getElementById('bgMusic');
-      if (audio.paused) audio.play();
-      else audio.pause();
+      if (audio.paused) {
+        audio.play();
+        audioStarted = true;
+      } else {
+        audio.pause();
+      }
     }
 
     function startExperience() {
-      startAudio();
+      playAudio();
       nextSlide(1);
     }
 
     function nextSlide(num) {
+      playAudio();
       document.getElementById(`s${currentSlide}`).classList.remove('active');
       
       setTimeout(() => {
@@ -504,7 +545,7 @@
     }
 
     function triggerFinal() {
-      startAudio();
+      playAudio();
       document.getElementById(`s${currentSlide}`).classList.remove('active');
       
       setTimeout(() => {
