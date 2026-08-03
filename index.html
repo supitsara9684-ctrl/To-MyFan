@@ -6,16 +6,16 @@
   <title>Para ti</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: linear-gradient(135deg, #1f1f2e 0%, #2d2d44 100%);
-      color: #e2e2f0;
-      font-family: 'Outfit', 'Itim', sans-serif;
+      background: linear-gradient(135deg, #181824 0%, #252538 100%);
+      color: #dfdfe6;
+      font-family: 'Outfit', sans-serif;
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -25,22 +25,22 @@
 
     .glass-card {
       width: 100%;
-      max-width: 400px;
-      padding: 24px 20px;
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      max-width: 390px;
+      padding: 22px 18px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
       text-align: center;
     }
 
     .slide {
       display: none;
       opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: translateY(6px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
     }
 
     .slide.active {
@@ -49,101 +49,101 @@
       transform: translateY(0);
     }
 
-    /* Passcode Box */
+    /* Passcode Styles */
     .pass-header {
-      font-size: 0.95rem;
-      color: #b8b8d0;
+      font-size: 0.92rem;
+      color: #9e9eb8;
       margin-bottom: 12px;
     }
 
     .pass-dots {
       display: flex;
       justify-content: center;
-      gap: 8px;
-      margin-bottom: 16px;
+      gap: 7px;
+      margin-bottom: 14px;
     }
 
     .dot {
-      width: 10px;
-      height: 10px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
-      border: 1.5px solid #8f8fae;
+      border: 1.5px solid #7a7a99;
       background: transparent;
-      transition: all 0.2s;
+      transition: all 0.15s;
     }
 
     .dot.filled {
-      background: #8f8fae;
-      border-color: #8f8fae;
+      background: #7a7a99;
+      border-color: #7a7a99;
     }
 
     .keypad {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      max-width: 230px;
+      gap: 7px;
+      max-width: 220px;
       margin: 0 auto;
     }
 
     .key {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.06);
       color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 10px;
-      padding: 10px 0;
-      font-size: 1.1rem;
+      padding: 9px 0;
+      font-size: 1.05rem;
       cursor: pointer;
       font-family: 'Outfit', sans-serif;
-      transition: background 0.2s;
+      transition: background 0.15s;
     }
 
-    .key:active { background: rgba(255, 255, 255, 0.2); }
+    .key:active { background: rgba(255, 255, 255, 0.18); }
 
     /* Content Layout */
     .msg-box {
       background: rgba(0, 0, 0, 0.2);
-      border-left: 3px solid #7c7c9d;
+      border-left: 3px solid #6b6b8a;
       border-radius: 0 10px 10px 0;
       padding: 12px 14px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       text-align: left;
     }
 
     .es-text {
-      font-size: 0.98rem;
+      font-size: 0.95rem;
       font-weight: 400;
-      color: #f0f0f5;
-      line-height: 1.45;
+      color: #ececf1;
+      line-height: 1.4;
       margin-bottom: 6px;
     }
 
     .th-text {
-      font-size: 0.83rem;
-      color: #a2a2bc;
-      line-height: 1.4;
+      font-size: 0.82rem;
+      color: #9494ad;
+      line-height: 1.35;
       border-top: 1px dashed rgba(255, 255, 255, 0.1);
       padding-top: 6px;
     }
 
     .btn {
-      background: #4d4d6e;
+      background: #42425c;
       border: none;
       color: white;
       font-family: 'Outfit', sans-serif;
-      font-size: 0.95rem;
-      padding: 9px 20px;
-      border-radius: 12px;
+      font-size: 0.92rem;
+      padding: 8px 18px;
+      border-radius: 10px;
       cursor: pointer;
       transition: background 0.2s;
     }
 
-    .btn:hover { background: #5d5d85; }
+    .btn:hover { background: #525275; }
 
-    .shake { animation: shakeAnim 0.4s ease-in-out; }
+    .shake { animation: shakeAnim 0.35s ease-in-out; }
     @keyframes shakeAnim {
       0%, 100% { transform: translateX(0); }
-      20%, 60% { transform: translateX(-8px); }
-      40%, 80% { transform: translateX(8px); }
+      20%, 60% { transform: translateX(-7px); }
+      40%, 80% { transform: translateX(7px); }
     }
   </style>
 </head>
@@ -252,7 +252,7 @@
           card.classList.remove('shake');
           inputVal = "";
           updateDots();
-        }, 400);
+        }, 350);
       }
     }
 
@@ -264,8 +264,8 @@
         currentId = targetId;
         const nextSlide = document.getElementById(targetId);
         nextSlide.style.display = 'block';
-        setTimeout(() => nextSlide.classList.add('active'), 30);
-      }, 300);
+        setTimeout(() => nextSlide.classList.add('active'), 25);
+      }, 250);
     }
   </script>
 </body>
