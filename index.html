@@ -1,293 +1,386 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Special Surprise For You 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Hay algo esperándote...</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&display=swap');
+
     :root {
-      --bg-color: #fce4ec;       /* Soft Blush Pink */
-      --card-bg: #fffbfb;     /* Warm Silk White */
-      --primary-rose: #d81b60;  /* Romantic Deep Pink */
-      --soft-rose: #f48fb1;     /* Soft Petal Pink */
-      --accent-gold: #d4af37;    /* Subtle Warm Gold */
-      --text-color: #4a2c31;     /* Soft Warm Dark Brown */
+      --bg-night: #05050e;
+      --accent-gold: #d4af37;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
-      font-family: 'Georgia', 'Tahoma', serif;
+      background-color: var(--bg-night);
+      color: #ffffff;
+      font-family: 'Cinzel', serif;
       min-height: 100vh;
+      overflow: hidden;
+      transition: background 4s ease-in-out;
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow-x: hidden;
-      color: var(--text-color);
     }
 
-    .container {
+    body.sunrise-bg {
+      background: linear-gradient(to top, #ffd194, #f8bbd0, #2b0910) !important;
+      color: #2c3e50;
+    }
+
+    canvas#starsCanvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    #hearts-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 20px;
+      animation: floatUp 4s linear forwards;
+      bottom: -30px;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(0.8); opacity: 1; }
+      100% { transform: translateY(-105vh) scale(1.2); opacity: 0; }
+    }
+
+    .main-container {
+      position: relative;
+      z-index: 10;
       width: 90%;
-      max-width: 480px;
+      max-width: 580px;
       text-align: center;
       padding: 20px;
-      position: relative;
     }
 
-    /* --- STEP 1: ENVELOPE --- */
-    .envelope-wrapper {
-      cursor: pointer;
-      margin: 50px auto;
-      transition: transform 0.4s ease;
-    }
-
-    .envelope-wrapper:hover {
-      transform: translateY(-5px) scale(1.02);
-    }
-
-    .envelope {
-      width: 280px;
-      height: 180px;
-      background-color: #f48fb1;
-      margin: 0 auto;
-      position: relative;
-      border-radius: 12px;
-      box-shadow: 0 15px 30px rgba(216, 27, 96, 0.2);
-      border: 2px solid #ffffff;
-    }
-
-    .envelope-seal {
-      width: 54px;
-      height: 54px;
-      background: linear-gradient(135deg, #f06292, var(--primary-rose));
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      font-size: 22px;
-      border: 2px solid #ffffff;
-    }
-
-    .hint-text {
-      color: #880e4f;
-      margin-top: 18px;
-      font-size: 0.95rem;
-      letter-spacing: 0.5px;
-      font-weight: 500;
-    }
-
-    /* --- STEP 2: LETTER --- */
-    .letter-card {
+    .section {
       display: none;
-      background-color: var(--card-bg);
-      padding: 35px 25px;
-      border-radius: 16px;
-      border: 1px solid #f8bbd0;
-      box-shadow: 0 20px 40px rgba(216, 27, 96, 0.12);
       opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-      text-align: left;
-    }
-
-    .letter-card.show {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .letter-title {
-      font-size: 1.6rem;
-      color: var(--primary-rose);
-      text-align: center;
-      margin-bottom: 6px;
-      font-weight: bold;
-    }
-
-    .letter-sub {
-      font-size: 0.85rem;
-      color: #ad1457;
-      text-align: center;
-      margin-bottom: 22px;
-      font-style: italic;
-    }
-
-    .letter-body {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--text-color);
-      margin-bottom: 25px;
-    }
-
-    .btn-next {
-      display: block;
-      width: 100%;
-      padding: 14px;
-      background: linear-gradient(135deg, #f48fb1, var(--primary-rose));
-      color: #ffffff;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      text-align: center;
-      font-family: inherit;
-      box-shadow: 0 6px 18px rgba(216, 27, 96, 0.25);
-      transition: all 0.3s;
-    }
-
-    .btn-next:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 22px rgba(216, 27, 96, 0.35);
-    }
-
-    /* --- STEP 3: FLOWER BLOOM --- */
-    .flower-container {
-      display: none;
+      transition: opacity 1.2s ease;
       flex-direction: column;
       align-items: center;
-      opacity: 0;
-      transition: opacity 1s ease;
     }
 
-    .flower-container.show {
+    .section.active {
       display: flex;
       opacity: 1;
     }
 
-    .rose {
-      position: relative;
-      width: 100px;
-      height: 100px;
+    .text-box {
+      font-size: 1.2rem;
+      letter-spacing: 1.5px;
+      line-height: 1.9;
+      min-height: 100px;
       margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.3);
+      white-space: pre-line;
     }
 
-    .petal {
-      position: absolute;
-      background: linear-gradient(135deg, #ff80ab, #d81b60);
-      border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
-      transform-origin: bottom center;
-      opacity: 0;
-      animation: bloom 2s ease-forward forwards;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-
-    .petal:nth-child(1) { width: 40px; height: 60px; left: 30px; animation-delay: 0.2s; }
-    .petal:nth-child(2) { width: 50px; height: 70px; left: 25px; transform: rotate(45deg); animation-delay: 0.5s; }
-    .petal:nth-child(3) { width: 50px; height: 70px; left: 25px; transform: rotate(-45deg); animation-delay: 0.8s; }
-    .petal:nth-child(4) { width: 60px; height: 80px; left: 20px; transform: rotate(90deg); animation-delay: 1.1s; }
-    .petal:nth-child(5) { width: 60px; height: 80px; left: 20px; transform: rotate(-90deg); animation-delay: 1.4s; }
-
-    .rose-center {
-      position: absolute;
-      top: 25px;
-      left: 35px;
-      width: 30px;
-      height: 30px;
-      background: radial-gradient(circle, #ff4081, #c2185b);
-      border-radius: 50%;
-      z-index: 10;
-    }
-
-    .stem {
-      width: 6px;
-      height: 120px;
-      background: #81c784;
-      margin-top: -10px;
-      border-radius: 3px;
-    }
-
-    .final-message {
-      color: #880e4f;
-      font-size: 1.5rem;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-
-    .final-sub {
-      color: #ad1457;
+    .btn-action {
+      background: transparent;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      padding: 12px 32px;
+      font-family: 'Cinzel', serif;
       font-size: 0.95rem;
-      margin-top: 8px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: all 0.4s;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    @keyframes bloom {
-      0% { opacity: 0; transform: scale(0.2) rotate(0deg); }
-      100% { opacity: 0.95; }
+    .btn-action:hover, .btn-action:active {
+      background: var(--accent-gold);
+      color: #000;
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+    }
+
+    .typewriter-cursor::after {
+      content: '|';
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .final-line {
+      opacity: 0;
+      transition: opacity 1.5s ease;
+      margin-bottom: 14px;
+      font-size: 1.2rem;
+    }
+
+    .final-line.show { opacity: 1; }
+
+    .signature-box {
+      margin-top: 30px;
+      opacity: 0;
+      transition: opacity 2s ease;
+    }
+
+    .signature-box.show { opacity: 1; }
+
+    .signature-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      color: #8b0000;
+      letter-spacing: 1px;
+    }
+
+    .signature-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: #8b0000;
+      margin-top: 5px;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <canvas id="starsCanvas"></canvas>
+  <div id="hearts-container"></div>
+
+  <!-- Audio Background -->
+  <audio id="bgMusic" loop preload="auto" src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=soft-piano-113884.mp3"></audio>
+
+  <div class="main-container">
     
-    <!-- STEP 1: ENVELOPE -->
-    <div class="envelope-wrapper" id="envelopeWrapper" onclick="openEnvelope()">
-      <div class="envelope">
-        <div class="envelope-seal">💌</div>
-      </div>
-      <p class="hint-text">มีจดหมายมาส่งค่ะ (แตะที่ซองเพื่อเปิดดูนะ)</p>
+    <!-- PAGE 1 -->
+    <div class="section active" id="sec1">
+      <div class="text-box typewriter-cursor" id="text1"></div>
+      <button class="btn-action" id="btn1" style="display:none;" onclick="nextPage(2)">Continuar ➔</button>
     </div>
 
-    <!-- STEP 2: LETTER -->
-    <div class="letter-card" id="letterCard">
-      <h2 class="letter-title">To My Favorite Person</h2>
-      <p class="letter-sub">― แด่คนพิเศษของฉัน</p>
-      
-      <div class="letter-body">
-        <p>ขอบคุณสำหรับทุกๆ รอยยิ้ม ความเข้าอกเข้าใจ และช่วงเวลาดีๆ ที่มีให้กันเสมอมานะคะ</p>
-        <br>
-        <p>ดีใจมากๆ ที่ได้มีเธอเคียงข้างกันในทุกๆ วันนะ ❤️</p>
-        <br>
-        <p style="text-align: right; font-weight: bold; color: var(--primary-rose);">รัก Renita ✨</p>
-      </div>
-
-      <button class="btn-next" onclick="showFlower()">มีของขวัญอีกอย่างให้ด้วยนะ ✨</button>
+    <!-- PAGE 2 -->
+    <div class="section" id="sec2">
+      <div class="text-box typewriter-cursor" id="text2"></div>
+      <button class="btn-action" id="btn2" style="display:none;" onclick="nextPage(3)">Continuar ➔</button>
     </div>
 
-    <!-- STEP 3: FLOWER -->
-    <div class="flower-container" id="flowerContainer">
-      <div class="rose">
-        <div class="rose-center"></div>
-        <div class="petal"></div>
-        <div class="petal"></div>
-        <div class="petal"></div>
-        <div class="petal"></div>
-        <div class="petal"></div>
-      </div>
-      <div class="stem"></div>
+    <!-- PAGE 3 -->
+    <div class="section" id="sec3">
+      <div class="text-box typewriter-cursor" id="text3"></div>
+      <button class="btn-action" id="btn3" style="display:none;" onclick="nextPage(4)">Continuar ➔</button>
+    </div>
 
-      <h2 class="final-message">You mean the world to me 🌹</h2>
-      <p class="final-sub">ขอบคุณที่เข้ามาเป็นเรื่องน่ารักในชีวิตกันนะคะ</p>
-      <p style="margin-top: 15px; font-weight: bold; color: var(--primary-rose);">รัก Renita ❤️</p>
+    <!-- PAGE 4 -->
+    <div class="section" id="sec4">
+      <div class="text-box typewriter-cursor" id="text4"></div>
+      <button class="btn-action" id="btn4" style="display:none;" onclick="triggerSunrise()">Continuar ➔</button>
+    </div>
+
+    <!-- PAGE 5 (FINAL) -->
+    <div class="section" id="sec5">
+      <div id="finalMessageContainer">
+        <div class="final-line" id="fl1">Gracias por aparecer en mi vida.</div>
+        <div class="final-line" id="fl2">Gracias por elegirme.</div>
+        <div class="final-line" id="fl3">Gracias por ser tú.</div>
+        <div class="final-line" id="fl4" style="font-size: 1.5rem; font-weight: bold; margin-top: 20px;">Te amo.</div>
+      </div>
+
+      <div class="signature-box" id="sigBox">
+        <div class="signature-title">Con amor,</div>
+        <div class="signature-name">Renita. ❤️</div>
+      </div>
     </div>
 
   </div>
 
   <script>
-    function openEnvelope() {
-      const envelope = document.getElementById('envelopeWrapper');
-      const letter = document.getElementById('letterCard');
-      
-      envelope.style.display = 'none';
-      letter.classList.add('show');
+    /* --- AUDIO & SYNTH --- */
+    let audioCtx = null;
+    
+    function initAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
     }
 
-    function showFlower() {
-      const letter = document.getElementById('letterCard');
-      const flower = document.getElementById('flowerContainer');
+    function playTick() {
+      try {
+        if (!audioCtx) return;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(420, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.02, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.04);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.04);
+      } catch(e) {}
+    }
 
-      letter.style.display = 'none';
-      flower.classList.add('show');
+    function startMusic() {
+      initAudioContext();
+      const bgMusic = document.getElementById('bgMusic');
+      if (bgMusic && bgMusic.paused) {
+        bgMusic.play().catch(() => {});
+      }
+    }
+
+    /* --- CANVAS STARS --- */
+    const canvas = document.getElementById('starsCanvas');
+    const ctx = canvas.getContext('2d');
+    let stars = [], shootingStars = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    for(let i = 0; i < 150; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5,
+        alpha: Math.random(),
+        speed: Math.random() * 0.02 + 0.005
+      });
+    }
+
+    function addShootingStar() {
+      shootingStars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * (canvas.height / 2),
+        len: Math.random() * 80 + 50,
+        speed: Math.random() * 8 + 6,
+        size: Math.random() * 1.2 + 0.2
+      });
+    }
+    setInterval(addShootingStar, 10000);
+
+    function animateStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#ffffff";
+      stars.forEach(star => {
+        star.alpha += star.speed;
+        if (star.alpha > 1 || star.alpha < 0) star.speed = -star.speed;
+        ctx.globalAlpha = Math.abs(star.alpha);
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      shootingStars.forEach((sStar, index) => {
+        ctx.globalAlpha = 1;
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.9)";
+        ctx.lineWidth = sStar.size;
+        ctx.beginPath();
+        ctx.moveTo(sStar.x, sStar.y);
+        ctx.lineTo(sStar.x - sStar.len, sStar.y + sStar.len);
+        ctx.stroke();
+
+        sStar.x += sStar.speed;
+        sStar.y += sStar.speed;
+
+        if (sStar.x > canvas.width || sStar.y > canvas.height) {
+          shootingStars.splice(index, 1);
+        }
+      });
+      requestAnimationFrame(animateStars);
+    }
+    animateStars();
+
+    /* --- FLOATING HEARTS --- */
+    function spawnHeart() {
+      const container = document.getElementById('hearts-container');
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 90 + 5 + 'vw';
+      heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+      container.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }
+
+    /* --- TYPEWRITER LOGIC --- */
+    const texts = {
+      1: "Hay algo esperándote…",
+      2: "Nunca imaginé que alguien tan lejos…\n\npudiera sentirse tan cerca.",
+      3: "Gracias…\npor cada sonrisa.\npor cada llamada.\npor cada momento.",
+      4: "Dicen que la distancia cambia las cosas…\n\nPero nunca cambió lo que siento por ti."
+    };
+
+    function typeText(pageIndex, callback) {
+      const element = document.getElementById(`text${pageIndex}`);
+      const fullText = texts[pageIndex];
+      let charIndex = 0;
+      element.textContent = "";
+
+      function type() {
+        if (charIndex < fullText.length) {
+          element.textContent += fullText.charAt(charIndex);
+          playTick();
+          charIndex++;
+          setTimeout(type, 75);
+        } else {
+          element.classList.remove("typewriter-cursor");
+          if(callback) callback();
+        }
+      }
+      type();
+    }
+
+    // Auto start page 1
+    setTimeout(() => {
+      typeText(1, () => {
+        document.getElementById("btn1").style.display = "inline-block";
+      });
+    }, 800);
+
+    function nextPage(pageNum) {
+      startMusic();
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById(`sec${pageNum}`).classList.add('active');
+
+      typeText(pageNum, () => {
+        document.getElementById(`btn${pageNum}`).style.display = "inline-block";
+      });
+    }
+
+    /* --- FINAL PAGE --- */
+    function triggerSunrise() {
+      startMusic();
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById('sec5').classList.add('active');
+      document.body.classList.add("sunrise-bg");
+
+      setInterval(spawnHeart, 500);
+
+      const lines = ['fl1', 'fl2', 'fl3', 'fl4'];
+      lines.forEach((id, index) => {
+        setTimeout(() => {
+          document.getElementById(id).classList.add('show');
+        }, (index + 1) * 1200);
+      });
+
+      // Show "Con amor, Renita. ❤️" exactly 2 seconds after "Te amo."
+      setTimeout(() => {
+        document.getElementById('sigBox').classList.add('show');
+      }, (lines.length * 1200) + 2000);
     }
   </script>
 </body>
