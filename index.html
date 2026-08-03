@@ -577,14 +577,14 @@
 
   <div class="glass-card" id="cardContainer">
     
-    <!-- 🔒 SLIDE 0: PASSCODE LOCK -->
+    <!-- 🔒 SLIDE 0: PASSCODE LOCK (แก้ไขให้สเปนและไทยอยู่คนละบรรทัด ไม่ซ้ำซ้อน) -->
     <div class="slide active" id="s_passcode">
       <div class="passcode-icon" id="passIcon">🔐💖</div>
       <div class="passcode-header">Escribe nuestra contraseña</div>
       
       <div class="hint-box" id="hintText">
-        <div style="font-weight: bold;">A ver si todavía te acuerdas de nuestra fecha… 😏❤️</div>
-        <div style="font-size: 0.8rem; opacity: 0.9;">(A ver si todavía te acuerdas de nuestra fecha… มาดูกันสิว่ายังจำวันของเราได้อยู่ไหม)</div>
+        <span class="es-main" style="font-size: 0.88rem; margin-bottom: 4px; color: #ffe5ec;">A ver si todavía te acuerdas de nuestra fecha… 😏❤️</span>
+        <span class="th-sub" style="margin-top: 2px; padding-top: 4px;">(มาดูกันสิว่ายังจำวันของเราได้อยู่ไหม)</span>
       </div>
 
       <div class="keypad-container">
@@ -625,12 +625,12 @@
 
       <div class="content-box-original">
         <span class="es-main">¿Sabes por qué elegí este fondo? 🌌</span>
-        <span class="th-sub">¿Sabes por qué elegí este fondo? (รู้ไหมว่าทำไมเค้าถึงเลือกพื้นหลังนี้? 🌌)</span>
+        <span class="th-sub">(รู้ไหมว่าทำไมเค้าถึงเลือกพื้นหลังนี้? 🌌)</span>
       </div>
 
       <div class="content-box-original" style="background: rgba(255, 133, 162, 0.25); border-color: rgba(255, 255, 255, 0.4);">
         <span class="es-main" style="color: #ffd1dc;">Porque es la constelación de tu signo y me chiflan las estrellas. ✨</span>
-        <span class="th-sub" style="color: #ffe5ec;">Porque es la constelación de tu signo y me chiflan las estrellas. (เพราะเป็นกลุ่มดาวราศีของแฟน และเค้าชอบดวงดาวมากเลยล่ะ ✨)</span>
+        <span class="th-sub" style="color: #ffe5ec;">(เพราะเป็นกลุ่มดาวราศีของแฟน และเค้าชอบดวงดาวมากเลยล่ะ ✨)</span>
       </div>
 
       <div class="btn-choice-group">
@@ -639,7 +639,7 @@
       </div>
 
       <div id="dukdikArea" style="display: none;">
-        <div class="bounce-dukdik">¡Vamos a seguir viendo más! 🚀💖 (ไปดูกันต่อเลย 🚀💖)</div>
+        <div class="bounce-dukdik">¡Vamos a seguir viendo más! 🚀💖<br><span style="font-size:0.85rem; font-weight:normal;">(ไปดูกันต่อเลย 🚀💖)</span></div>
       </div>
     </div>
 
@@ -648,20 +648,17 @@
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
       <div class="content-box-original">
         <span class="es-main">He preparado una pequeña sorpresa para ti. Espero que te saque una sonrisa. 😊</span>
-        <span class="th-sub">He preparado una pequeña sorpresa para ti. Espero que te saque una sonrisa. (เค้าเตรียมเซอร์ไพรส์เล็กๆ ไว้ให้ หวังว่าจะทำให้แฟนยิ้มได้นะ 😊)</span>
+        <span class="th-sub">(เค้าเตรียมเซอร์ไพรส์เล็กๆ ไว้ให้ หวังว่าจะทำให้แฟนยิ้มได้นะ 😊)</span>
       </div>
-      <button class="btn-next" onclick="goToSlide('s2')">Siguiente (ถัดไป) ➔</button>
+      <button class="btn-next" onclick="goToSlide('s2')">Siguiente / ถัดไป ➔</button>
     </div>
 
     <!-- 🗺️ SLIDE 2: MAPS SPAIN & THAILAND -->
     <div class="slide" id="s2">
       <div class="map-slide-bg">
-        <!-- SVG แผนที่ไทย-สเปน เป็นแบคกราวน์จางๆ เฉพาะหน้านี้ -->
         <svg class="map-bg-svg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- สเปน (ซ้ายบน) -->
           <path d="M 80 50 Q 120 40 140 80 Q 130 130 90 120 Q 50 110 60 70 Z" fill="#ff85a2" stroke="#ff85a2" stroke-width="2"/>
           <circle cx="100" cy="85" r="5" fill="#fff"/>
-          <!-- ไทย (ขวาล่าง) -->
           <path d="M 280 160 Q 320 170 330 220 Q 310 260 270 240 Q 250 200 270 170 Z" fill="#ff85a2" stroke="#ff85a2" stroke-width="2"/>
           <circle cx="295" cy="205" r="5" fill="#fff"/>
         </svg>
@@ -682,20 +679,18 @@
             </g>
             <path d="M 250 62 Q 160 -5, 68 72" stroke="#ffd1dc" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
             <g transform="translate(155, 6) rotate(-165)"><text font-size="20">✈️</text></g>
-            <!-- ป้ายบอกระยะทางหมื่นไมล์ในรูปแผนที่ -->
             <rect x="115" y="55" width="130" height="24" rx="12" fill="rgba(42, 27, 61, 0.8)" stroke="#ff85a2" stroke-width="1.5"/>
             <text x="180" y="72" fill="#ffd1dc" font-size="11" font-weight="bold" text-anchor="middle">✨ +10,000 millas ✨</text>
           </svg>
 
           <div class="content-box-original" style="margin-bottom: 0; background: rgba(255, 255, 255, 0.15);">
             <span class="es-main">Hay gente que piensa que las relaciones a distancia no funcionan. Yo prefiero demostrar lo contrario contigo. ❤️</span>
-            <div style="margin-top: 6px; border-top: 1px dotted rgba(255,255,255,0.25); padding-top: 6px;"></div>
-            <span class="th-sub" style="border-top: none; padding-top: 0; margin-top: 0;">Hay gente que piensa que las relaciones a distancia no funcionan. Yo prefiero demostrar lo contrario contigo. (มีหลายคนที่คิดว่าความสัมพันธ์ทางไกลไปไม่รอด แต่เค้าอยากพิสูจน์สิ่งตรงกันข้ามกับแฟนนะ)</span>
+            <span class="th-sub">(มีหลายคนที่คิดว่าความสัมพันธ์ทางไกลไปไม่รอด แต่เค้าอยากพิสูจน์สิ่งตรงกันข้ามกับแฟนนะ)</span>
           </div>
         </div>
       </div>
 
-      <button class="btn-next" onclick="goToSlide('s_distance_feel')">Siguiente (ถัดไป) ➔</button>
+      <button class="btn-next" onclick="goToSlide('s_distance_feel')">Siguiente / ถัดไป ➔</button>
     </div>
 
     <!-- 🥺 SLIDE: DISTANCE FEELINGS & APOLOGY -->
@@ -703,17 +698,15 @@
       <div class="koala-container"><div class="cute-koala">🐨🥺</div></div>
       <div class="content-box-original" style="margin-bottom: 8px;">
         <span class="es-main">Sé que a veces la distancia no es fácil. Ojalá pudiera estar contigo mucho más. 🥺</span>
-        <div style="margin-top: 6px; border-top: 1px dotted rgba(255,255,255,0.25); padding-top: 6px;"></div>
-        <span class="th-sub" style="border-top: none; padding-top: 0; margin-top: 0;">Sé que a veces la distancia no es fácil. Ojalá pudiera estar contigo mucho más. (เค้ารู้ว่าบางครั้งระยะทางก็ไม่ง่ายเลย เค้าอยากอยู่กับแฟนให้มากกว่านี้จัง)</span>
+        <span class="th-sub">(เค้ารู้ว่าบางครั้งระยะทางก็ไม่ง่ายเลย เค้าอยากอยู่กับแฟนให้มากกว่านี้จัง)</span>
       </div>
 
       <div class="content-box-original" style="margin-bottom: 12px;">
         <span class="es-main">Pero haré todo lo posible para que nunca dudes de lo importante que eres para mí. Solo ten un poquito de paciencia conmigo. ❤️</span>
-        <div style="margin-top: 6px; border-top: 1px dotted rgba(255,255,255,0.25); padding-top: 6px;"></div>
-        <span class="th-sub" style="border-top: none; padding-top: 0; margin-top: 0;">Pero haré todo lo posible para que nunca dudes de lo importante que eres para mí. (แต่เค้าจะทำทุกอย่างเพื่อให้แฟนไม่ต้องสงสัยเลยว่าแฟนสำคัญกับเค้าแค่ไหน ขอแค่อดทนกับเค้าอีกนิดนะ)</span>
+        <span class="th-sub">(แต่เค้าจะทำทุกอย่างเพื่อให้แฟนไม่ต้องสงสัยเลยว่าแฟนสำคัญกับเค้าแค่ไหน ขอแคอดทนกับเค้าอีกนิดนะ)</span>
       </div>
 
-      <button class="btn-next" onclick="goToSlide('s3')">Siguiente (ถัดไป) ➔</button>
+      <button class="btn-next" onclick="goToSlide('s3')">Siguiente / ถัดไป ➔</button>
     </div>
 
     <!-- SLIDE 3: THANKS -->
@@ -721,10 +714,9 @@
       <div class="koala-container"><div class="cute-koala">🐨💖</div></div>
       <div class="content-box-original">
         <span class="es-main">Gracias por estar conmigo, por cuidarme y por hacerme sentir tan querida.</span>
-        <div style="margin-top: 6px; border-top: 1px dotted rgba(255,255,255,0.25); padding-top: 6px;"></div>
-        <span class="th-sub" style="border-top: none; padding-top: 0; margin-top: 0;">Gracias por estar conmigo, por cuidarme y por hacerme sentir tan querida. (ขอบคุณที่อยู่กับเค้า คอยดูแล และทำให้เค้ารู้สึกว่าตัวเองเป็นคนที่ได้รับความรักนะ)</span>
+        <span class="th-sub">(ขอบคุณที่อยู่กับเค้า คอยดูแล และทำให้เค้ารู้สึกว่าตัวเองเป็นคนที่ได้รับความรักนะ)</span>
       </div>
-      <button class="btn-next" onclick="goToSlide('s4')">Siguiente (ถัดไป) ➔</button>
+      <button class="btn-next" onclick="goToSlide('s4')">Siguiente / ถัดไป ➔</button>
     </div>
 
     <!-- SLIDE 4: DISTANCE IS WORTH IT -->
@@ -732,10 +724,9 @@
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
       <div class="content-box-original">
         <span class="es-main">No me gusta la distancia, pero me gustas tú. Así que merece la pena esperar. ❤️</span>
-        <div style="margin-top: 6px; border-top: 1px dotted rgba(255,255,255,0.25); padding-top: 6px;"></div>
-        <span class="th-sub" style="border-top: none; padding-top: 0; margin-top: 0;">No me gusta la distancia, pero me gustas tú. Así que merece la pena esperar. (เค้าไม่ชอบระยะทางหรอก แต่เค้าชอบแฟน เพราะงั้นการรอคอยมันก็คุ้มค่าเสมอ)</span>
+        <span class="th-sub">(เค้าไม่ชอบระยะทางหรอก แต่เค้าชอบแฟน เพราะงั้นการรอคอยมันก็คุ้มค่าเสมอ)</span>
       </div>
-      <button class="btn-next" onclick="goToSlide('s_question')">Pregunta (คำถาม) ✨ ➔</button>
+      <button class="btn-next" onclick="goToSlide('s_question')">Pregunta / คำถาม ✨ ➔</button>
     </div>
 
     <!-- SLIDE QUESTION: LOVE? -->
@@ -743,8 +734,7 @@
       <div class="koala-container"><div class="cute-koala">🐨❓</div></div>
       <div class="content-box-original">
         <span class="es-main">Una pregunta… ¿todavía me amas? 😜</span>
-        <div style="margin-top: 6px; border-top: 1px dotted rgba(255,255,255,0.25); padding-top: 6px;"></div>
-        <span class="th-sub" style="border-top: none; padding-top: 0; margin-top: 0;">Una pregunta… ¿todavía me amas? (ถามหน่อยสิ... แฟนยังรักเค้าอยู่ไหมนะ? 😜)</span>
+        <span class="th-sub">(ถามหน่อยสิ... แฟนยังรักเค้าอยู่ไหมนะ? 😜)</span>
       </div>
       <div class="btn-choice-group">
         <button class="btn-next btn-love" onclick="goToSlide('s_love')" style="font-size: 0.95rem; padding: 8px 16px;">Sí, te amo ❤️</button>
@@ -757,8 +747,7 @@
       <div class="koala-container"><div class="cute-koala">🐨🥰</div></div>
       <div class="content-box-original">
         <span class="es-main">Lo sabía. 😌❤️</span>
-        <div style="margin-top: 6px; border-top: 1px dotted rgba(255,255,255,0.25); padding-top: 6px;"></div>
-        <span class="th-sub" style="border-top: none; padding-top: 0; margin-top: 0;">Lo sabía. (รู้อยู่แล้วล่ะ เค้าก็รักแฟนเหมือนกันนะ 😌❤️)</span>
+        <span class="th-sub">(รู้อยู่แล้วล่ะ เค้าก็รักแฟนเหมือนกันนะ 😌❤️)</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s_music')">Nuestra canción 🎶</button>
     </div>
@@ -768,8 +757,7 @@
       <div class="koala-container"><div class="cute-koala">🐨😜</div></div>
       <div class="content-box-original">
         <span class="es-main">No te creo… 😏 Estoy segura de que sí.</span>
-        <div style="margin-top: 6px; border-top: 1px dotted rgba(255,255,255,0.25); padding-top: 6px;"></div>
-        <span class="th-sub" style="border-top: none; padding-top: 0; margin-top: 0;">No te creo… Estoy segura de que sí. (ไม่เชื่อหรอก… เค้ามั่นใจว่าแฟนรักและคิดถึงเค้าแหละ 😜)</span>
+        <span class="th-sub">(ไม่เชื่อหรอก… เค้ามั่นใจว่าแฟนรักและคิดถึงเค้าแหละ 😜)</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s_music')">Escuchar canción ✨</button>
     </div>
@@ -778,15 +766,15 @@
     <div class="slide" id="s_music">
       <div class="content-box-original" style="margin-bottom: 6px;">
         <span class="es-main" style="font-size: 0.92rem;">Quiero que escuches esta canción con atención. Me encanta escucharla, aunque tenga que tirar de Google Translator para entenderlo todo. ❤️</span>
-        <span class="th-sub">Quiero que escuches esta canción con atención. (อยากให้แฟนตั้งใจฟังเพลงนี้นะ เค้าชอบฟังเพลงนี้มากๆ ถึงแม้บางทีจะต้องเปิดกูเกิลทรานสเลเตอร์แปลก็ตาม อิอิ ♡)</span>
+        <span class="th-sub">(อยากให้แฟนตั้งใจฟังเพลงนี้นะ เค้าชอบฟังเพลงนี้มากๆ ถึงแม้บางทีจะต้องเปิดกูเกิลทรานสเลเตอร์แปลก็ตาม อิอิ ♡)</span>
       </div>
 
       <div class="music-card-box">
         <div class="music-header">
           <div class="cd-spin"><i class="fa-solid fa-compact-disc"></i></div>
           <div class="music-title-info">
-            <h4>Toca para ver y pasar a la página siguiente ➔ (กดดูสิแล้วไปหน้าถัดไป)</h4>
-            <p>Nuestra propia canción (เพลงของเราเอง)</p>
+            <h4>Toca para ver y pasar a la página siguiente</h4>
+            <p>(กดดูสิแล้วไปหน้าถัดไป) • Nuestra propia canción (เพลงของเราเอง)</p>
           </div>
         </div>
 
@@ -811,12 +799,12 @@
           <span class="heart-center">💖</span>
           <span class="char-monkey">🐒</span>
         </div>
-        <div style="font-size: 0.92rem; color:#ff6b8b; font-weight:500;">Estemos juntitos así por mucho tiempo. ✨ (อยู่ข้างๆ กันแบบนี้นานๆ นะ ✨)</div>
+        <div style="font-size: 0.92rem; color:#ff6b8b; font-weight:500;">Estemos juntitos así por mucho tiempo. ✨<br><span style="font-size:0.82rem; font-weight:normal;">(อยู่ข้างๆ กันแบบนี้นานๆ นะ ✨)</span></div>
       </div>
 
       <div class="content-box-original" style="text-align: center; margin-bottom: 8px;">
         <span class="es-main" style="font-size: 0.95rem;">Gracias por llegar a mi vida. Gracias por compartirla conmigo. Y, sobre todo, gracias por ser tú. ❤️</span>
-        <span class="th-sub" style="margin-top: 4px;">Gracias por llegar a mi vida. (ขอบคุณที่เข้ามาในชีวิตของเค้า ขอบคุณที่แบ่งปันชีวิตนี้ร่วมกัน และที่สำคัญที่สุด ขอบคุณที่เป็นตัวของตัวเองนะ ❤️)</span>
+        <span class="th-sub">(ขอบคุณที่เข้ามาในชีวิตของเค้า ขอบคุณที่แบ่งปันชีวิตนี้ร่วมกัน และที่สำคัญที่สุด ขอบคุณที่เป็นตัวของตัวเองนะ ❤️)</span>
       </div>
 
       <div class="big-love-text">
@@ -842,23 +830,23 @@
       <h3 style="color: #ff4b72; font-family: 'Dancing Script', cursive; font-size: 1.8rem; text-align: center; margin-bottom: 2px;">
         Para Mi Amor 💌
       </h3>
-      <div style="text-align: center; font-size: 0.8rem; color: #ff758f; margin-bottom: 8px;">(Para Mi Amor - ถึงแฟนที่รัก)</div>
+      <div style="text-align: center; font-size: 0.8rem; color: #ff758f; margin-bottom: 8px;">(ถึงแฟนที่รัก)</div>
 
       <div class="modal-body">
         <p style="font-weight: bold; color: #ff4b72;">Hola, mi amor. 💖</p>
-        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">(สวัสดีค่ะที่รัก)</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px; margin-bottom: 6px;">(สวัสดีค่ะที่รัก)</p>
 
-        <p style="margin-top: 6px;">Quería hacerte esta pequeña sorpresa porque quería que supieras lo importante que eres para mí.</p>
-        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">Quería hacerte esta pequeña sorpresa... (เค้าตั้งใจทำเซอร์ไพรส์ชิ้นนี้ขึ้นมาเพราะอยากให้แฟนรู้ว่าแฟนสำคัญกับเค้ามากแค่ไหน)</p>
+        <p style="margin-top: 4px;">Quería hacerte esta pequeña sorpresa porque quería que supieras lo importante que eres para mí.</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px; margin-bottom: 6px;">(เค้าตั้งใจทำเซอร์ไพรส์ชิ้นนี้ขึ้นมาเพราะอยากให้แฟนรู้ว่าแฟนสำคัญกับเค้ามากแค่ไหน)</p>
         
-        <p style="margin-top: 8px;">Gracias por acompañarme incluso cuando estamos lejos. Hay días fáciles y otros más difíciles, pero contigo siempre siento que merece la pena seguir.</p>
-        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">Gracias por acompañarme... (ขอบคุณที่คอยอยู่เคียงข้างกันแม้ว่าเราจะอยู่ไกลกัน มีทั้งวันที่ราบรื่นและวันที่ยากลำบาก แต่พอมีแฟนแล้วเค้ารู้สึกว่ามันคุ้มค่าที่จะสู้ต่อเสมอ)</p>
+        <p style="margin-top: 4px;">Gracias por acompañarme incluso cuando estamos lejos. Hay días fáciles y otros más difíciles, pero contigo siempre siento que merece la pena seguir.</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px; margin-bottom: 6px;">(ขอบคุณที่คอยอยู่เคียงข้างกันแม้ว่าเราจะอยู่ไกลกัน มีทั้งวันที่ราบรื่นและวันที่ยากลำบาก แต่พอมีแฟนแล้วเค้ารู้สึกว่ามันคุ้มค่าที่จะสู้ต่อเสมอ)</p>
 
-        <p style="margin-top: 8px;">Espero que algún día podamos ver هذا momento juntos y reírnos de toda la distancia que tuvimos que superar.</p>
-        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">Espero que algún día... (หวังว่าสักวันหนึ่งเราจะได้มานั่งดูช่วงเวลานี้ด้วยกัน แล้วหัวเราะให้กับระยะทางทั้งหมดที่เราผ่านพ้นมาด้วยกันนะ)</p>
+        <p style="margin-top: 4px;">Espero que algún día podamos ver este momento juntos y reírnos de toda la distancia que tuvimos que superar.</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px; margin-bottom: 6px;">(หวังว่าสักวันหนึ่งเราจะได้มานั่งดูช่วงเวลานี้ด้วยกัน แล้วหัวเราะให้กับระยะทางทั้งหมดที่เราผ่านพ้นมาด้วยกันนะ)</p>
         
-        <p style="font-weight: bold; color: #ff4b72; margin-top: 10px;">¡Te amo muchísimo! 🥰✨</p>
-        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">¡Te amo muchísimo! (รักแฟนที่สุดในโลกเลยนะ 🥰✨)</p>
+        <p style="font-weight: bold; color: #ff4b72; margin-top: 8px;">¡Te amo muchísimo! 🥰✨</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">(รักแฟนที่สุดในโลกเลยนะ 🥰✨)</p>
       </div>
     </div>
   </div>
@@ -921,10 +909,10 @@
     }
 
     const poutingMessages = [
-      { es: "¿Te equivocaste de contraseña? 😤", th: "¿Te equivocaste de contraseña? ใส่รหัสผิดเหรอ ลองใหม่อีกทีนะ!" },
-      { es: "¿Ya olvidaste la fecha? 😡", th: "¿Ya olvidaste la fecha? ลืมวันสำคัญเหรอเนี่ย ใส่ใหม่อีกรอบด่วน!" },
-      { es: "¡Ups, incorrecto! 🥺", th: "¡Ups, incorrecto! อ๊ะ ผิดซะงั้น ตั้งสติแล้วกดใหม่น้า" },
-      { es: "¡Inténtalo otra vez! 😤", th: "¡Inténtalo otra vez! ลองใหม่อีกรอบนะจ๊ะ" }
+      { es: "¿Te equivocaste de contraseña? 😤", th: "ใส่รหัสผิดเหรอ ลองใหม่อีกทีนะ!" },
+      { es: "¿Ya olvidaste la fecha? 😡", th: "ลืมวันสำคัญเหรอเนี่ย ใส่ใหม่อีกรอบด่วน!" },
+      { es: "¡Ups, incorrecto! 🥺", th: "อ๊ะ ผิดซะงั้น ตั้งสติแล้วกดใหม่น้า" },
+      { es: "¡Inténtalo otra vez! 😤", th: "ลองใหม่อีกรอบนะจ๊ะ" }
     ];
 
     const poutIcons = ["😤", "😡", "🥺", "😖", "😠"];
@@ -944,8 +932,8 @@
         icon.innerHTML = randomIcon + "💔";
         
         hint.innerHTML = `
-          <div style='color:#ff477e; font-weight:bold; font-size:0.9rem;'>${randomPout.es}</div>
-          <div style='color:#ff85a2; font-size:0.78rem;'>(${randomPout.th})</div>
+          <div class="es-main" style='color:#ff477e; font-weight:bold; font-size:0.9rem; margin-bottom:2px;'>${randomPout.es}</div>
+          <div class="th-sub" style='color:#ff85a2; font-size:0.78rem; border-top:none; padding-top:0; margin-top:0;'>(${randomPout.th})</div>
         `;
         
         setTimeout(() => {
