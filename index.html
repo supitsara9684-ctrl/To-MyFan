@@ -48,7 +48,7 @@
       z-index: 10;
       width: 88%;
       max-width: 420px;
-      padding: 35px 22px;
+      padding: 32px 20px;
       background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
@@ -60,7 +60,7 @@
     }
 
     body.sunrise-pastel .glass-card {
-      background: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.65);
       border: 2px solid rgba(255, 255, 255, 0.85);
       box-shadow: 0 20px 40px rgba(255, 133, 162, 0.35);
     }
@@ -123,13 +123,13 @@
     .cute-text {
       font-size: 1.35rem;
       line-height: 1.5;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       white-space: pre-line;
       text-shadow: 0 2px 8px rgba(0,0,0,0.12);
     }
 
     .cute-text-th {
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: #ffd1dc;
       margin-top: 6px;
       display: block;
@@ -194,12 +194,15 @@
       padding: 10px;
     }
 
-    /* Vector Art Couple Recreation */
-    .couple-svg {
-      width: 160px;
-      height: 160px;
+    /* Clearer & Cute Vector Art Couple Recreation */
+    .couple-svg-container {
+      width: 190px;
+      height: 190px;
       margin: 0 auto 10px auto;
-      filter: drop-shadow(0 8px 15px rgba(255, 71, 126, 0.3));
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 10px 25px rgba(255, 133, 162, 0.4);
       animation: floatArt 3s ease-in-out infinite alternate;
     }
 
@@ -235,7 +238,7 @@
       position: fixed;
       top: 20px; right: 20px;
       z-index: 99;
-      background: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.3);
       border-radius: 50%;
       width: 42px; height: 42px;
       display: flex;
@@ -244,6 +247,7 @@
       font-size: 1.2rem;
       cursor: pointer;
       backdrop-filter: blur(5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
   </style>
 </head>
@@ -258,8 +262,8 @@
   <!-- Music Control -->
   <div class="music-btn" onclick="toggleAudio()">🎵</div>
 
-  <!-- Acoustic Sweet Romantic Music Audio -->
-  <audio id="bgMusic" loop preload="auto" src="https://cdn.pixabay.com/download/audio/2022/10/14/audio_9939f61b0c.mp3?filename=sweet-romantic-acoustic-123472.mp3"></audio>
+  <!-- Extra Sweet Romantic Music Audio -->
+  <audio id="bgMusic" loop preload="auto" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a88b77.mp3?filename=sweet-love-10878.mp3"></audio>
 
   <div class="glass-card">
     
@@ -286,7 +290,6 @@
     <div class="slide" id="s2">
       <!-- MAP ROUTE SVG -->
       <svg class="map-svg" viewBox="0 0 300 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- World Map Silhouette Dots -->
         <circle cx="50" cy="50" r="12" fill="#ffffff" opacity="0.15"/>
         <circle cx="240" cy="70" r="14" fill="#ffffff" opacity="0.15"/>
         
@@ -338,42 +341,58 @@
 
     <!-- SLIDE 5 (FINAL) -->
     <div class="slide" id="s5">
-      <!-- Vector Art Elevator Photo -->
-      <svg class="couple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="85" fill="#ffe5ec" opacity="0.8"/>
-        <circle cx="100" cy="100" r="65" fill="#ffb3c6" opacity="0.5"/>
-        <text x="145" y="50" font-size="22">🌻</text>
-        <text x="30" y="60" font-size="20">✨</text>
-        <text x="150" y="140" font-size="18">💖</text>
+      <!-- Clearer Minimalist Couple Illustration -->
+      <div class="couple-svg-container">
+        <svg viewBox="0 0 160 160" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background Sparkles -->
+          <text x="12" y="30" font-size="16">✨</text>
+          <text x="130" y="35" font-size="18">🌻</text>
+          <text x="135" y="125" font-size="16">💖</text>
 
-        <!-- Boy Cap & Kiss -->
-        <path d="M100 65 C100 48, 135 48, 145 68 L155 72 C158 73, 155 77, 145 75 Z" fill="#7d746d"/>
-        <circle cx="120" cy="72" r="15" fill="#fcd5ce"/>
-        <path d="M110 70 Q 115 68 120 70" stroke="#4a4e69" stroke-width="2" fill="none"/>
-        <path d="M108 87 L145 92 L140 150 L95 145 Z" fill="#1d2d44"/>
-        <path d="M112 95 Q 128 100 132 135" stroke="#0077b6" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <!-- BOY (Left side leaning in with Cap) -->
+          <!-- Cap -->
+          <path d="M 50 48 Q 72 32 90 48 L 98 52 C 102 54 98 58 90 56 Z" fill="#4a5568"/>
+          <!-- Hair & Head -->
+          <circle cx="68" cy="58" r="18" fill="#fbd38d"/>
+          <path d="M 52 50 C 48 60 52 72 60 75" stroke="#2d3748" stroke-width="2.5" fill="none"/>
+          <!-- Boy Kissing Mouth/Nose Gesture -->
+          <path d="M 75 58 Q 83 58 85 62" stroke="#2d3748" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Boy Body (Navy Shirt) -->
+          <path d="M 45 78 Q 68 76 78 85 L 72 135 L 35 135 Z" fill="#1a365d"/>
 
-        <!-- Girl Selfie -->
-        <path d="M60 78 C55 90, 58 120, 68 135 C75 120, 80 90, 75 78 Z" fill="#2b2d42"/>
-        <circle cx="70" cy="85" r="14" fill="#fcd5ce"/>
-        <path d="M58 98 C58 106, 80 106, 80 98" stroke="#f8f9fa" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <path d="M48 105 L88 105 L82 150 L42 150 Z" fill="#6b705c"/>
-        <rect x="74" y="92" width="16" height="26" rx="4" fill="#6a4c93"/>
-        <circle cx="82" cy="100" r="3" fill="#ffb703"/>
+          <!-- GIRL (Right side holding phone) -->
+          <!-- Hair Long -->
+          <path d="M 85 55 C 80 75 82 105 92 125 C 105 110 115 85 108 55 Z" fill="#2d3748"/>
+          <!-- Head -->
+          <circle cx="95" cy="62" r="16" fill="#feebc8"/>
+          <!-- Eye & Blush -->
+          <path d="M 88 62 Q 91 65 94 62" stroke="#2d3748" stroke-width="2" fill="none" stroke-linecap="round"/> <!-- Happy Eye -->
+          <circle cx="90" cy="67" r="3" fill="#feb2b2"/> <!-- Blush -->
+          <!-- Girl Body (Olive Top) -->
+          <path d="M 80 82 L 115 82 L 110 135 L 75 135 Z" fill="#525252"/>
+          <!-- White Strap / Crop Detail -->
+          <path d="M 82 82 Q 95 86 112 82" stroke="#ffffff" stroke-width="4" fill="none"/>
 
-        <!-- Heart -->
-        <path d="M98 62 C 98 58, 93 56, 90 59 C 87 62, 90 67, 98 71 C 106 67, 109 62, 106 59 C 103 56, 98 58, 98 62 Z" fill="#ff477e"/>
-      </svg>
+          <!-- Girl Arm Holding Phone for Selfie -->
+          <path d="M 100 88 L 122 80 L 115 105" stroke="#feebc8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <!-- Phone (Purple Case) -->
+          <rect x="114" y="70" width="16" height="28" rx="4" fill="#805ad5" transform="rotate(12 114 70)"/>
+          <circle cx="122" cy="78" r="3" fill="#f6e05e" transform="rotate(12 114 70)"/> <!-- Camera -->
 
-      <div class="cute-text" style="font-size: 1.35rem; line-height: 1.6;">
+          <!-- Floating Heart between them -->
+          <path d="M 80 40 C 80 36 75 34 72 37 C 69 40 72 45 80 49 C 88 45 91 40 88 37 C 85 34 80 36 80 40 Z" fill="#e53e3e"/>
+        </svg>
+      </div>
+
+      <div class="cute-text" style="font-size: 1.3rem; line-height: 1.6;">
         Gracias por aparecer en mi vida.<br>
         Gracias por elegirme.<br>
         Gracias por ser tú.<br>
-        <span class="cute-text-th" style="margin-bottom: 8px;">( ขอบคุณที่เข้ามาในชีวิต ขอบคุณที่เลือกกัน และขอบคุณที่เป็นเธอนะคะ )</span>
-        <strong style="font-size: 2.1rem; color: #d81b60; display: block; margin-top: 8px;">Te amo. ❤️</strong>
-        <span style="font-size: 1.1rem; color: #ad1457; font-weight: normal;">( รักเธอนะคะ )</span>
+        <span class="cute-text-th" style="margin-bottom: 6px;">( ขอบคุณที่เข้ามาในชีวิต ขอบคุณที่เลือกกัน และขอบคุณที่เป็นเธอนะคะ )</span>
+        <strong style="font-size: 2rem; color: #d81b60; display: block; margin-top: 6px;">Te amo. ❤️</strong>
+        <span style="font-size: 1.05rem; color: #ad1457; font-weight: normal;">( รักเธอนะคะ )</span>
       </div>
-      <div style="font-size: 1.25rem; font-weight: 600; margin-top: 12px; color: #880e4f;">
+      <div style="font-size: 1.2rem; font-weight: 600; margin-top: 10px; color: #880e4f;">
         Con todo mi amor, Renita 🌸
       </div>
     </div>
