@@ -29,11 +29,11 @@
 
     /* Pastel Sunrise Theme on Final Page */
     body.sunrise-pastel {
-      background: linear-gradient(180deg, #ffb3c6 0%, #ff85a2 40%, #ffc6ff 70%, #ffe5ec 100%) !important;
+      background: linear-gradient(180deg, #ffb3c6 0%, #ff85a2 35%, #ffc6ff 70%, #ffe5ec 100%) !important;
       color: #5c2c3b;
     }
 
-    /* Canvas for Aries Stars */
+    /* Canvas for Stars */
     canvas#starCanvas {
       position: fixed;
       top: 0; left: 0;
@@ -48,7 +48,7 @@
       z-index: 10;
       width: 88%;
       max-width: 420px;
-      padding: 32px 20px;
+      padding: 30px 20px;
       background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
@@ -59,10 +59,12 @@
       transition: all 1s ease;
     }
 
+    /* Final Page Pretty Card Style */
     body.sunrise-pastel .glass-card {
-      background: rgba(255, 255, 255, 0.65);
-      border: 2px solid rgba(255, 255, 255, 0.85);
-      box-shadow: 0 20px 40px rgba(255, 133, 162, 0.35);
+      background: rgba(255, 255, 255, 0.85);
+      border: 3px solid #ffffff;
+      box-shadow: 0 20px 45px rgba(255, 117, 151, 0.4);
+      border-radius: 35px;
     }
 
     /* Wax Seal Start */
@@ -95,7 +97,6 @@
       font-size: 1.25rem;
       margin-top: 18px;
       opacity: 0.95;
-      letter-spacing: 0.5px;
     }
 
     .th-sub {
@@ -125,7 +126,7 @@
       line-height: 1.5;
       margin-bottom: 18px;
       white-space: pre-line;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     .cute-text-th {
@@ -158,7 +159,7 @@
 
     .btn-next:active { transform: scale(0.95); }
 
-    /* Cute Walking Koala Animation */
+    /* Cute Walking Mascot Animation */
     .koala-container {
       width: 100%;
       height: 55px;
@@ -194,22 +195,18 @@
       padding: 10px;
     }
 
-    /* Cute Romantic Kiss Illustration Container */
-    .couple-svg-container {
-      width: 200px;
-      height: 200px;
-      margin: 0 auto 10px auto;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 50%;
-      padding: 12px;
-      box-shadow: 0 12px 28px rgba(255, 133, 162, 0.45);
-      animation: floatArt 3s ease-in-out infinite alternate;
+    /* SUNRISE & DANCING MASCOT CONTAINER */
+    .sunrise-art-container {
+      width: 100%;
+      max-width: 280px;
+      height: 180px;
+      margin: 0 auto 12px auto;
       position: relative;
-    }
-
-    @keyframes floatArt {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-8px); }
+      border-radius: 22px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffcad4 0%, #ffe5ec 100%);
+      box-shadow: 0 8px 20px rgba(255, 133, 162, 0.3);
+      border: 2px solid #ffffff;
     }
 
     /* Floating Hearts & Sparkles */
@@ -239,41 +236,43 @@
       position: fixed;
       top: 20px; right: 20px;
       z-index: 99;
-      background: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.4);
       border-radius: 50%;
-      width: 42px; height: 42px;
+      width: 46px; height: 46px;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       cursor: pointer;
-      backdrop-filter: blur(5px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      border: 2px solid rgba(255,255,255,0.6);
+      -webkit-tap-highlight-color: transparent;
     }
   </style>
 </head>
 <body>
 
-  <!-- Aries Constellation Canvas -->
+  <!-- Starry Canvas -->
   <canvas id="starCanvas"></canvas>
 
   <!-- Floating Hearts & Sparkles -->
   <div class="floating-hearts" id="heartsBg"></div>
 
-  <!-- Music Control -->
+  <!-- Music Control Button -->
   <div class="music-btn" id="musicToggleBtn" onclick="toggleAudio()">🎵</div>
 
-  <!-- Audio Element -->
-  <audio id="bgMusic" loop preload="auto">
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a88b77.mp3?filename=sweet-love-10878.mp3" type="audio/mpeg">
-    <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-sun-680.mp3" type="audio/mpeg">
+  <!-- Audio Element with High Reliability CDN Links -->
+  <audio id="bgMusic" loop preload="auto" crossorigin="anonymous">
+    <source src="https://codeskulptor-demos.commondatastorage.googleapis.com/rigel/sparkle.mp3" type="audio/mpeg">
+    <source src="https://actions.google.com/sounds/v1/ambiences/soft_piano_ambient.ogg" type="audio/ogg">
   </audio>
 
   <div class="glass-card">
     
     <!-- START / SEAL -->
     <div class="slide active" id="s0">
-      <div class="seal-btn" onclick="startExperience()">R × A</div>
+      <div class="seal-btn" onclick="startExperience(event)">R × A</div>
       <div class="start-subtitle">
         Tócame, mi Fan ♡
         <span class="th-sub">( แตะตรงนี้สิคะแฟน ♡ )</span>
@@ -343,51 +342,69 @@
       <button class="btn-next" onclick="triggerFinal()">Descubrir el secreto ✨<br><span style="font-size:0.85rem; font-weight:normal;">( เปิดดูความลับกัน )</span></button>
     </div>
 
-    <!-- SLIDE 5 (FINAL) -->
+    <!-- SLIDE 5 (FINAL PAGE WITH RISING SUN & DANCING MASCOT) -->
     <div class="slide" id="s5">
       
-      <!-- CUTE KISSING COUPLE ILLUSTRATION -->
-      <div class="couple-svg-container">
-        <svg viewBox="0 0 180 180" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Sparkles & Flowers -->
-          <text x="10" y="30" font-size="18">🌸</text>
-          <text x="148" y="32" font-size="16">✨</text>
-          <text x="145" y="140" font-size="16">🌻</text>
+      <div class="sunrise-art-container">
+        <svg viewBox="0 0 280 180" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Soft Clouds Background -->
+          <path d="M -10 110 Q 20 90 50 110 Q 90 85 130 110 Q 170 90 210 110 Q 250 85 290 110 L 290 180 L -10 180 Z" fill="#ffffff" opacity="0.6"/>
 
-          <!-- Floating Kiss Hearts -->
-          <path d="M 90 32 C 90 27 84 25 81 29 C 78 33 81 38 90 43 C 99 38 102 33 99 29 C 96 25 90 27 90 32 Z" fill="#ff477e">
-            <animate attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="2s" repeatCount="indefinite"/>
-          </path>
-          <text x="75" y="24" font-size="12">💖</text>
+          <!-- RISING SUN ANIMATION -->
+          <g id="risingSun">
+            <!-- Sun Rays -->
+            <g opacity="0.7">
+              <circle cx="140" cy="85" r="48" fill="#ffe082" opacity="0.3"/>
+              <line x1="140" y1="20" x2="140" y2="30" stroke="#ffb74d" stroke-width="3" stroke-linecap="round"/>
+              <line x1="185" y1="40" x2="177" y2="48" stroke="#ffb74d" stroke-width="3" stroke-linecap="round"/>
+              <line x1="205" y1="85" x2="195" y2="85" stroke="#ffb74d" stroke-width="3" stroke-linecap="round"/>
+              <line x1="95" y1="40" x2="103" y2="48" stroke="#ffb74d" stroke-width="3" stroke-linecap="round"/>
+              <line x1="75" y1="85" x2="85" y2="85" stroke="#ffb74d" stroke-width="3" stroke-linecap="round"/>
+            </g>
 
-          <!-- BOY (Left side leaning in to kiss) -->
-          <!-- Cap -->
-          <path d="M 38 52 C 45 38 68 38 78 48 L 88 51 C 92 53 88 57 78 55 Z" fill="#2d3748"/>
-          <!-- Head & Closed Eyes Kissing -->
-          <circle cx="58" cy="62" r="18" fill="#fed7aa"/>
-          <path d="M 64 62 Q 68 64 66 67" stroke="#4a5568" stroke-width="2" stroke-linecap="round" fill="none"/> <!-- Eye closed -->
-          <circle cx="68" cy="68" r="3" fill="#fca5a5" opacity="0.6"/> <!-- Blush -->
-          <!-- Hair back -->
-          <path d="M 42 58 C 38 68 42 78 50 82" stroke="#2d3748" stroke-width="3" fill="none"/>
-          <!-- Clothes / Body Leaning -->
-          <path d="M 35 88 Q 58 84 68 95 L 62 145 L 20 145 Z" fill="#1e3a8a"/>
+            <!-- Cute Smiling Sun Body -->
+            <circle cx="140" cy="85" r="32" fill="#ffb74d"/>
+            <circle cx="140" cy="85" r="28" fill="#ffe082"/>
+            
+            <!-- Eyes & Cute Smile -->
+            <circle cx="130" cy="82" r="3" fill="#5d4037"/>
+            <circle cx="150" cy="82" r="3" fill="#5d4037"/>
+            <circle cx="128" cy="88" r="3" fill="#ff8a65" opacity="0.6"/>
+            <circle cx="152" cy="88" r="3" fill="#ff8a65" opacity="0.6"/>
+            <path d="M 135 88 Q 140 94 145 88" stroke="#5d4037" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </g>
+          <animateTransform href="#risingSun" attributeName="transform" type="translate" from="0, 70" to="0, 0" dur="2.5s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1.0"/>
 
-          <!-- GIRL (Right side leaning in to kiss) -->
-          <!-- Long Hair Back -->
-          <path d="M 122 55 C 145 70 140 120 125 145 C 105 145 100 110 102 85 Z" fill="#334155"/>
-          <!-- Head & Closed Eyes Kissing -->
-          <circle cx="112" cy="64" r="17" fill="#ffedd5"/>
-          <path d="M 104 63 Q 101 65 103 68" stroke="#4a5568" stroke-width="2" stroke-linecap="round" fill="none"/> <!-- Eye closed -->
-          <circle cx="103" cy="70" r="3.5" fill="#f43f5e" opacity="0.5"/> <!-- Blush -->
-          <!-- Front Hair Bangs -->
-          <path d="M 115 48 C 100 50 95 62 98 70 C 105 58 120 52 125 58 Z" fill="#334155"/>
-          <!-- Clothes / Body Leaning -->
-          <path d="M 98 92 Q 115 88 135 95 L 145 145 L 90 145 Z" fill="#ec4899"/>
-          <!-- Soft White Collar/Detail -->
-          <path d="M 100 92 Q 112 98 125 92" stroke="#ffffff" stroke-width="3" fill="none"/>
+          <!-- Front Pastel Hills -->
+          <path d="M -10 145 Q 60 115 140 140 Q 210 120 290 145 L 290 180 L -10 180 Z" fill="#ff85a2" opacity="0.85"/>
+          <path d="M -10 158 Q 80 135 180 155 Q 240 140 290 160 L 290 180 L -10 180 Z" fill="#ff477e"/>
 
-          <!-- Hands / Hug Detail -->
-          <path d="M 62 105 Q 85 110 102 100" stroke="#fed7aa" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <!-- CUTEY DANCING KOALA MASCOT -->
+          <g id="dancingMascot" transform="translate(195, 105)">
+            <text x="10" y="-8" font-size="14">💖
+              <animate attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="1.2s" repeatCount="indefinite"/>
+            </text>
+            
+            <circle cx="18" cy="28" r="14" fill="#a1a1aa"/>
+            <circle cx="18" cy="28" r="9" fill="#f4f4f5"/>
+            <circle cx="42" cy="28" r="14" fill="#a1a1aa"/>
+            <circle cx="42" cy="28" r="9" fill="#f4f4f5"/>
+            
+            <circle cx="30" cy="35" r="16" fill="#d4d4d8"/>
+            <ellipse cx="30" cy="37" rx="4" ry="6" fill="#3f3f46"/>
+            
+            <path d="M 22 33 Q 25 30 27 33" stroke="#27272a" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M 33 33 Q 35 30 38 33" stroke="#27272a" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <circle cx="21" cy="38" r="3" fill="#fda4af"/>
+            <circle cx="39" cy="38" r="3" fill="#fda4af"/>
+
+            <animateTransform attributeName="transform" type="rotate" values="-6 30 50; 6 30 50; -6 30 50" dur="1.5s" repeatCount="indefinite"/>
+          </g>
+
+          <!-- COUPLE SILHOUETTE -->
+          <g transform="translate(45, 115)">
+            <text x="0" y="25" font-size="28">👩‍❤️‍👨</text>
+          </g>
         </svg>
       </div>
 
@@ -396,10 +413,10 @@
         Gracias por elegirme.<br>
         Gracias por ser tú.<br>
         <span class="cute-text-th" style="margin-bottom: 6px;">( ขอบคุณที่เข้ามาในชีวิต ขอบคุณที่เลือกกัน และขอบคุณที่เป็นเธอนะคะ )</span>
-        <strong style="font-size: 2rem; color: #d81b60; display: block; margin-top: 6px;">Te amo, mi Fan ❤️</strong>
+        <strong style="font-size: 2.1rem; color: #d81b60; display: block; margin-top: 6px;">Te amo, mi Fan ❤️</strong>
         <span style="font-size: 1.05rem; color: #ad1457; font-weight: normal;">( รักแฟนนะคะ )</span>
       </div>
-      <div style="font-size: 1.2rem; font-weight: 600; margin-top: 10px; color: #880e4f;">
+      <div style="font-size: 1.2rem; font-weight: 600; margin-top: 8px; color: #880e4f;">
         Con todo mi amor, Renita 🌸
       </div>
     </div>
@@ -408,25 +425,49 @@
 
   <script>
     let currentSlide = 0;
-    let audioStarted = false;
+    const audio = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicToggleBtn');
 
-    /* Global listener to unlock audio on first touch/click anywhere */
-    function unlockAudio() {
-      if (audioStarted) return;
-      const audio = document.getElementById('bgMusic');
-      audio.play().then(() => {
-        audioStarted = true;
-        document.removeEventListener('touchstart', unlockAudio);
-        document.removeEventListener('click', unlockAudio);
-      }).catch(err => {
-        console.log("Audio play error:", err);
-      });
+    function playAudio() {
+      if (audio.paused) {
+        audio.play().then(() => {
+          musicBtn.innerHTML = '🎵';
+        }).catch(err => {
+          console.log("Autoplay waiting for click:", err);
+        });
+      }
     }
 
-    document.addEventListener('touchstart', unlockAudio, { once: true });
-    document.addEventListener('click', unlockAudio, { once: true });
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+        musicBtn.innerHTML = '🎵';
+      } else {
+        audio.pause();
+        musicBtn.innerHTML = '🔇';
+      }
+    }
 
-    /* Aries Constellation Canvas */
+    function startExperience(e) {
+      if (e) e.preventDefault();
+      playAudio();
+      nextSlide(1);
+    }
+
+    function nextSlide(num) {
+      playAudio();
+      document.getElementById(`s${currentSlide}`).classList.remove('active');
+      
+      setTimeout(() => {
+        document.getElementById(`s${currentSlide}`).style.display = 'none';
+        currentSlide = num;
+        const next = document.getElementById(`s${num}`);
+        next.style.display = 'block';
+        setTimeout(() => next.classList.add('active'), 50);
+      }, 400);
+    }
+
+    /* Star Canvas Animation */
     const canvas = document.getElementById('starCanvas');
     const ctx = canvas.getContext('2d');
     
@@ -490,47 +531,11 @@
     }
     drawStars();
 
-    /* Music Control */
-    function playAudio() {
-      const audio = document.getElementById('bgMusic');
-      audio.play().then(() => {
-        audioStarted = true;
-      }).catch(e => console.log(e));
-    }
-
-    function toggleAudio() {
-      const audio = document.getElementById('bgMusic');
-      if (audio.paused) {
-        audio.play();
-        audioStarted = true;
-      } else {
-        audio.pause();
-      }
-    }
-
-    function startExperience() {
-      playAudio();
-      nextSlide(1);
-    }
-
-    function nextSlide(num) {
-      playAudio();
-      document.getElementById(`s${currentSlide}`).classList.remove('active');
-      
-      setTimeout(() => {
-        document.getElementById(`s${currentSlide}`).style.display = 'none';
-        currentSlide = num;
-        const next = document.getElementById(`s${num}`);
-        next.style.display = 'block';
-        setTimeout(() => next.classList.add('active'), 50);
-      }, 400);
-    }
-
     /* Final Page Effects */
     function createHearts() {
       const container = document.getElementById('heartsBg');
       container.style.display = 'block';
-      const symbols = ['💖', '🌸', '🌻', '✨', '💕', '💗', '🐨'];
+      const symbols = ['💖', '🌸', '🌻', '✨', '💕', '💗', '🐨', '🌅'];
 
       setInterval(() => {
         const heart = document.createElement('div');
