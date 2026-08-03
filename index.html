@@ -266,7 +266,6 @@
     .btn-love { background: linear-gradient(135deg, #ff477e, #ff0055); }
     .btn-not-love { background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4); }
 
-    /* 🐨 ขนาดภาพแฟนใหญ่ขึ้นเด่นชัด */
     .koala-container { 
       width: 100%; 
       height: 70px; 
@@ -282,12 +281,6 @@
       position: absolute; 
       left: -60px; 
       animation: koalaWalk 4s linear infinite; 
-    }
-    .cute-koala-static {
-      font-size: 4rem;
-      display: block;
-      margin-bottom: 4px;
-      animation: floatAries 3s ease-in-out infinite;
     }
 
     @keyframes koalaWalk {
@@ -340,16 +333,16 @@
       100% { transform: scale(1.05) rotate(2deg); }
     }
 
-    /* MAP SILHOUETTE */
+    /* MAP SILHOUETTE - ขยายแผนที่ให้เด่นชัดขึ้น */
     .map-svg {
       width: 100%;
-      max-width: 280px;
-      height: 90px;
+      max-width: 330px;
+      height: 120px;
       margin: 0 auto 8px auto;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.12);
       border-radius: 14px;
-      border: 1px dashed rgba(255, 255, 255, 0.3);
-      padding: 4px;
+      border: 1.5px dashed rgba(255, 255, 255, 0.4);
+      padding: 6px;
     }
 
     /* YOUTUBE MUSIC SECTION */
@@ -613,8 +606,8 @@
       </div>
 
       <div class="content-box-original" style="background: rgba(255, 133, 162, 0.25); border-color: rgba(255, 255, 255, 0.4);">
-        <span class="es-main" style="color: #ffd1dc;">Porque me recuerda a ti. Sé que te gustan las estrellas, así que pensé que este fondo era perfecto para ti. ✨</span>
-        <span class="th-sub" style="color: #ffe5ec;">เพราะมันทำให้เค้านึกถึงแฟน เค้า Iรู้ว่าแฟนชอบดวงดาว เลยคิดว่าพื้นหลังนี้เหมาะกับแฟนที่สุด ✨</span>
+        <span class="es-main" style="color: #ffd1dc;">Porque es la constelación de tu signo y me encantan las estrellas. ✨ (¡O en España decimos que me chiflan las estrellas!)</span>
+        <span class="th-sub" style="color: #ffe5ec;">เพราะเป็นกลุ่มดาวราศีของแฟน และเค้าชอบดวงดาวมากเลยล่ะ ✨ (ถ้าคนสเปนจะพูดว่า: me chiflan las estrellas! หรือหลงใหลสุดๆ เลย)</span>
       </div>
 
       <div class="btn-choice-group">
@@ -637,28 +630,28 @@
       <button class="btn-next" onclick="goToSlide('s2')">Siguiente (ถัดไป) ➔</button>
     </div>
 
-    <!-- 🗺️ SLIDE 2: MAPS SPAIN & THAILAND -->
+    <!-- 🗺️ SLIDE 2: MAPS SPAIN & THAILAND (ขยายให้เด่นชัดขึ้น) -->
     <div class="slide" id="s2">
-      <svg class="map-svg" viewBox="0 0 320 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g opacity="0.85">
-          <path d="M 40 45 L 60 40 L 85 45 L 90 60 L 85 85 L 75 95 L 50 90 L 35 75 L 30 55 Z" fill="#ff85a2" opacity="0.3" stroke="#ff85a2" stroke-width="2"/>
-          <circle cx="60" cy="65" r="5" fill="#ff477e"/>
-          <circle cx="60" cy="65" r="9" fill="#ff477e" opacity="0.35"/>
-          <text x="32" y="30" fill="#ffd1dc" font-size="11" font-weight="bold">🇪🇸 España</text>
+      <svg class="map-svg" viewBox="0 0 340 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="0.9">
+          <path d="M 35 40 L 60 35 C 85 38, 95 55, 90 75 C 85 95, 75 105, 50 100 C 35 95, 25 75, 30 55 Z" fill="#ff85a2" opacity="0.35" stroke="#ff85a2" stroke-width="2.5"/>
+          <circle cx="58" cy="68" r="6" fill="#ff477e"/>
+          <circle cx="58" cy="68" r="11" fill="#ff477e" opacity="0.35"/>
+          <text x="25" y="24" fill="#ffd1dc" font-size="12" font-weight="bold">🇪🇸 España</text>
         </g>
-        <g opacity="0.85">
-          <path d="M 230 35 L 255 40 L 260 60 L 245 75 L 240 95 L 235 120 L 230 120 L 232 90 L 225 70 L 220 50 Z" fill="#ff85a2" opacity="0.3" stroke="#ff85a2" stroke-width="2"/>
-          <circle cx="240" cy="60" r="5" fill="#ff477e"/>
-          <circle cx="240" cy="60" r="9" fill="#ff477e" opacity="0.35"/>
-          <text x="210" y="25" fill="#ffd1dc" font-size="11" font-weight="bold">🇹🇭 Tailandia</text>
+        <g opacity="0.9">
+          <path d="M 235 30 L 265 38 C 275 55, 260 75, 250 95 C 245 110, 240 130, 230 130 C 220 120, 228 90, 222 70 C 218 55, 220 40, 235 30 Z" fill="#ff85a2" opacity="0.35" stroke="#ff85a2" stroke-width="2.5"/>
+          <circle cx="242" cy="62" r="6" fill="#ff477e"/>
+          <circle cx="242" cy="62" r="11" fill="#ff477e" opacity="0.35"/>
+          <text x="205" y="20" fill="#ffd1dc" font-size="12" font-weight="bold">🇹🇭 Tailandia</text>
         </g>
-        <path d="M 236 58 Q 150 10, 64 63" stroke="#ffd1dc" stroke-width="2.5" stroke-dasharray="5 4" fill="none"/>
-        <g transform="translate(145, 20) rotate(-170)"><text font-size="16">✈️</text></g>
+        <path d="M 238 58 Q 150 0, 62 65" stroke="#ffd1dc" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+        <g transform="translate(145, 10) rotate(-165)"><text font-size="18">✈️</text></g>
       </svg>
 
       <div class="content-box-original" style="margin-bottom: 8px;">
-        <span class="es-main">Hay gente que piensa que las relaciones a distancia no funcionan. Yo prefiero demostrar lo contrario contigo. ❤️</span>
-        <span class="th-sub">มีหลายคนที่คิดว่าความสัมพันธ์ทางไกลไปไม่รอด แต่เค้าอยากพิสูจน์สิ่งตรงกันข้ามกับแฟนนะ</span>
+        <span class="es-main">Hay gente que piensa que las relaciones a distancia no funcionan. Yo prefiero demostrar lo contrario contigo. ❤️ (¡Más de 10.000 millas que superamos con ilusión!)</span>
+        <span class="th-sub">มีหลายคนที่คิดว่าความสัมพันธ์ทางไกลไปไม่รอด แต่เค้าอยากพิสูจน์สิ่งตรงกันข้ามกับแฟนนะ (ระยะทางหมื่นกว่าไมล์ของเรา ที่จะเอาชนะไปด้วยกัน อิอิ)</span>
       </div>
 
       <button class="btn-next" onclick="goToSlide('s_distance_feel')">Siguiente (ถัดไป) ➔</button>
@@ -684,7 +677,7 @@
     <div class="slide" id="s3">
       <div class="koala-container"><div class="cute-koala">🐨💖</div></div>
       <div class="content-box-original">
-        <span class="es-main">Gracias por estar conmigo, por cuidarme y por hacerne sentir tan querida.</span>
+        <span class="es-main">Gracias por estar conmigo, por cuidarme y por hacerme sentir tan querida.</span>
         <span class="th-sub">ขอบคุณที่อยู่กับเค้า คอยดูแล และทำให้เค้ารู้สึกว่าตัวเองเป็นคนที่ได้รับความรักนะ</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s4')">Siguiente (ถัดไป) ➔</button>
@@ -733,11 +726,11 @@
       <button class="btn-next" onclick="goToSlide('s_music')">Escuchar canción ✨</button>
     </div>
 
-    <!-- 🎶 SLIDE 5: YOUTUBE MUSIC -->
+    <!-- 🎶 SLIDE 5: YOUTUBE MUSIC (ปรับแก้ข้อความตามบรีฟ) -->
     <div class="slide" id="s_music">
       <div class="content-box-original" style="margin-bottom: 6px;">
-        <span class="es-main" style="font-size: 0.92rem;">Cada vez que escucho esta canción me acuerdo de ti. ❤️</span>
-        <span class="th-sub">ทุกครั้งที่ฟังเพลงนี้ เค้าจะนึกถึงแฟนตลอดเลย ♡</span>
+        <span class="es-main" style="font-size: 0.92rem;">Quiero que escuches esta canción con atención. Me encanta escucharla, aunque tenga que tirar de Google Translator para entenderlo todo. ❤️</span>
+        <span class="th-sub">อยากให้แฟนตั้งใจฟังเพลงนี้นะ เค้าชอบฟังเพลงนี้มากๆ ถึงแม้บางทีจะต้องเปิดกูเกิลทรานสเลเตอร์แปลก็ตาม อิอิ ♡</span>
       </div>
 
       <div class="music-card-box">
@@ -779,7 +772,7 @@
       </div>
 
       <div class="big-love-text">
-        Te quiero, mi Fan ❤️
+        Te amo, mi Fan ❤️
       </div>
 
       <div class="action-buttons">
@@ -816,8 +809,9 @@
         <p style="margin-top: 8px;">Espero que algún día podamos ver este momento juntos y reírnos de toda la distancia que tuvimos que superar.</p>
         <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">หวังว่าสักวันหนึ่งเราจะได้มานั่งดูช่วงเวลานี้ด้วยกัน แล้วหัวเราะให้กับระยะทางทั้งหมดที่เราผ่านพ้นมาด้วยกันนะ</p>
         
-        <p style="font-weight: bold; color: #ff4b72; margin-top: 10px;">¡Te quiero muchísimo! 🥰✨</p>
-        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">รักแฟนมากๆ เลยนะ 🥰✨</p>
+        <!-- ปรับเปลี่ยนเป็น Te amo ตามบรีฟ -->
+        <p style="font-weight: bold; color: #ff4b72; margin-top: 10px;">¡Te amo muchísimo! 🥰✨</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">รักแฟนที่สุดในโลกเลยนะ 🥰✨</p>
       </div>
     </div>
   </div>
