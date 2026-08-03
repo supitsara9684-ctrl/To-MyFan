@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Para Alejandro ♡</title>
+  <title>Para mi Fan ♡</title>
   <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +45,37 @@
       width: 100%; height: 100%;
       z-index: 1;
       pointer-events: none;
+    }
+
+    /* 🎵 Floating Music Toggle Button */
+    .music-btn-floating {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 99;
+      background: rgba(255, 133, 162, 0.85);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      color: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .music-btn-floating.playing {
+      animation: spinMusicBtn 3s linear infinite;
+      background: #ff477e;
+    }
+
+    @keyframes spinMusicBtn {
+      100% { transform: rotate(360deg); }
     }
 
     /* Main Container Glass Card */
@@ -89,9 +120,10 @@
 
     /* 🔒 PASSCODE LOCK */
     .passcode-icon {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 8px;
       animation: pulseLock 2s infinite ease-in-out;
+      transition: all 0.3s ease;
     }
 
     @keyframes pulseLock {
@@ -120,6 +152,7 @@
       padding: 10px 14px;
       border-radius: 16px;
       border: 1px dashed rgba(255, 255, 255, 0.25);
+      transition: all 0.3s ease;
     }
 
     .keypad-container {
@@ -177,8 +210,8 @@
     .shake { animation: shakeAnim 0.4s ease-in-out; }
     @keyframes shakeAnim {
       0%, 100% { transform: translateX(0); }
-      20%, 60% { transform: translateX(-10px); }
-      40%, 80% { transform: translateX(10px); }
+      20%, 60% { transform: translateX(-12px); }
+      40%, 80% { transform: translateX(12px); }
     }
 
     /* General Typography */
@@ -207,7 +240,7 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    .btn-choice-group { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
+    .btn-choice-group { display: flex; justify-content: center; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
     .btn-love { background: linear-gradient(135deg, #ff477e, #ff0055); }
     .btn-not-love { background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4); }
 
@@ -217,6 +250,36 @@
       0% { left: -60px; transform: rotate(0deg); }
       50% { transform: rotate(5deg) translateY(-3px); }
       100% { left: 100%; transform: rotate(0deg); }
+    }
+
+    /* 🪐 ARIES & SPACE SLIDE SPECIAL ANIMATION */
+    .aries-icon-box {
+      font-size: 3.5rem;
+      margin-bottom: 8px;
+      animation: floatAries 3s ease-in-out infinite;
+    }
+
+    @keyframes floatAries {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-10px) rotate(3deg); }
+    }
+
+    .bounce-dukdik {
+      display: inline-block;
+      animation: dukdikAnim 0.6s infinite alternate cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: rgba(255, 117, 143, 0.3);
+      padding: 10px 16px;
+      border-radius: 20px;
+      border: 1.5px dashed #ff85a2;
+      color: #ffe5ec;
+      font-size: 1.15rem;
+      font-weight: bold;
+      margin-top: 14px;
+    }
+
+    @keyframes dukdikAnim {
+      0% { transform: scale(0.95) rotate(-2deg); }
+      100% { transform: scale(1.08) rotate(2deg); }
     }
 
     /* MAP SILHOUETTE */
@@ -285,7 +348,7 @@
       border: 0;
     }
 
-    /* 💌 FINAL CARD SLIDE & CUTE ANIMATED CHARACTERS (KOALA & MONKEY) */
+    /* 💌 FINAL CARD SLIDE & CUTE ANIMATED CHARACTERS */
     .illustration-box {
       background: linear-gradient(135deg, #ffeef2 0%, #ffd3e0 100%);
       border-radius: 24px;
@@ -364,7 +427,23 @@
       gap: 8px;
     }
 
-    .cute-tagline { font-size: 1.05rem; color: #ff6b8b; font-weight: 500; margin-bottom: 4px; }
+    /* Cute Signature Text */
+    .cute-tagline { 
+      font-family: 'Dancing Script', cursive; 
+      font-size: 1.9rem; 
+      color: #ff4b72; 
+      margin: 18px 0; 
+      font-weight: 700;
+    }
+    
+    .cute-tagline-sub {
+      font-family: 'Itim', sans-serif; 
+      font-size: 0.95rem; 
+      color: #ff758f; 
+      margin-top: 2px; 
+      font-weight: normal;
+    }
+
     .sender-tag { font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: #724c52; margin-top: 4px; }
 
     .action-buttons {
@@ -459,6 +538,16 @@
 </head>
 <body>
 
+  <!-- Background Music Element -->
+  <audio id="bgmAudio" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112191.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Floating Music Toggle Button -->
+  <button class="music-btn-floating" id="musicBtn" onclick="toggleBgm()" title="Música de fondo">
+    <i class="fa-solid fa-music"></i>
+  </button>
+
   <canvas id="starCanvas"></canvas>
   <div class="floating-hearts" id="heartsBg"></div>
 
@@ -466,12 +555,14 @@
     
     <!-- 🔒 SLIDE 0: PASSCODE LOCK -->
     <div class="slide active" id="s_passcode">
-      <div class="passcode-icon">🔐💖</div>
+      <div class="passcode-icon" id="passIcon">🔐💖</div>
       <div class="passcode-header">Enter Our Password</div>
       
       <div class="hint-box" id="hintText">
         ¿Recuerdas nuestro aniversario, mi amor? 😡<br>
-        <span style="font-size: 0.82rem; opacity: 0.85;">(ถ้ารักกันจริงต้องจำวันครบรอบได้สิคะ!)</span>
+        <span style="font-size: 0.85rem; color: #ffccd5; font-weight: bold; display: block; margin-top: 4px;">
+          (ถ้าลืมวันครบรอบก็ไม่ต้องเข้าไปดูข้างในเลยนะ! 😡😡😡)
+        </span>
       </div>
 
       <div class="keypad-container">
@@ -499,6 +590,37 @@
           <button class="key-btn action-btn" onclick="pressKey('*')">*</button>
           <button class="key-btn" onclick="pressKey('0')">0</button>
           <button class="key-btn action-btn" onclick="deleteKey()">⌫</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🌌 SLIDE ARIES & SPACE (ฉากใหม่เรื่องราศีเมษและดาวประจำตัว) -->
+    <div class="slide" id="s_aries">
+      <div class="aries-icon-box">♈️✨🪐</div>
+      <div class="cute-text">
+        <span class="es-text">¿Sabías por qué elegí este fondo del espacio? 🌌</span>
+        <span class="th-sub">( รู้ไหมทำไมเค้าถึงเลือกพื้นหลังธีมอวกาศดาวตกแบบนี้? )</span>
+      </div>
+
+      <div class="hint-box" style="margin-bottom: 12px; background: rgba(255, 133, 162, 0.25); border-color: rgba(255, 255, 255, 0.4);">
+        <span style="font-size: 0.98rem; color: #fff;">
+          เพราะมันคือราศีเมษ (Aries) ดาวประจำตัวของแฟนเลยนะ! ♈️<br>
+          แฟนชอบดวงดาวเหมือนกันใช่ไหมล่ะ? ✨
+        </span>
+      </div>
+
+      <div class="btn-choice-group">
+        <button class="btn-next btn-love" onclick="showDukdikMsg()">Sí, me encanta ♡<br><span style="font-size:0.75rem; font-weight:normal;">(ชอบสิ ชอบมากๆ เลย)</span></button>
+        <button class="btn-next btn-love" onclick="showDukdikMsg()">Sí 😜<br><span style="font-size:0.75rem; font-weight:normal;">(กดชอบอยู่ดี)</span></button>
+      </div>
+
+      <!-- ข้อความเด้งดุ๊กดิ๊กเมื่อกดปุ่ม -->
+      <div id="dukdikArea" style="display: none;">
+        <div class="bounce-dukdik">
+          ¡Avancemos juntos, mi amor! 🚀💖<br>
+          <span style="font-size: 0.88rem; font-weight: normal; display: block; margin-top: 2px;">
+            (เอาล่ะทีนี้ ไปกันต่อได้เลย mi amor! 🚀✨)
+          </span>
         </div>
       </div>
     </div>
@@ -639,15 +761,19 @@
       </div>
 
       <div class="thai-translation">
-        (ขอบคุณที่เข้ามาในชีวิต ขอบคุณที่เลือกกัน<br>และขอบคุณที่เป็นเธอนะคะ)
+        (ขอบคุณที่เข้ามาในชีวิต ขอบคุณที่เลือกกัน<br>และขอบคุณที่เป็นแฟนนะคะ)
       </div>
 
       <div class="big-love-text">
-        Te amo, Alejandro ❤️
+        Te amo, mi Fan ❤️
       </div>
 
+      <!-- CUTE FONT TEXT -->
       <div class="cute-tagline">
-        renita rak Alejandro eiei ✨
+        Renita rak Alejandro eiei ✨
+        <div class="cute-tagline-sub">
+          (Renita ama a Alejandro)
+        </div>
       </div>
 
       <div class="sender-tag">
@@ -674,12 +800,12 @@
         Para Mi Amor 💌
       </h3>
       <div class="modal-body">
-        <p>¡Hola mi amor! 💖</p>
-        <p>จดหมายฉบับนี้ทำขึ้นมาด้วยความรักทั้งหมดที่มีให้เธอเลยนะ</p>
+        <p>¡Hola mi Fan! 💖</p>
+        <p>จดหมายฉบับนี้ทำขึ้นมาด้วยความรักทั้งหมดที่มีให้แฟนเลยนะ</p>
         <br>
-        <p>ขอบคุณสำหรับทุกๆ วันที่อยู่เคียงข้างกัน ขอบคุณที่เป็นรอยยิ้ม และขอบคุณที่คอยดูแลอย่างดีเสมอมา ถึงเราจะอยู่ไกลกันแต่เค้ารู้สึกได้ถึงความรักของเธอตลอดเลยนะ</p>
+        <p>ขอบคุณสำหรับทุกๆ วันที่อยู่เคียงข้างกัน ขอบคุณที่เป็นรอยยิ้ม และขอบคุณที่คอยดูแลอย่างดีเสมอมา ถึงเราจะอยู่ไกลกันแต่เค้ารู้สึกได้ถึงความรักของแฟนตลอดเลยนะ</p>
         <br>
-        <p>¡Te amo muchísimo! รักที่สุดในโลกเลยค่ะ 🥰✨</p>
+        <p>¡Te amo muchísimo! รักแฟนที่สุดในโลกเลยค่ะ 🥰✨</p>
       </div>
     </div>
   </div>
@@ -687,11 +813,36 @@
   <script>
     let currentSlideId = 's_passcode';
 
+    /* BACKGROUND MUSIC LOGIC */
+    const bgm = document.getElementById('bgmAudio');
+    const musicBtn = document.getElementById('musicBtn');
+    let isBgmPlaying = false;
+    bgm.volume = 0.35;
+
+    function playBgm() {
+      bgm.play().then(() => {
+        isBgmPlaying = true;
+        musicBtn.classList.add('playing');
+      }).catch(e => console.log("Autoplay waiting for click"));
+    }
+
+    function toggleBgm() {
+      if (isBgmPlaying) {
+        bgm.pause();
+        isBgmPlaying = false;
+        musicBtn.classList.remove('playing');
+      } else {
+        playBgm();
+      }
+    }
+
     /* PASSCODE LOGIC */
     const CORRECT_PASS = "18022026";
     let inputPass = "";
 
     function pressKey(val) {
+      if (!isBgmPlaying) playBgm();
+
       if (inputPass.length < 8) {
         inputPass += val;
         updateDots();
@@ -719,15 +870,31 @@
       });
     }
 
+    /* สุ่มคำพูดงอนๆ + หน้าบูด ตอนรหัสผิด */
+    const poutingMessages = [
+      { es: "¿Cómo que te equivocaste? 😤", th: "ใส่รหัสผิดได้ไงเนี่ย! งอนแล้วนะ 😤<br>ใส่ใหม่อีกทีเลยค่ะ!" },
+      { es: "¿¡Olvidaste nuestra fecha!? 😡", th: "ลืมวันครบรอบของเราเหรอเนี่ย!? 😡<br>เค้าจะบูดแล้วนะ กดใหม่อีกรอบเลย!" },
+      { es: "¡Incorrecto! Mi Fan feo 🥺", th: "ผิดเฉยเลย! แฟนใจร้าย 🥺<br>ตั้งสติแล้วลองใส่อีกทีน้า" },
+      { es: "¡No te creo! Inténtalo otra vez 😤", th: "ไม่จริงอะ กดผิดได้ไงเนี่ย! 😤<br>งอนแล้ว! กดใหม่อีกรอบเลยค่ะ" }
+    ];
+
+    const poutIcons = ["😤", "😡", "🥺", "😖", "😠"];
+
     function checkPasscode() {
       if (inputPass === CORRECT_PASS) {
-        goToSlide('s1');
+        goToSlide('s_aries'); // ปลดล็อกแล้วไปที่หน้า Aries & Space ก่อน
       } else {
         const card = document.getElementById('cardContainer');
         const hint = document.getElementById('hintText');
+        const icon = document.getElementById('passIcon');
         
+        const randomPout = poutingMessages[Math.floor(Math.random() * poutingMessages.length)];
+        const randomIcon = poutIcons[Math.floor(Math.random() * poutIcons.length)];
+
         card.classList.add('shake');
-        hint.innerHTML = "<span style='color:#ff477e; font-weight:bold;'>¿Olvidaste la fecha? 😡</span><br>ลองกดใหม่อีกทีเลยค่ะ (18/02/2026)";
+        icon.innerHTML = randomIcon + "💔";
+        
+        hint.innerHTML = `<span style='color:#ff477e; font-weight:bold; font-size: 1.05rem;'>${randomPout.es}</span><br><span style='color:#ff85a2; font-size:0.88rem; display:block; margin-top:4px;'>(${randomPout.th})</span>`;
         
         setTimeout(() => {
           card.classList.remove('shake');
@@ -737,10 +904,27 @@
       }
     }
 
+    /* ฟังก์ชันแสดงข้อความดุ๊กดิ๊กแล้วเปลี่ยนหน้า */
+    function showDukdikMsg() {
+      const dukdik = document.getElementById('dukdikArea');
+      dukdik.style.display = 'block';
+      
+      // หน่วงเวลา 1.8 วินาทีให้แฟนอ่านข้อความดุ๊กดิ๊กก่อนพาเข้าสไลด์เนื้อหาหลัก
+      setTimeout(() => {
+        goToSlide('s1');
+      }, 1800);
+    }
+
     function goToSlide(targetId) {
       const current = document.getElementById(currentSlideId);
       current.classList.remove('active');
       
+      if (targetId === 's_music') {
+        bgm.volume = 0.08;
+      } else {
+        bgm.volume = 0.35;
+      }
+
       setTimeout(() => {
         current.style.display = 'none';
         currentSlideId = targetId;
