@@ -3,43 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Hay algo para ti</title>
+  <title>Para Ti ♡</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Montserrat:wght@300;400;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Itim&display=swap');
 
     :root {
-      --bg-dark: #0a0d18;
-      --gold-accent: #f39c12;
+      --pastel-pink: #ffd1dc;
+      --soft-purple: #2a1b3d;
+      --accent-pink: #ff85a2;
+      --gold-sparkle: #fff176;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: var(--bg-dark);
-      color: #e0e0e0;
-      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #1a0c27 0%, #2a1b3d 50%, #4a2e4d 100%);
+      color: #fff;
+      font-family: 'Itim', 'Fredoka', cursive, sans-serif;
       min-height: 100vh;
       overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: background 3.5s ease-in-out;
+      transition: background 3s ease-in-out;
     }
 
-    /* Sunset Beach Background Effect */
-    body.sunset-beach {
-      background: linear-gradient(to top, #f39c12 0%, #e74c3c 35%, #8e44ad 70%, #2c3e50 100%) !important;
-      color: #2c3e50;
+    /* Pastel Sunrise Theme on Final Page */
+    body.sunrise-pastel {
+      background: linear-gradient(180deg, #ffb3c6 0%, #ff85a2 40%, #ffc6ff 70%, #ffe5ec 100%) !important;
+      color: #5c2c3b;
     }
 
-    /* Stars Canvas */
-    canvas#starsCanvas {
+    /* Canvas for Aries Stars & Sparkles */
+    canvas#starCanvas {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
       z-index: 1;
       pointer-events: none;
-      transition: opacity 2s ease;
     }
 
     /* Glass Card Container */
@@ -47,60 +48,63 @@
       position: relative;
       z-index: 10;
       width: 88%;
-      max-width: 440px;
-      padding: 40px 25px 50px 25px;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 24px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      max-width: 420px;
+      padding: 35px 25px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      border-radius: 30px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
       text-align: center;
-      transition: all 1.2s ease;
+      transition: all 1s ease;
     }
 
-    body.sunset-beach .glass-card {
-      background: rgba(255, 255, 255, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    body.sunrise-pastel .glass-card {
+      background: rgba(255, 255, 255, 0.45);
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 20px 40px rgba(255, 133, 162, 0.3);
     }
 
-    /* Wax Seal Button */
+    /* Envelope Wax Seal Start */
     .seal-btn {
-      width: 80px;
-      height: 80px;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #a93226, #641e16);
-      border: 2px solid rgba(243, 156, 18, 0.6);
-      color: #f1c40f;
-      font-family: 'Caveat', cursive;
-      font-size: 1.6rem;
+      background: linear-gradient(135deg, #ff85a2, #ff477e);
+      border: 3px solid #fff;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 600;
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 0 auto;
       cursor: pointer;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
+      box-shadow: 0 10px 25px rgba(255, 71, 126, 0.5);
+      animation: pulse 2s infinite;
       -webkit-tap-highlight-color: transparent;
     }
 
-    .seal-btn:active { transform: scale(0.92); }
-
-    .start-subtitle {
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-top: 20px;
-      opacity: 0.7;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
     }
 
-    /* Slide Transition */
+    .start-subtitle {
+      font-size: 1.1rem;
+      margin-top: 20px;
+      opacity: 0.9;
+      letter-spacing: 1px;
+    }
+
+    /* Slides */
     .slide {
       display: none;
       opacity: 0;
       transform: translateY(15px);
-      transition: opacity 1s ease, transform 1s ease;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     .slide.active {
@@ -109,180 +113,168 @@
       transform: translateY(0);
     }
 
-    /* Cute Handwritten Text Style */
-    .hand-text {
-      font-family: 'Caveat', cursive;
-      font-size: 2rem;
-      line-height: 1.5;
+    .cute-text {
+      font-size: 1.55rem;
+      line-height: 1.6;
       margin-bottom: 25px;
       white-space: pre-line;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
-    body.sunset-beach .hand-text {
-      color: #2c3e50;
-    }
-
-    /* Button */
+    /* Next Button */
     .btn-next {
-      background: transparent;
-      border: 1.5px solid var(--gold-accent);
-      color: var(--gold-accent);
-      font-family: 'Caveat', cursive;
-      font-size: 1.4rem;
-      padding: 8px 24px;
-      border-radius: 20px;
+      background: linear-gradient(135deg, #ff85a2, #ff5c8a);
+      border: none;
+      color: white;
+      font-family: 'Itim', cursive;
+      font-size: 1.25rem;
+      padding: 10px 28px;
+      border-radius: 25px;
       cursor: pointer;
+      box-shadow: 0 6px 18px rgba(255, 92, 138, 0.4);
+      transition: all 0.3s ease;
       outline: none;
-      transition: all 0.3s;
       -webkit-tap-highlight-color: transparent;
     }
 
-    body.sunset-beach .btn-next {
-      border-color: #2c3e50;
-      color: #2c3e50;
-    }
+    .btn-next:active { transform: scale(0.95); }
 
-    .btn-next:active {
-      background: var(--gold-accent);
-      color: #000;
-    }
-
-    /* Cartoon Beach Couple Illustration (SVG) */
-    .beach-couple-svg {
-      width: 180px;
-      height: 110px;
-      margin: 0 auto 10px auto;
-      opacity: 0;
-      transform: scale(0.8);
-      transition: all 1.5s ease 0.5s;
-    }
-
-    .beach-couple-svg.show {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* Waves Animation at bottom */
-    .ocean-waves {
-      position: fixed;
-      bottom: 0; left: 0;
+    /* Cute Riding Bike Cartoon Animation */
+    .moto-container {
       width: 100%;
-      height: 90px;
-      z-index: 2;
-      opacity: 0;
-      transition: opacity 2s ease;
-      pointer-events: none;
+      height: 70px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 15px;
     }
 
-    body.sunset-beach .ocean-waves { opacity: 0.8; }
-
-    .wave {
+    .cute-moto {
+      font-size: 2.8rem;
       position: absolute;
-      bottom: 0; left: 0;
-      width: 200%; height: 100%;
-      background: repeat-x url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0 C150,90 350,-40 500,50 C650,140 900,10 1200,40 L1200,120 L0,120 Z" fill="%23ffffff" opacity="0.3"></path></svg>');
-      animation: waveMove 12s linear infinite;
+      left: -60px;
+      animation: drive 3.5s linear infinite;
     }
 
-    .wave.wave2 {
-      bottom: 5px;
-      animation: waveMove 8s linear infinite reverse;
-      opacity: 0.5;
+    @keyframes drive {
+      0% { left: -60px; transform: rotate(0deg); }
+      25% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+      75% { transform: rotate(-2deg); }
+      100% { left: 100%; transform: rotate(0deg); }
     }
 
-    @keyframes waveMove {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    /* Sunflower & Hearts Burst */
+    .sunflower-box {
+      font-size: 4.5rem;
+      margin-bottom: 10px;
+      animation: bounce 1.8s infinite alternate ease-in-out;
     }
 
-    /* Audio Control Icon */
-    .audio-control {
+    @keyframes bounce {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-12px) scale(1.08); }
+    }
+
+    /* Floating Hearts & Sparkles Container */
+    .floating-hearts {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 20;
+      display: none;
+    }
+
+    .heart-item {
+      position: absolute;
+      font-size: 1.8rem;
+      animation: floatUp 4s linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.5) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.3) rotate(360deg); opacity: 0; }
+    }
+
+    /* Music Control Icon */
+    .music-btn {
       position: fixed;
       top: 20px; right: 20px;
-      z-index: 100;
+      z-index: 99;
+      background: rgba(255,255,255,0.25);
+      border-radius: 50%;
+      width: 42px; height: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
       cursor: pointer;
-      opacity: 0.6;
-      font-size: 1.3rem;
+      backdrop-filter: blur(5px);
     }
   </style>
 </head>
 <body>
 
-  <canvas id="starsCanvas"></canvas>
+  <!-- Aries Constellation Canvas -->
+  <canvas id="starCanvas"></canvas>
 
-  <!-- Waves Effect for Final Page -->
-  <div class="ocean-waves">
-    <div class="wave"></div>
-    <div class="wave wave2"></div>
-  </div>
+  <!-- Floating Hearts & Sparkles for Final Page -->
+  <div class="floating-hearts" id="heartsBg"></div>
 
-  <!-- Audio Toggle -->
-  <div class="audio-control" onclick="toggleAudio()">🎵</div>
+  <!-- Music Control -->
+  <div class="music-btn" onclick="toggleAudio()">🎵</div>
 
-  <!-- Music (Eres Tú Instrumental) -->
-  <audio id="bgMusic" loop preload="auto" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a816a7.mp3?filename=romantic-acoustic-guitar-10875.mp3"></audio>
+  <!-- Modern Pop/Acoustic Instrumental Eres Tú Vibes -->
+  <audio id="bgMusic" loop preload="auto" src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112191.mp3"></audio>
 
-  <div class="glass-card" id="card">
+  <div class="glass-card">
     
     <!-- START / SEAL -->
     <div class="slide active" id="s0">
       <div class="seal-btn" onclick="startExperience()">R × A</div>
-      <div class="start-subtitle">Tap to open</div>
+      <div class="start-subtitle">กดตรงนี้สิคนดี ♡</div>
     </div>
 
     <!-- SLIDE 1 -->
     <div class="slide" id="s1">
-      <div class="hand-text">Hay algo esperándote…</div>
-      <button class="btn-next" onclick="nextSlide(2)">Continuar ➔</button>
+      <div class="moto-container"><div class="cute-moto">🛵💨</div></div>
+      <div class="cute-text">Hay algo esperándote…<br>มีบางอย่างรอเธออยู่นะคะ ♡</div>
+      <button class="btn-next" onclick="nextSlide(2)">ไปต่อกันเลย ➔</button>
     </div>
 
     <!-- SLIDE 2 -->
     <div class="slide" id="s2">
-      <div class="hand-text">Nunca imaginé que alguien tan lejos…<br><br>pudiera sentirse tan cerca.</div>
-      <button class="btn-next" onclick="nextSlide(3)">Continuar ➔</button>
+      <div class="moto-container"><div class="cute-moto">🛵💨</div></div>
+      <div class="cute-text">Nunca imaginé que alguien tan lejos…<br><br>pudiera sentirse tan cerca.<br>ไม่เคยคิดเลยว่าคนที่อยู่ไกลขนาดนี้<br>จะทำให้รู้สึกใกล้ได้ขนาดนี้</div>
+      <button class="btn-next" onclick="nextSlide(3)">กดไปอีกหน่อย ➔</button>
     </div>
 
     <!-- SLIDE 3 -->
     <div class="slide" id="s3">
-      <div class="hand-text">Gracias…<br>por cada sonrisa.<br>por cada llamada.<br>por cada momento.</div>
-      <button class="btn-next" onclick="nextSlide(4)">Continuar ➔</button>
+      <div class="moto-container"><div class="cute-moto">🛵💨</div></div>
+      <div class="cute-text">Gracias…<br>por cada sonrisa.<br>por cada llamada.<br>por cada momento.<br>ขอบคุณสำหรับทุกรอยยิ้มและทุกนาทีเลยนะ</div>
+      <button class="btn-next" onclick="nextSlide(4)">หน้าต่อไปนะ ➔</button>
     </div>
 
     <!-- SLIDE 4 -->
     <div class="slide" id="s4">
-      <div class="hand-text">Dicen que la distancia cambia las cosas…<br><br>Pero nunca cambió lo que siento por ti.</div>
-      <button class="btn-next" onclick="triggerFinal()">Continuar ➔</button>
+      <div class="moto-container"><div class="cute-moto">🛵💨</div></div>
+      <div class="cute-text">Dicen que la distancia cambia las cosas…<br><br>Pero nunca cambió lo que siento por ti.<br>ระยะทางอาจเปลี่ยนหลายอย่าง<br>แต่ไม่เคยเปลี่ยนหัวใจฉันได้เลย</div>
+      <button class="btn-next" onclick="triggerFinal()">เปิดความลับกัน ✨</button>
     </div>
 
     <!-- SLIDE 5 (FINAL) -->
     <div class="slide" id="s5">
-      <!-- Cartoon Couple Sitting on Beach SVG Illustration -->
-      <svg class="beach-couple-svg" id="coupleSvg" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Sun -->
-        <circle cx="100" cy="45" r="22" fill="#f39c12" opacity="0.8"/>
-        <!-- Sea Line -->
-        <path d="M10 80 Q 100 78 190 80" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
-        <!-- Couple Silhouette -->
-        <!-- Girl -->
-        <circle cx="92" cy="58" r="5" fill="#2c3e50"/>
-        <path d="M86 63 C86 63 92 63 94 76 L88 76 Z" fill="#2c3e50"/>
-        <!-- Boy -->
-        <circle cx="108" cy="56" r="5.5" fill="#2c3e50"/>
-        <path d="M102 62 C102 62 108 61 110 76 L104 76 Z" fill="#2c3e50"/>
-        <!-- Heart floating above -->
-        <path d="M100 42 C 100 40, 97 38, 95 40 C 93 42, 95 45, 100 48 C 105 45, 107 42, 105 40 C 103 38, 100 40, 100 42 Z" fill="#e74c3c"/>
-      </svg>
-
-      <div class="hand-text" style="font-size: 1.7rem; margin-bottom: 10px;">
+      <div class="sunflower-box">🌻💖✨</div>
+      <div class="cute-text" style="font-size: 1.45rem; line-height: 1.7;">
         Gracias por aparecer en mi vida.<br>
         Gracias por elegirme.<br>
         Gracias por ser tú.<br>
-        <strong style="font-size: 2.2rem; display: block; margin-top: 10px; color: #b30000;">Te amo.</strong>
+        <strong style="font-size: 2rem; color: #d81b60; display: block; margin-top: 10px;">Te amo. ❤️</strong>
       </div>
-
-      <div class="hand-text" style="font-size: 1.8rem; color: #641e16; margin-top: 10px;">
-        Con amor, Renita. ❤️
+      <div style="font-size: 1.4rem; font-weight: 600; margin-top: 15px; color: #880e4f;">
+        Con todo mi amor, Renita 🌸
       </div>
     </div>
 
@@ -291,11 +283,10 @@
   <script>
     let currentSlide = 0;
 
-    /* Stars Background Animation */
-    const canvas = document.getElementById('starsCanvas');
+    /* Aries Constellation Drawing on Canvas */
+    const canvas = document.getElementById('starCanvas');
     const ctx = canvas.getContext('2d');
-    let stars = [];
-
+    
     function resizeCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -303,32 +294,67 @@
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    for(let i = 0; i < 100; i++) {
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 1.5,
-        alpha: Math.random(),
-        speed: Math.random() * 0.02 + 0.005
+    // Aries Star Coordinates (Normalized)
+    const ariesStars = [
+      {x: 0.35, y: 0.28, r: 4, name: 'Hamal'},
+      {x: 0.48, y: 0.32, r: 3.5, name: 'Sheratan'},
+      {x: 0.58, y: 0.36, r: 3, name: 'Mesarthim'},
+      {x: 0.68, y: 0.42, r: 2.5, name: '41 Ari'}
+    ];
+
+    let backgroundStars = [];
+    for(let i=0; i<80; i++){
+      backgroundStars.push({
+        x: Math.random(),
+        y: Math.random(),
+        r: Math.random() * 1.8,
+        alpha: Math.random()
       });
     }
 
-    function animateStars() {
+    function drawStars() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#ffffff";
-      stars.forEach(star => {
-        star.alpha += star.speed;
-        if (star.alpha > 1 || star.alpha < 0) star.speed = -star.speed;
-        ctx.globalAlpha = Math.abs(star.alpha);
+      
+      // Background Twinkling Stars
+      backgroundStars.forEach(s => {
+        s.alpha += (Math.random() - 0.5) * 0.05;
+        if(s.alpha < 0.2) s.alpha = 0.2;
+        if(s.alpha > 0.9) s.alpha = 0.9;
+        ctx.fillStyle = `rgba(255, 209, 220, ${s.alpha})`;
         ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.arc(s.x * canvas.width, s.y * canvas.height, s.r, 0, Math.PI*2);
         ctx.fill();
       });
-      requestAnimationFrame(animateStars);
-    }
-    animateStars();
 
-    /* Audio Toggle */
+      // Draw Aries Lines
+      ctx.strokeStyle = "rgba(255, 182, 193, 0.5)";
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      for(let i=0; i<ariesStars.length-1; i++){
+        ctx.moveTo(ariesStars[i].x * canvas.width, ariesStars[i].y * canvas.height);
+        ctx.lineTo(ariesStars[i+1].x * canvas.width, ariesStars[i+1].y * canvas.height);
+      }
+      ctx.stroke();
+
+      // Draw Aries Main Stars with Glow
+      ariesStars.forEach(s => {
+        const sx = s.x * canvas.width;
+        const sy = s.y * canvas.height;
+
+        ctx.shadowBlur = 12;
+        ctx.shadowColor = "#fff176";
+        ctx.fillStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.arc(sx, sy, s.r, 0, Math.PI*2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      });
+
+      requestAnimationFrame(drawStars);
+    }
+    drawStars();
+
+    /* Music Control */
     function startAudio() {
       const audio = document.getElementById('bgMusic');
       if (audio.paused) audio.play().catch(() => {});
@@ -354,7 +380,25 @@
         const next = document.getElementById(`s${num}`);
         next.style.display = 'block';
         setTimeout(() => next.classList.add('active'), 50);
-      }, 500);
+      }, 400);
+    }
+
+    /* Final Page Effects: Hearts & Sparkles Burst */
+    function createHearts() {
+      const container = document.getElementById('heartsBg');
+      container.style.display = 'block';
+      const symbols = ['💖', '🌸', '🌻', '✨', '💕', '💗'];
+
+      setInterval(() => {
+        const heart = document.createElement('div');
+        heart.className = 'heart-item';
+        heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+        heart.style.left = Math.random() * 90 + 5 + 'vw';
+        heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+        container.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 4000);
+      }, 250);
     }
 
     function triggerFinal() {
@@ -365,18 +409,17 @@
         document.getElementById(`s${currentSlide}`).style.display = 'none';
         currentSlide = 5;
         
-        // Background change to Sunset Beach
-        document.body.classList.add('sunset-beach');
-        document.getElementById('starsCanvas').style.opacity = '0';
+        // Change Theme to Pastel Sunrise
+        document.body.classList.add('sunrise-pastel');
         
         const finalSlide = document.getElementById('s5');
         finalSlide.style.display = 'block';
         
         setTimeout(() => {
           finalSlide.classList.add('active');
-          document.getElementById('coupleSvg').classList.add('show');
-        }, 300);
-      }, 500);
+          createHearts();
+        }, 200);
+      }, 400);
     }
   </script>
 </body>
