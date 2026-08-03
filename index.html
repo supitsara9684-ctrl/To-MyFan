@@ -83,7 +83,7 @@
       position: relative;
       z-index: 10;
       width: 100%;
-      max-width: 400px;
+      max-width: 410px;
       padding: 24px 20px;
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(18px);
@@ -211,13 +211,13 @@
       40%, 80% { transform: translateX(12px); }
     }
 
-    /* Original Long Content Structured Boxes */
+    /* Long Content Structured Boxes */
     .content-box-original {
       background: rgba(255, 255, 255, 0.08);
       border: 1.5px dashed rgba(255, 255, 255, 0.3);
       border-radius: 18px;
       padding: 14px 16px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       text-align: left;
     }
 
@@ -227,23 +227,26 @@
     }
 
     .es-main {
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       font-weight: 500;
       color: #fff;
       line-height: 1.45;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       display: block;
     }
     body.sunrise-pastel .es-main { color: #5d4037; }
 
     .th-sub {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: #ffe5ec;
       line-height: 1.4;
       display: block;
       opacity: 0.95;
+      border-top: 1px dotted rgba(255,255,255,0.2);
+      padding-top: 5px;
+      margin-top: 4px;
     }
-    body.sunrise-pastel .th-sub { color: #8c6d73; }
+    body.sunrise-pastel .th-sub { color: #8c6d73; border-top-color: rgba(255,192,203,0.5); }
 
     .btn-next {
       background: linear-gradient(135deg, #ff85a2, #ff5c8a);
@@ -263,8 +266,8 @@
     .btn-love { background: linear-gradient(135deg, #ff477e, #ff0055); }
     .btn-not-love { background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4); }
 
-    .koala-container { width: 100%; height: 40px; position: relative; overflow: hidden; margin-bottom: 4px; }
-    .cute-koala { font-size: 2.3rem; position: absolute; left: -50px; animation: koalaWalk 4s linear infinite; }
+    .koala-container { width: 100%; height: 38px; position: relative; overflow: hidden; margin-bottom: 2px; }
+    .cute-koala { font-size: 2.2rem; position: absolute; left: -50px; animation: koalaWalk 4s linear infinite; }
     @keyframes koalaWalk {
       0% { left: -50px; transform: rotate(0deg); }
       50% { transform: rotate(5deg) translateY(-2px); }
@@ -281,7 +284,7 @@
     }
 
     .aries-icon-box {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       margin-bottom: 2px;
       animation: floatAries 3s ease-in-out infinite;
     }
@@ -319,7 +322,7 @@
     .map-svg {
       width: 100%;
       max-width: 280px;
-      height: 95px;
+      height: 90px;
       margin: 0 auto 8px auto;
       background: rgba(255, 255, 255, 0.08);
       border-radius: 14px;
@@ -332,7 +335,7 @@
       background: #ffffff;
       border-radius: 16px;
       padding: 10px;
-      margin: 6px 0 12px 0;
+      margin: 4px 0 10px 0;
       box-shadow: 0 6px 15px rgba(255, 182, 193, 0.4);
       border: 2px solid #ffe3ec;
       color: #4a2e4d;
@@ -367,7 +370,7 @@
     .youtube-container {
       position: relative;
       width: 100%;
-      padding-bottom: 50%;
+      padding-bottom: 48%;
       height: 0;
       border-radius: 12px;
       overflow: hidden;
@@ -385,9 +388,9 @@
     .illustration-box {
       background: linear-gradient(135deg, #ffeef2 0%, #ffd3e0 100%);
       border-radius: 18px;
-      padding: 12px 8px;
+      padding: 10px 8px;
       position: relative;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       border: 2px solid rgba(255, 255, 255, 0.9);
       box-shadow: inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 12px rgba(255, 133, 162, 0.2);
     }
@@ -397,12 +400,12 @@
       justify-content: center;
       align-items: center;
       gap: 10px;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
-    .char-koala { font-size: 2.6rem; animation: danceKoala 1.6s infinite ease-in-out; display: inline-block; }
-    .char-monkey { font-size: 2.6rem; animation: danceMonkey 1.6s infinite ease-in-out; display: inline-block; }
-    .heart-center { font-size: 1.5rem; animation: pulseHeart 1.2s infinite ease-in-out; display: inline-block; margin: 0 -3px; }
+    .char-koala { font-size: 2.4rem; animation: danceKoala 1.6s infinite ease-in-out; display: inline-block; }
+    .char-monkey { font-size: 2.4rem; animation: danceMonkey 1.6s infinite ease-in-out; display: inline-block; }
+    .heart-center { font-size: 1.4rem; animation: pulseHeart 1.2s infinite ease-in-out; display: inline-block; margin: 0 -3px; }
 
     @keyframes danceKoala {
       0%, 100% { transform: translateY(0) rotate(-6deg); }
@@ -421,22 +424,22 @@
 
     .big-love-text {
       font-family: 'Dancing Script', cursive;
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       color: #ff4b72;
-      margin: 10px 0;
+      margin: 8px 0;
     }
 
     .action-buttons {
       display: flex;
       gap: 10px;
       justify-content: center;
-      margin-top: 14px;
+      margin-top: 10px;
     }
 
     .btn-pill {
       background: #ffffff;
       border: 1.5px solid #ffccd5;
-      padding: 9px 16px;
+      padding: 8px 14px;
       border-radius: 20px;
       color: #5a4045;
       font-size: 0.9rem;
@@ -583,13 +586,13 @@
       </div>
 
       <div class="content-box-original">
-        <span class="es-main">¿Sabías por qué elegí este fondo del espacio? 🌌</span>
-        <span class="th-sub">(รู้มั้ยคะว่าทำไมเค้าถึงเลือกพื้นหลังธีมอวกาศดาวตกแบบนี้?)</span>
+        <span class="es-main">¿Sabías por qué elegí este fondo del espacio con estrellas fugaces y luces de colores tan hermosas para ti? 🌌✨</span>
+        <span class="th-sub">รู้มั้ยคะว่าทำไมเค้าถึงตั้งใจเลือกพื้นหลังธีมอวกาศและหมู่ดาวตกที่ระยิบระยับสวยงามแบบนี้ให้แฟน?</span>
       </div>
 
       <div class="content-box-original" style="background: rgba(255, 133, 162, 0.25); border-color: rgba(255, 255, 255, 0.4);">
-        <span class="es-main" style="color: #ffd1dc;">¡Porque es Aries, tu signo zodiacal! ♈️✨<br>Te encantan las estrellas, ¿verdad, mi amor? 🌟</span>
-        <span class="th-sub" style="color: #ffe5ec;">(ก็เพราะมันคือราศีเมษ ราศีของแฟนเองค่ะ! ♈️)</span>
+        <span class="es-main" style="color: #ffd1dc;">¡Porque es Aries, tu signo zodiacal! ♈️✨ Sé cuánto te encantan las estrellas y mirar el cielo nocturno, mi amor. 🌟</span>
+        <span class="th-sub" style="color: #ffe5ec;">ก็เพราะมันคือราศีเมษ ราศีของแฟนเองค่ะ! ♈️ เเค้ารู้ว่าแฟนชอบดูดวงดาวและท้องฟ้ายามค่ำคืนมากแค่ไหน</span>
       </div>
 
       <div class="btn-choice-group">
@@ -606,8 +609,8 @@
     <div class="slide" id="s1">
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
       <div class="content-box-original">
-        <span class="es-main">Tengo algo muy especial para ti, mi Fan ♡</span>
-        <span class="th-sub">(เค้ามีอะไรพิเศษๆ จะเซอร์ไพรส์แฟนด้วยน้า ♡)</span>
+        <span class="es-main">Tengo algo muy especial guardado en mi corazón para decirte hoy, mi Fan ♡ Eres una de las mejores sorpresas que la vida me ha dado.</span>
+        <span class="th-sub">เค้ามีเรื่องราวพิเศษมากๆ ที่เก็บไว้ในใจอยากจะบอกแฟนในวันนี้ค่ะ ♡ แฟนคือหนึ่งในเซอร์ไพรส์ที่ดีที่สุดที่ชีวิตนี้มอบให้เค้าเลยนะ</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s2')">Siguiente (ถัดไป) ➔</button>
     </div>
@@ -632,13 +635,13 @@
       </svg>
 
       <div class="content-box-original" style="margin-bottom: 8px;">
-        <span class="es-main">"Ríndete, la distancia no funciona"... 💔</span>
-        <span class="th-sub">(ใครๆ ก็บอกว่ารักทางไกลไม่มีทางรอด...)</span>
+        <span class="es-main">Muchos dicen: "Ríndete, la distancia entre España y Tailandia es demasiado y no funciona"... 💔</span>
+        <span class="th-sub">หลายคนมักจะพูดว่า: "ยอมแพ้เถอะ ระยะทางระหว่างสเปนกับไทยมันไกลเกินไปและไม่มีทางรอดหรอก"...</span>
       </div>
 
       <div class="content-box-original" style="margin-bottom: 12px;">
-        <span class="es-main">¡Te demostraré que mi amor es fiel hasta que se rindan! 🔥💖</span>
-        <span class="th-sub">(แต่เค้าจะทำให้เห็นเองว่าเราจะอยู่ด้วยกันตลอดไป! 🔥✨)</span>
+        <span class="es-main">¡Pero yo te demostraré que mi amor es tan fuerte y fiel que superará cualquier obstáculo hasta que todos se rindan! 🔥💖</span>
+        <span class="th-sub">แต่เค้าจะทำให้ทุกคนเห็นเองว่าความรักของเรามั่นคงและแข็งแกร่งพอที่จะเอาชนะทุกอุปสรรคจนกว่าทุกคนจะต้องยอมแพ้!</span>
       </div>
 
       <button class="btn-next" onclick="goToSlide('s_distance_feel')">Siguiente (ถัดไป) ➔</button>
@@ -648,13 +651,13 @@
     <div class="slide" id="s_distance_feel">
       <div class="koala-container"><div class="cute-koala">🐨🥺</div></div>
       <div class="content-box-original" style="margin-bottom: 8px;">
-        <span class="es-main">Perdón por hacerte sentir solo a veces... 🥺</span>
-        <span class="th-sub">(ขอโทษนะคะที่บางทีทำให้รู้สึกเหงา...)</span>
+        <span class="es-main">Perdón por hacerte sentir solo a veces o cuando la diferencia de horas nos quita tiempo de estar juntos... 🥺</span>
+        <span class="th-sub">ขอโทษนะคะที่บางครั้งทำให้แฟนต้องรู้สึกเหงา หรือเวลาที่เราติดเรื่องเวลาที่ต่างกันจนทำให้เรามีเวลาคุยกันน้อยลง...</span>
       </div>
 
       <div class="content-box-original" style="margin-bottom: 12px;">
-        <span class="es-main">Haré todo lo posible por estar cerca. ¡Espérame! 💖</span>
-        <span class="th-sub">(จะทำทุกอย่างให้อยู่ใกล้แฟนนะ รอเค้าหน่อยน้า 🥺💕)</span>
+        <span class="es-main">Te prometo que haré todo lo posible por acortar esta distancia. ¡Espérame un poco más, mi amor! 💖</span>
+        <span class="th-sub">เค้าสัญญาว่าจะทำทุกวิถีทางเพื่อย่นระยะทางนี้ให้สั้นลง รอเค้าอีกนิดนึงนะคะคนดี!</span>
       </div>
 
       <button class="btn-next" onclick="goToSlide('s3')">Siguiente (ถัดไป) ➔</button>
@@ -664,8 +667,8 @@
     <div class="slide" id="s3">
       <div class="koala-container"><div class="cute-koala">🐨💖</div></div>
       <div class="content-box-original">
-        <span class="es-main">Gracias por ser el mejor novio del mundo, por cada sonrisa y por cuidarme.</span>
-        <span class="th-sub">(ขอบคุณที่เป็นแฟนที่ดีที่สุด ขอบคุณสำหรับทุกรอยยิ้มและการดูแลนะคคะ)</span>
+        <span class="es-main">Gracias por ser el novio más maravilloso del mundo, por cada risa compartida, por tu paciencia infinita y por cuidarme siempre con tanto cariño.</span>
+        <span class="th-sub">ขอบคุณสำหรับการเป็นแฟนที่มหัศจรรย์ที่สุดในโลก ขอบคุณสำหรับเสียงหัวเราะ ความอดทนที่มีให้กันเสมอ และการดูแลเอาใจใส่เค้าเป็นอย่างดีมาโดยตลอดนะคะ</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s4')">Siguiente (ถัดไป) ➔</button>
     </div>
@@ -674,8 +677,8 @@
     <div class="slide" id="s4">
       <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
       <div class="content-box-original">
-        <span class="es-main">La distancia es solo un número... porque tú lo eres todo para mí.</span>
-        <span class="th-sub">(ระยะทางก็เป็นแค่ตัวเลข... เพราะสำหรับเค้าแฟนคือทุกสิ่งค่ะ)</span>
+        <span class="es-main">La distancia física es solo un número en el mapa... porque en mi corazón y en mi mente, tú lo eres absolutamente todo.</span>
+        <span class="th-sub">ระยะทางทางกายภาพก็เป็นเพียงแค่ตัวเลขบนแผนที่เท่านั้น... เพราะลึกๆ ในหัวใจและในความรู้สึกของเค้า แฟนคือทุกสิ่งทุกอย่างเลยค่ะ</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s_question')">Pregunta (คำถาม) ✨ ➔</button>
     </div>
@@ -684,8 +687,8 @@
     <div class="slide" id="s_question">
       <div class="koala-container"><div class="cute-koala">🐨❓</div></div>
       <div class="content-box-original">
-        <span class="es-main">¿Me amas, mi Fan? ❤️</span>
-        <span class="th-sub">(แฟนรักเค้ามั้ยคะเนี่ย?)</span>
+        <span class="es-main">Dime la verdad... ¿Me amas tanto como yo te amo a ti, mi Fan? ❤️</span>
+        <span class="th-sub">บอกความจริงเค้ามาซะดีๆ... แฟนรักเค้ามากเท่าที่เค้ารักแฟนไหมคะเนี่ย?</span>
       </div>
       <div class="btn-choice-group">
         <button class="btn-next btn-love" onclick="goToSlide('s_love')" style="font-size: 0.95rem; padding: 8px 16px;">Sí, te amo ❤️</button>
@@ -697,8 +700,8 @@
     <div class="slide" id="s_love">
       <div class="koala-container"><div class="cute-koala">🐨🥰</div></div>
       <div class="content-box-original">
-        <span class="es-main">¡Ya lo sabía! Te amo muchísimo 😜💖</span>
-        <span class="th-sub">(รู้อยู่แล้วล่ะสิคะ! เค้าก็รักแฟนมากๆ เหมือนกัน 🥰)</span>
+        <span class="es-main">¡Jeje, ya lo sabía! Yo también te amo con todo mi corazón, muchísimo más de lo que las palabras pueden explicar 😜💖</span>
+        <span class="th-sub">หึๆ รู้อยู่แล้วล่ะสิคะ! เค้าก็รักแฟนด้วยหัวใจทั้งหมดเหมือนกัน มากกว่าที่คำพูดใดๆ จะอธิบายได้เลย 🥰</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s_music')">Nuestra canción 🎶</button>
     </div>
@@ -707,17 +710,17 @@
     <div class="slide" id="s_not_love">
       <div class="koala-container"><div class="cute-koala">🐨😜</div></div>
       <div class="content-box-original">
-        <span class="es-main">¡Mentira! Sé que me amas mucho, mi Fan 😚</span>
-        <span class="th-sub">(แอบโกหกแน่ๆ เค้าดูออกหรอกว่ารักเค้าจะตาย 😜)</span>
+        <span class="es-main">¡Mentira cochina! Sé perfectamente que me amas con locura, mi Fan alcahuete 😚 ¡No intentes engañarme!</span>
+        <span class="th-sub">แอบโกหกคำโตแน่ๆ! เค้าดูออกหรอกว่าแฟนคลั่งรักเค้าจะตาย 😜 อย่ามาเนียนแถซะให้ยากเลยนะจ๊ะ!</span>
       </div>
       <button class="btn-next" onclick="goToSlide('s_music')">Escuchar canción ✨</button>
     </div>
 
     <!-- 🎶 SLIDE 5: YOUTUBE MUSIC -->
     <div class="slide" id="s_music">
-      <div class="content-box-original" style="margin-bottom: 8px;">
-        <span class="es-main" style="font-size: 0.95rem;">Escucho esta canción y siempre pienso en ti ♡</span>
-        <span class="th-sub">(ฟังเพลงนี้ทีไรก็นึกถึงแฟนทุกทีเลยนะ ♡)</span>
+      <div class="content-box-original" style="margin-bottom: 6px;">
+        <span class="es-main" style="font-size: 0.92rem;">Cada vez que escucho esta canción, cierro los ojos y siempre pienso en ti ♡</span>
+        <span class="th-sub">ทุกครั้งที่เปิดฟังเพลงนี้ทีไร เค้าจะหลับตาลงแล้วก็นึกถึงหน้าแฟนทุกทีเลยนะ ♡</span>
       </div>
 
       <div class="music-card-box">
@@ -725,7 +728,7 @@
           <div class="cd-spin"><i class="fa-solid fa-compact-disc"></i></div>
           <div class="music-title-info">
             <h4>Me gusta esta canción 🎧</h4>
-            <p>เค้าชอบเพลงนี้นะ</p>
+            <p>เพลงนี้มีความหมายกับเราจัง</p>
           </div>
         </div>
 
@@ -750,12 +753,12 @@
           <span class="heart-center">💖</span>
           <span class="char-monkey">🐒</span>
         </div>
-        <div style="font-size: 0.92rem; color:#ff6b8b; font-weight:500;">Juntos para siempre ✨ (จะอยู่ด้วยกันตลอดไป)</div>
+        <div style="font-size: 0.92rem; color:#ff6b8b; font-weight:500;">Juntos para siempre (จะอยู่เคียงข้างกันตลอดไป) ✨</div>
       </div>
 
-      <div class="content-box-original" style="text-align: center; margin-bottom: 10px;">
-        <span class="es-main" style="font-size: 0.98rem;">"Gracias por aparecer en mi vida, gracias por elegirnos, y gracias por ser tú. ♡"</span>
-        <span class="th-sub" style="margin-top: 6px;">(ขอบคุณที่ก้าวเข้ามาในชีวิต และเลือกเราเสมอนะคะ ♡)</span>
+      <div class="content-box-original" style="text-align: center; margin-bottom: 8px;">
+        <span class="es-main" style="font-size: 0.95rem;">"Gracias por aparecer en mi vida, gracias por elegirnos todos los días, y gracias por ser exactamente tú. Te adoro con el alma. ♡"</span>
+        <span class="th-sub" style="margin-top: 4px;">ขอบคุณที่ก้าวเข้ามาเติมเต็มชีวิต ขอบคุณที่เลือกเราในทุกๆ วัน และขอบคุณที่เป็นตัวเองแบบนี้นะคะ รักที่สุดในดวงใจเลย ♡</span>
       </div>
 
       <div class="big-love-text">
@@ -781,18 +784,18 @@
       <h3 style="color: #ff4b72; font-family: 'Dancing Script', cursive; font-size: 1.8rem; text-align: center; margin-bottom: 2px;">
         Para Mi Amor 💌
       </h3>
-      <div style="text-align: center; font-size: 0.8rem; color: #ff758f; margin-bottom: 8px;">(ถึงแฟนที่รักของเค้า)</div>
+      <div style="text-align: center; font-size: 0.8rem; color: #ff758f; margin-bottom: 8px;">(ถึงแฟนที่รักและคิดถึงที่สุดของเค้า)</div>
 
       <div class="modal-body">
-        <p style="font-weight: bold; color: #ff4b72;">¡Hola mi Fan! 💖 (สวัสดีค่ะแฟนจ๋า)</p>
-        <p style="margin-top: 6px;">Esta carta está hecha con todo mi amor para ti. Gracias por estar a mi lado cada día, por ser mi sonrisa y por cuidarme siempre tan bien.</p>
-        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">(จดหมายฉบับนี้ตั้งใจทำด้วยความรักทั้งหมด ขอบคุณสำหรับทุกวันที่อยู่ข้างกันนะคะ)</p>
+        <p style="font-weight: bold; color: #ff4b72;">¡Hola mi Fan! 💖 (สวัสดีค่ะแฟนจ๋าคนดีของเค้า)</p>
+        <p style="margin-top: 6px;">Esta carta está escrita con todo el cariño y amor que tengo guardado para ti. Gracias por estar a mi lado en cada paso, por ser mi refugio seguro y por cuidarme siempre con tanto mimo.</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">จดหมายฉบับนี้กลั่นกรองมาจากความรักและหัวใจทั้งหมด ขอบคุณที่คอยอยู่เคียงข้างในทุกๆ ก้าว เป็นพื้นที่ปลอดภัยและดูแลกันอย่างดีเสมอมานะ</p>
         
-        <p style="margin-top: 8px;">Aunque estemos lejos, puedo sentir tu amor todo el tiempo.</p>
-        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">(ถึงอยู่ไกลกัน แต่เค้าสัมผัสความรักของแฟนได้ตลอดเวลาเลยนะ)</p>
+        <p style="margin-top: 8px;">Aunque nos separen muchos kilómetros, quiero que sepas que mi corazón siempre viaja hasta donde tú estás. Te siento cerquita de mí todo el tiempo.</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">ถึงจะมีกิโลเมตรมากมายกั้นกลาง แต่ให้อยู่เสมอนะว่าหัวใจของเค้าเดินทางไปหาแฟนตลอดเวลา เค้าสัมผัสได้ว่าแฟนอยู่ใกล้ๆ เสมอเลย</p>
         
-        <p style="font-weight: bold; color: #ff4b72; margin-top: 10px;">¡Te amo muchísimo! Eres el mejor del mundo. 🥰✨</p>
-        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">(รักแฟนที่สุดในโลกเลยค่ะ 🥰✨)</p>
+        <p style="font-weight: bold; color: #ff4b72; margin-top: 10px;">¡Te amo muchísimo! Eres el mejor novio del mundo entero. 🥰✨</p>
+        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">รักแฟนมากๆๆๆ นะคะ! แฟนคือแฟนที่ดีที่สุดในโลกเลย 🥰✨</p>
       </div>
     </div>
   </div>
