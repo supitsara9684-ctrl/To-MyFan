@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Map / Memory</title>
+    <title>Letter / Message</title>
     <style>
         * {
             box-sizing: border-box;
@@ -12,81 +12,134 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* พื้นหลังจักรวาล (ดวงดาวและอวกาศ) */
+        /* พื้นหลังสีชมพูละมุน */
         body {
-            background-color: #050510;
-            background-image: 
-                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-                radial-gradient(circle at center, #1b1b3a 0%, #050510 100%);
-            background-size: 550px 550px, 100% 100%;
-            min-height: 100vh;
+            background-color: #f7d6e0;
+            background-image: radial-gradient(circle at center, #fce4ec 0%, #f7d6e0 100%);
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #ffffff;
-            padding: 20px;
+            color: #4a4a4a;
         }
 
-        /* กล่องเนื้อหาแผนที่ วางอยู่บนจักรวาลโดยตรง ไม่มีรูปภาพอื่นมาทับซ้อนให้รก */
-        .map-section-container {
-            background: rgba(15, 15, 30, 0.75); /* ความโปร่งแสงกำลังดี เห็นดาวรำไรข้างหลังแต่ตัวหนังสือชัด */
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            max-width: 600px;
-            width: 100%;
+        /* กล่องการ์ดหลัก */
+        .card-container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
             padding: 30px;
             border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 15px 35px rgba(200, 100, 120, 0.2);
+            width: 420px;
+            max-width: 90%;
             text-align: center;
         }
 
-        .map-title {
-            font-size: 24px;
+        .emojis {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        /* กล่องข้อความย่อยด้านบน */
+        .box-top {
+            background: rgba(255, 240, 245, 0.8);
+            border: 1px dashed rgba(230, 150, 170, 0.5);
+            padding: 15px;
+            border-radius: 14px;
+            margin-bottom: 15px;
+            color: #d15b64;
+            font-weight: 500;
+        }
+
+        .box-top .th-text {
+            font-size: 0.9em;
+            margin-top: 6px;
+            color: #666666;
+            display: block;
+        }
+
+        /* กล่องข้อความย่อยด้านล่าง */
+        .box-bottom {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px dashed rgba(230, 150, 170, 0.5);
+            padding: 15px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333333;
+        }
+
+        .box-bottom .th-text {
+            font-size: 0.9em;
+            margin-top: 8px;
+            color: #666666;
+            display: block;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 8px;
+        }
+
+        .signature {
+            font-size: 22px;
+            color: #d15b64;
+            font-style: italic;
             font-weight: bold;
             margin-bottom: 20px;
-            color: #ffb7b2;
-            text-shadow: 0 2px 10px rgba(255, 183, 178, 0.3);
         }
 
-        /* ส่วนแสดงแผนที่ (ถ้ามี iframe Google Maps ให้ใส่ตรงนี้) */
-        .map-frame-box {
-            width: 100%;
-            height: 300px;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 20px;
-            background: #000;
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .map-frame-box iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
+        .btn {
+            background: #ffffff;
+            border: 1px solid #e0b0bc;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #555555;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.2s;
         }
 
-        /* ข้อความบรรยายพิกัดหรือความทรงจำ ให้อ่านง่าย ชัดเจน */
-        .map-description {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #f0f0f5;
+        .btn:hover {
+            background: #fff0f3;
         }
     </style>
 </head>
 <body>
 
-    <div class="map-section-container">
-        <div class="map-title">📍 สถานที่ของเรา</div>
-        
-        <!-- กรอบสำหรับใส่แผนที่ (เช่น Google Maps Embed) -->
-        <div class="map-frame-box">
-            <!-- แทนที่ลิงก์ src ด้วยแผนที่ของคุณ -->
-            <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen="" loading="lazy"></iframe>
+    <div class="card-container">
+        <!-- อิโมจิด้านบน -->
+        <div class="emojis">🐨💖🐒</div>
+
+        <!-- กล่องที่ 1 (ลบตัวซ้ำออก และแยกไทย-สเปนคนละบรรทัด) -->
+        <div class="box-top">
+            <span>Estemos juntitos así por mucho tiempo. ✨</span>
+            <span class="th-text">(อยู่ข้างๆ กันแบบนี้นานๆ นะ ✨)</span>
         </div>
 
-        <div class="map-description">
-            ที่นี่คือจุดเริ่มต้นความทรงจำของเรา... อยู่ท่ามกลางจักรวาลที่กว้างใหญ่ ✨
+        <!-- กล่องที่ 2 (ลบตัวซ้ำออก และแยกไทย-สเปนคนละบรรทัด) -->
+        <div class="box-bottom">
+            <div>Gracias por llegar a mi vida. Gracias por compartirla conmigo. Y, sobre todo, gracias por ser tú. ❤️</div>
+            <div class="th-text">(ขอบคุณที่เข้ามาในชีวิตของเค้า ขอบคุณที่แบ่งปันชีวิตนี้ร่วมกัน และที่สำคัญที่สุด ขอบคุณที่เป็นตัวของตัวเองนะ ❤️)</div>
+        </div>
+
+        <!-- ลายเซ็น -->
+        <div class="signature">
+            Te amo, mi Fan ❤️
+        </div>
+
+        <!-- ปุ่มกดด้านล่าง -->
+        <div class="btn-container">
+            <button class="btn">✉️ Leer carta</button>
+            <button class="btn">💌 Enviar ❤️</button>
         </div>
     </div>
 
