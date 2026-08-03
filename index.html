@@ -3,112 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Para mi Fan ♡</title>
-  <!-- Google Fonts & FontAwesome -->
+  <title>Para ti</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Dancing+Script:wght@600;700&family=Itim&family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    :root {
-      --pastel-pink: #ffd1dc;
-      --soft-purple: #2a1b3d;
-      --accent-pink: #ff85a2;
-      --btn-pink: #ff758f;
-    }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: linear-gradient(135deg, #1a0c27 0%, #2a1b3d 50%, #4a2e4d 100%);
-      color: #fff;
-      font-family: 'Itim', cursive, sans-serif;
+      background: linear-gradient(135deg, #1f1f2e 0%, #2d2d44 100%);
+      color: #e2e2f0;
+      font-family: 'Outfit', 'Itim', sans-serif;
       min-height: 100vh;
-      overflow-x: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: background 2.5s ease-in-out;
       padding: 15px;
     }
 
-    body.sunrise-pastel {
-      background: linear-gradient(180deg, #ffb3c6 0%, #ff85a2 40%, #ffc6ff 75%, #ffe5ec 100%) !important;
-      color: #4a2e4d;
-    }
-
-    /* Star Canvas */
-    canvas#starCanvas {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    /* 🎵 Floating Music Toggle Button */
-    .music-btn-floating {
-      position: fixed;
-      top: 18px;
-      right: 18px;
-      z-index: 99;
-      background: rgba(255, 133, 162, 0.85);
-      border: 2px solid rgba(255, 255, 255, 0.6);
-      color: white;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      transition: all 0.3s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .music-btn-floating.playing {
-      animation: spinMusicBtn 3s linear infinite;
-      background: #ff477e;
-    }
-
-    @keyframes spinMusicBtn {
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Main Container Glass Card */
     .glass-card {
-      position: relative;
-      z-index: 10;
       width: 100%;
-      max-width: 410px;
+      max-width: 400px;
       padding: 24px 20px;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      border-radius: 30px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       text-align: center;
-      transition: all 0.8s ease;
-    }
-
-    body.sunrise-pastel .glass-card {
-      background: rgba(255, 255, 255, 0.95) !important;
-      border: 2px solid #ffccd5 !important;
-      outline: 6px solid rgba(255, 255, 255, 0.9);
-      outline-offset: -12px;
-      box-shadow: 0 25px 50px rgba(255, 133, 162, 0.35) !important;
-      border-radius: 28px !important;
     }
 
     .slide {
       display: none;
       opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
+      transform: translateY(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .slide.active {
@@ -117,901 +49,223 @@
       transform: translateY(0);
     }
 
-    /* 🔒 PASSCODE LOCK */
-    .passcode-icon {
-      font-size: 2.5rem;
-      margin-bottom: 4px;
-      animation: pulseLock 2s infinite ease-in-out;
-    }
-
-    @keyframes pulseLock {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-
-    .passcode-header {
-      background: rgba(255, 133, 162, 0.3);
-      border: 1px solid rgba(255, 133, 162, 0.5);
-      color: #ffe5ec;
-      padding: 4px 14px;
-      border-radius: 20px;
-      display: inline-block;
+    /* Passcode Box */
+    .pass-header {
       font-size: 0.95rem;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-
-    .hint-box {
-      font-size: 0.88rem;
-      color: #ffe5ec;
+      color: #b8b8d0;
       margin-bottom: 12px;
-      line-height: 1.3;
-      background: rgba(0, 0, 0, 0.2);
-      padding: 8px 10px;
-      border-radius: 14px;
-      border: 1px dashed rgba(255, 255, 255, 0.25);
     }
 
-    .keypad-container {
-      max-width: 240px;
-      margin: 0 auto;
-    }
-
-    .passcode-dots {
+    .pass-dots {
       display: flex;
       justify-content: center;
-      gap: 6px;
-      margin-bottom: 12px;
-      height: 18px;
-      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
     }
 
-    .passcode-dot {
-      width: 11px;
-      height: 11px;
+    .dot {
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      border: 2px solid #ff85a2;
+      border: 1.5px solid #8f8fae;
       background: transparent;
-      transition: all 0.2s ease;
+      transition: all 0.2s;
     }
 
-    .passcode-dot.filled {
-      background: #ff85a2;
-      box-shadow: 0 0 8px #ff85a2;
+    .dot.filled {
+      background: #8f8fae;
+      border-color: #8f8fae;
     }
 
-    .keypad-grid {
+    .keypad {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 8px;
+      max-width: 230px;
+      margin: 0 auto;
     }
 
-    .key-btn {
-      background: rgba(255, 133, 162, 0.85);
-      color: white;
-      border: none;
-      border-radius: 14px;
+    .key {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
       padding: 10px 0;
-      font-size: 1.15rem;
-      font-weight: bold;
-      font-family: 'Itim', cursive;
+      font-size: 1.1rem;
       cursor: pointer;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-      transition: all 0.15s ease;
-      -webkit-tap-highlight-color: transparent;
+      font-family: 'Outfit', sans-serif;
+      transition: background 0.2s;
     }
 
-    .key-btn:active { transform: scale(0.92); background: #ff477e; }
-    .key-btn.action-btn { background: rgba(255, 255, 255, 0.2); font-size: 0.95rem; }
+    .key:active { background: rgba(255, 255, 255, 0.2); }
+
+    /* Content Layout */
+    .msg-box {
+      background: rgba(0, 0, 0, 0.2);
+      border-left: 3px solid #7c7c9d;
+      border-radius: 0 10px 10px 0;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .es-text {
+      font-size: 0.98rem;
+      font-weight: 400;
+      color: #f0f0f5;
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+
+    .th-text {
+      font-size: 0.83rem;
+      color: #a2a2bc;
+      line-height: 1.4;
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+      padding-top: 6px;
+    }
+
+    .btn {
+      background: #4d4d6e;
+      border: none;
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      padding: 9px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn:hover { background: #5d5d85; }
 
     .shake { animation: shakeAnim 0.4s ease-in-out; }
     @keyframes shakeAnim {
       0%, 100% { transform: translateX(0); }
-      20%, 60% { transform: translateX(-12px); }
-      40%, 80% { transform: translateX(12px); }
-    }
-
-    /* Long Content Structured Boxes */
-    .content-box-original {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1.5px dashed rgba(255, 255, 255, 0.3);
-      border-radius: 18px;
-      padding: 14px 16px;
-      margin-bottom: 12px;
-      text-align: left;
-    }
-
-    body.sunrise-pastel .content-box-original {
-      background: rgba(255, 182, 193, 0.15);
-      border-color: #ffccd5;
-    }
-
-    .es-main {
-      font-size: 1.02rem;
-      font-weight: 500;
-      color: #fff;
-      line-height: 1.45;
-      margin-bottom: 6px;
-      display: block;
-    }
-    body.sunrise-pastel .es-main { color: #5d4037; }
-
-    .th-sub {
-      font-size: 0.88rem;
-      color: #ffe5ec;
-      line-height: 1.4;
-      display: block;
-      opacity: 0.95;
-      border-top: 1px dotted rgba(255,255,255,0.2);
-      padding-top: 5px;
-      margin-top: 4px;
-    }
-    body.sunrise-pastel .th-sub { color: #8c6d73; border-top-color: rgba(255,192,203,0.5); }
-
-    .btn-next {
-      background: linear-gradient(135deg, #ff85a2, #ff5c8a);
-      border: none;
-      color: white;
-      font-family: 'Itim', cursive;
-      font-size: 1.05rem;
-      padding: 10px 24px;
-      border-radius: 25px;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(255, 92, 138, 0.4);
-      transition: all 0.3s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .btn-choice-group { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
-    .btn-love { background: linear-gradient(135deg, #ff477e, #ff0055); }
-    .btn-not-love { background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4); }
-
-    .koala-container { width: 100%; height: 38px; position: relative; overflow: hidden; margin-bottom: 2px; }
-    .cute-koala { font-size: 2.2rem; position: absolute; left: -50px; animation: koalaWalk 4s linear infinite; }
-    @keyframes koalaWalk {
-      0% { left: -50px; transform: rotate(0deg); }
-      50% { transform: rotate(5deg) translateY(-2px); }
-      100% { left: 100%; transform: rotate(0deg); }
-    }
-
-    /* ARIES & SPACE */
-    .aries-box {
-      background: rgba(255, 133, 162, 0.15);
-      border: 2px dashed #ff85a2;
-      border-radius: 16px;
-      padding: 8px;
-      margin-bottom: 10px;
-    }
-
-    .aries-icon-box {
-      font-size: 2.6rem;
-      margin-bottom: 2px;
-      animation: floatAries 3s ease-in-out infinite;
-    }
-
-    @keyframes floatAries {
-      0%, 100% { transform: translateY(0) rotate(-3deg); }
-      50% { transform: translateY(-6px) rotate(3deg); }
-    }
-
-    .aries-constellation-title {
-      font-size: 1.1rem;
-      color: #ffd1dc;
-      font-weight: bold;
-    }
-
-    .bounce-dukdik {
-      display: inline-block;
-      animation: dukdikAnim 0.6s infinite alternate cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      background: rgba(255, 117, 143, 0.3);
-      padding: 8px 14px;
-      border-radius: 16px;
-      border: 1.5px dashed #ff85a2;
-      color: #ffe5ec;
-      font-size: 1.05rem;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    @keyframes dukdikAnim {
-      0% { transform: scale(0.95) rotate(-2deg); }
-      100% { transform: scale(1.05) rotate(2deg); }
-    }
-
-    /* MAP SILHOUETTE */
-    .map-svg {
-      width: 100%;
-      max-width: 280px;
-      height: 90px;
-      margin: 0 auto 8px auto;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
-      border: 1px dashed rgba(255, 255, 255, 0.3);
-      padding: 4px;
-    }
-
-    /* YOUTUBE MUSIC SECTION */
-    .music-card-box {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 10px;
-      margin: 4px 0 10px 0;
-      box-shadow: 0 6px 15px rgba(255, 182, 193, 0.4);
-      border: 2px solid #ffe3ec;
-      color: #4a2e4d;
-    }
-
-    .music-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
-      text-align: left;
-    }
-
-    .cd-spin {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 15px;
-      animation: spinCD 4s linear infinite;
-    }
-
-    @keyframes spinCD { 100% { transform: rotate(360deg); } }
-
-    .music-title-info h4 { font-size: 0.9rem; color: #4a3e3d; margin-bottom: 1px; }
-    .music-title-info p { font-size: 0.78rem; color: #ff4b72; font-weight: 500; }
-
-    .youtube-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 48%;
-      height: 0;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-
-    .youtube-container iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: 0;
-    }
-
-    /* FINAL CARD SLIDE */
-    .illustration-box {
-      background: linear-gradient(135deg, #ffeef2 0%, #ffd3e0 100%);
-      border-radius: 18px;
-      padding: 10px 8px;
-      position: relative;
-      margin-bottom: 10px;
-      border: 2px solid rgba(255, 255, 255, 0.9);
-      box-shadow: inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 12px rgba(255, 133, 162, 0.2);
-    }
-
-    .couple-friends {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 2px;
-    }
-
-    .char-koala { font-size: 2.4rem; animation: danceKoala 1.6s infinite ease-in-out; display: inline-block; }
-    .char-monkey { font-size: 2.4rem; animation: danceMonkey 1.6s infinite ease-in-out; display: inline-block; }
-    .heart-center { font-size: 1.4rem; animation: pulseHeart 1.2s infinite ease-in-out; display: inline-block; margin: 0 -3px; }
-
-    @keyframes danceKoala {
-      0%, 100% { transform: translateY(0) rotate(-6deg); }
-      50% { transform: translateY(-6px) rotate(4deg); }
-    }
-
-    @keyframes danceMonkey {
-      0%, 100% { transform: translateY(0) rotate(6deg); }
-      50% { transform: translateY(-6px) rotate(-4deg); }
-    }
-
-    @keyframes pulseHeart {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.25); }
-    }
-
-    .big-love-text {
-      font-family: 'Dancing Script', cursive;
-      font-size: 2.1rem;
-      color: #ff4b72;
-      margin: 8px 0;
-    }
-
-    .action-buttons {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 10px;
-    }
-
-    .btn-pill {
-      background: #ffffff;
-      border: 1.5px solid #ffccd5;
-      padding: 8px 14px;
-      border-radius: 20px;
-      color: #5a4045;
-      font-size: 0.9rem;
-      font-family: 'Itim', sans-serif;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 3px 8px rgba(255, 117, 140, 0.15);
-      transition: all 0.3s ease;
-    }
-
-    .btn-pill:hover, .btn-pill:active {
-      background: #ff4b72;
-      color: white;
-      border-color: #ff4b72;
-      transform: translateY(-2px);
-    }
-
-    /* Modal for Letter */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 100;
-      justify-content: center;
-      align-items: center;
-      padding: 15px;
-    }
-
-    .modal-content {
-      background: #fff0f5;
-      border-radius: 22px;
-      max-width: 360px;
-      width: 100%;
-      padding: 20px;
-      position: relative;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-      border: 3px solid #ffccd5;
-      animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    @keyframes popIn {
-      0% { transform: scale(0.7); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 10px; right: 10px;
-      background: #ff4b72;
-      color: white;
-      border: none;
-      width: 26px; height: 26px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
-
-    .modal-body {
-      font-size: 0.92rem;
-      color: #5a4045;
-      line-height: 1.5;
-      margin-top: 10px;
-      text-align: left;
-      max-height: 65vh;
-      overflow-y: auto;
-      padding-right: 4px;
-    }
-
-    /* Floating Hearts Background Animation */
-    .floating-hearts { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 20; display: none; }
-    .heart-item { position: absolute; font-size: 1.5rem; animation: floatUp 4s linear infinite; opacity: 0; }
-    @keyframes floatUp {
-      0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
-      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
     }
   </style>
 </head>
 <body>
 
-  <!-- Background Music Element -->
-  <audio id="bgmAudio" loop preload="auto">
-    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112191.mp3" type="audio/mpeg">
-  </audio>
-
-  <!-- Floating Music Toggle Button -->
-  <button class="music-btn-floating" id="musicBtn" onclick="toggleBgm()" title="Música de fondo">
-    <i class="fa-solid fa-music"></i>
-  </button>
-
-  <canvas id="starCanvas"></canvas>
-  <div class="floating-hearts" id="heartsBg"></div>
-
   <div class="glass-card" id="cardContainer">
     
-    <!-- 🔒 SLIDE 0: PASSCODE LOCK -->
-    <div class="slide active" id="s_passcode">
-      <div class="passcode-icon" id="passIcon">🔐💖</div>
-      <div class="passcode-header">Escribe nuestra contraseña</div>
-      
-      <div class="hint-box" id="hintText">
-        <div style="font-weight: bold;">¿Recuerdas nuestro aniversario, mi amor? 😡</div>
-        <div style="font-size: 0.8rem; opacity: 0.9;">(ถ้าลืมวันครบรอบก็ไม่ต้องเข้าไปดูข้างในเลยนะจ๊ะ! 😡😡😡)</div>
+    <!-- Passcode -->
+    <div class="slide active" id="s_pass">
+      <div class="pass-header">Introduce la contraseña</div>
+      <div class="pass-dots" id="dotGroup">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
       </div>
-
-      <div class="keypad-container">
-        <div class="passcode-dots" id="dotContainer">
-          <div class="passcode-dot"></div>
-          <div class="passcode-dot"></div>
-          <div class="passcode-dot"></div>
-          <div class="passcode-dot"></div>
-          <div class="passcode-dot"></div>
-          <div class="passcode-dot"></div>
-          <div class="passcode-dot"></div>
-          <div class="passcode-dot"></div>
-        </div>
-
-        <div class="keypad-grid">
-          <button class="key-btn" onclick="pressKey('1')">1</button>
-          <button class="key-btn" onclick="pressKey('2')">2</button>
-          <button class="key-btn" onclick="pressKey('3')">3</button>
-          <button class="key-btn" onclick="pressKey('4')">4</button>
-          <button class="key-btn" onclick="pressKey('5')">5</button>
-          <button class="key-btn" onclick="pressKey('6')">6</button>
-          <button class="key-btn" onclick="pressKey('7')">7</button>
-          <button class="key-btn" onclick="pressKey('8')">8</button>
-          <button class="key-btn" onclick="pressKey('9')">9</button>
-          <button class="key-btn action-btn" onclick="pressKey('*')">*</button>
-          <button class="key-btn" onclick="pressKey('0')">0</button>
-          <button class="key-btn action-btn" onclick="deleteKey()">⌫</button>
-        </div>
+      <div class="keypad">
+        <button class="key" onclick="press('1')">1</button>
+        <button class="key" onclick="press('2')">2</button>
+        <button class="key" onclick="press('3')">3</button>
+        <button class="key" onclick="press('4')">4</button>
+        <button class="key" onclick="press('5')">5</button>
+        <button class="key" onclick="press('6')">6</button>
+        <button class="key" onclick="press('7')">7</button>
+        <button class="key" onclick="press('8')">8</button>
+        <button class="key" onclick="press('9')">9</button>
+        <button class="key" style="visibility:hidden;"></button>
+        <button class="key" onclick="press('0')">0</button>
+        <button class="key" onclick="del()">⌫</button>
       </div>
     </div>
 
-    <!-- 🌌 SLIDE ARIES & SPACE -->
-    <div class="slide" id="s_aries">
-      <div class="aries-box">
-        <div class="aries-icon-box">♈️✨🪐</div>
-        <div class="aries-constellation-title">Constelación de Aries ✨</div>
-      </div>
-
-      <div class="content-box-original">
-        <span class="es-main">¿Sabías por qué elegí este fondo del espacio con estrellas fugaces y luces de colores tan hermosas para ti? 🌌✨</span>
-        <span class="th-sub">รู้มั้ยคะว่าทำไมเค้าถึงตั้งใจเลือกพื้นหลังธีมอวกาศและหมู่ดาวตกที่ระยิบระยับสวยงามแบบนี้ให้แฟน?</span>
-      </div>
-
-      <div class="content-box-original" style="background: rgba(255, 133, 162, 0.25); border-color: rgba(255, 255, 255, 0.4);">
-        <span class="es-main" style="color: #ffd1dc;">¡Porque es Aries, tu signo zodiacal! ♈️✨ Sé cuánto te encantan las estrellas y mirar el cielo nocturno, mi amor. 🌟</span>
-        <span class="th-sub" style="color: #ffe5ec;">ก็เพราะมันคือราศีเมษ ราศีของแฟนเองค่ะ! ♈️ เเค้ารู้ว่าแฟนชอบดูดวงดาวและท้องฟ้ายามค่ำคืนมากแค่ไหน</span>
-      </div>
-
-      <div class="btn-choice-group">
-        <button class="btn-next btn-love" onclick="showDukdikMsg()" style="font-size: 0.95rem; padding: 8px 16px;">Sí, me encanta ♡</button>
-        <button class="btn-next btn-love" onclick="showDukdikMsg()" style="font-size: 0.95rem; padding: 8px 16px;">Sí 😜</button>
-      </div>
-
-      <div id="dukdikArea" style="display: none;">
-        <div class="bounce-dukdik">¡Avancemos juntos, mi amor! 🚀💖</div>
-      </div>
-    </div>
-
-    <!-- SLIDE 1 -->
+    <!-- Slide 1 -->
     <div class="slide" id="s1">
-      <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
-      <div class="content-box-original">
-        <span class="es-main">Tengo algo muy especial guardado en mi corazón para decirte hoy, mi Fan ♡ Eres una de las mejores sorpresas que la vida me ha dado.</span>
-        <span class="th-sub">เค้ามีเรื่องราวพิเศษมากๆ ที่เก็บไว้ในใจอยากจะบอกแฟนในวันนี้ค่ะ ♡ แฟนคือหนึ่งในเซอร์ไพรส์ที่ดีที่สุดที่ชีวิตนี้มอบให้เค้าเลยนะ</span>
+      <div class="msg-box">
+        <div class="es-text">Tengo esto preparado desde hace unos días. Quería comentarte par de cosas sobre nosotros.</div>
+        <div class="th-text">เค้าเตรียมอันนี้ไว้สักพักแล้วล่ะ มีเรื่องราวบางอย่างเกี่ยวกับเราที่อยากจะบอก</div>
       </div>
-      <button class="btn-next" onclick="goToSlide('s2')">Siguiente (ถัดไป) ➔</button>
+      <button class="btn" onclick="next('s2')">Continuar ➔</button>
     </div>
 
-    <!-- 🗺️ SLIDE 2: MAPS SPAIN & THAILAND -->
+    <!-- Slide 2 -->
     <div class="slide" id="s2">
-      <svg class="map-svg" viewBox="0 0 320 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g opacity="0.85">
-          <path d="M 40 45 L 60 40 L 85 45 L 90 60 L 85 85 L 75 95 L 50 90 L 35 75 L 30 55 Z" fill="#ff85a2" opacity="0.3" stroke="#ff85a2" stroke-width="2"/>
-          <circle cx="60" cy="65" r="5" fill="#ff477e"/>
-          <circle cx="60" cy="65" r="9" fill="#ff477e" opacity="0.35"/>
-          <text x="32" y="30" fill="#ffd1dc" font-size="11" font-weight="bold">🇪🇸 España</text>
-        </g>
-        <g opacity="0.85">
-          <path d="M 230 35 L 255 40 L 260 60 L 245 75 L 240 95 L 235 120 L 230 120 L 232 90 L 225 70 L 220 50 Z" fill="#ff85a2" opacity="0.3" stroke="#ff85a2" stroke-width="2"/>
-          <circle cx="240" cy="60" r="5" fill="#ff477e"/>
-          <circle cx="240" cy="60" r="9" fill="#ff477e" opacity="0.35"/>
-          <text x="210" y="25" fill="#ffd1dc" font-size="11" font-weight="bold">🇹🇭 Tailandia</text>
-        </g>
-        <path d="M 236 58 Q 150 10, 64 63" stroke="#ffd1dc" stroke-width="2.5" stroke-dasharray="5 4" fill="none"/>
-        <g transform="translate(145, 20) rotate(-170)"><text font-size="16">✈️</text></g>
-      </svg>
-
-      <div class="content-box-original" style="margin-bottom: 8px;">
-        <span class="es-main">Muchos dicen: "Ríndete, la distancia entre España y Tailandia es demasiado y no funciona"... 💔</span>
-        <span class="th-sub">หลายคนมักจะพูดว่า: "ยอมแพ้เถอะ ระยะทางระหว่างสเปนกับไทยมันไกลเกินไปและไม่มีทางรอดหรอก"...</span>
+      <div class="msg-box">
+        <div class="es-text">Sé que la distancia entre España y Tailandia a veces complica las cosas y consume tiempo con el cambio horario.</div>
+        <div class="th-text">รู้ว่าระยะทางระหว่างสเปนกับไทยมันทำให้บางอย่างยุ่งยาก แถมเรื่องเวลาที่ต่างกันก็ทำให้เวลามันไม่ค่อยลงตัว</div>
       </div>
-
-      <div class="content-box-original" style="margin-bottom: 12px;">
-        <span class="es-main">¡Pero yo te demostraré que mi amor es tan fuerte y fiel que superará cualquier obstáculo hasta que todos se rindan! 🔥💖</span>
-        <span class="th-sub">แต่เค้าจะทำให้ทุกคนเห็นเองว่าความรักของเรามั่นคงและแข็งแกร่งพอที่จะเอาชนะทุกอุปสรรคจนกว่าทุกคนจะต้องยอมแพ้!</span>
-      </div>
-
-      <button class="btn-next" onclick="goToSlide('s_distance_feel')">Siguiente (ถัดไป) ➔</button>
+      <button class="btn" onclick="next('s3')">Continuar ➔</button>
     </div>
 
-    <!-- 🥺 SLIDE: DISTANCE FEELINGS -->
-    <div class="slide" id="s_distance_feel">
-      <div class="koala-container"><div class="cute-koala">🐨🥺</div></div>
-      <div class="content-box-original" style="margin-bottom: 8px;">
-        <span class="es-main">Perdón por hacerte sentir solo a veces o cuando la diferencia de horas nos quita tiempo de estar juntos... 🥺</span>
-        <span class="th-sub">ขอโทษนะคะที่บางครั้งทำให้แฟนต้องรู้สึกเหงา หรือเวลาที่เราติดเรื่องเวลาที่ต่างกันจนทำให้เรามีเวลาคุยกันน้อยลง...</span>
-      </div>
-
-      <div class="content-box-original" style="margin-bottom: 12px;">
-        <span class="es-main">Te prometo que haré todo lo posible por acortar esta distancia. ¡Espérame un poco más, mi amor! 💖</span>
-        <span class="th-sub">เค้าสัญญาว่าจะทำทุกวิถีทางเพื่อย่นระยะทางนี้ให้สั้นลง รอเค้าอีกนิดนึงนะคะคนดี!</span>
-      </div>
-
-      <button class="btn-next" onclick="goToSlide('s3')">Siguiente (ถัดไป) ➔</button>
-    </div>
-
-    <!-- SLIDE 3 -->
+    <!-- Slide 3 -->
     <div class="slide" id="s3">
-      <div class="koala-container"><div class="cute-koala">🐨💖</div></div>
-      <div class="content-box-original">
-        <span class="es-main">Gracias por ser el novio más maravilloso del mundo, por cada risa compartida, por tu paciencia infinita y por cuidarme siempre con tanto cariño.</span>
-        <span class="th-sub">ขอบคุณสำหรับการเป็นแฟนที่มหัศจรรย์ที่สุดในโลก ขอบคุณสำหรับเสียงหัวเราะ ความอดทนที่มีให้กันเสมอ และการดูแลเอาใจใส่เค้าเป็นอย่างดีมาโดยตลอดนะคะ</span>
+      <div class="msg-box">
+        <div class="es-text">Aun así, te agradezco que estés ahí, por la paciencia y por cómo llevamos el día a día juntos.</div>
+        <div class="th-text">ถึงอย่างนั้นก็ขอบคุณที่ยังอยู่ตรงนี้ ขอบคุณสำหรับความอดทนและการที่เราพยายามปรับตัวเข้าหากันในทุกๆ วัน</div>
       </div>
-      <button class="btn-next" onclick="goToSlide('s4')">Siguiente (ถัดไป) ➔</button>
+      <button class="btn" onclick="next('s4')">Continuar ➔</button>
     </div>
 
-    <!-- SLIDE 4 -->
+    <!-- Slide 4 -->
     <div class="slide" id="s4">
-      <div class="koala-container"><div class="cute-koala">🐨✨</div></div>
-      <div class="content-box-original">
-        <span class="es-main">La distancia física es solo un número en el mapa... porque en mi corazón y en mi mente, tú lo eres absolutamente todo.</span>
-        <span class="th-sub">ระยะทางทางกายภาพก็เป็นเพียงแค่ตัวเลขบนแผนที่เท่านั้น... เพราะลึกๆ ในหัวใจและในความรู้สึกของเค้า แฟนคือทุกสิ่งทุกอย่างเลยค่ะ</span>
+      <div class="msg-box">
+        <div class="es-text">Poco más. Valoro mucho lo nuestro y quería dejar constancia de ello por aquí. Un abrazo.</div>
+        <div class="th-text">ก็ไม่มีอะไรมาก แค่รู้สึกว่าเรื่องของเรามันสำคัญและอยากบันทึกมันไว้แบบนี้แหละ ไว้คุยกันนะ</div>
       </div>
-      <button class="btn-next" onclick="goToSlide('s_question')">Pregunta (คำถาม) ✨ ➔</button>
+      <button class="btn" onclick="next('s1')">Volver al inicio ↺</button>
     </div>
 
-    <!-- SLIDE QUESTION -->
-    <div class="slide" id="s_question">
-      <div class="koala-container"><div class="cute-koala">🐨❓</div></div>
-      <div class="content-box-original">
-        <span class="es-main">Dime la verdad... ¿Me amas tanto como yo te amo a ti, mi Fan? ❤️</span>
-        <span class="th-sub">บอกความจริงเค้ามาซะดีๆ... แฟนรักเค้ามากเท่าที่เค้ารักแฟนไหมคะเนี่ย?</span>
-      </div>
-      <div class="btn-choice-group">
-        <button class="btn-next btn-love" onclick="goToSlide('s_love')" style="font-size: 0.95rem; padding: 8px 16px;">Sí, te amo ❤️</button>
-        <button class="btn-next btn-not-love" onclick="goToSlide('s_not_love')" style="font-size: 0.95rem; padding: 8px 16px;">No 🙈</button>
-      </div>
-    </div>
-
-    <!-- SLIDE ANSWER LOVE -->
-    <div class="slide" id="s_love">
-      <div class="koala-container"><div class="cute-koala">🐨🥰</div></div>
-      <div class="content-box-original">
-        <span class="es-main">¡Jeje, ya lo sabía! Yo también te amo con todo mi corazón, muchísimo más de lo que las palabras pueden explicar 😜💖</span>
-        <span class="th-sub">หึๆ รู้อยู่แล้วล่ะสิคะ! เค้าก็รักแฟนด้วยหัวใจทั้งหมดเหมือนกัน มากกว่าที่คำพูดใดๆ จะอธิบายได้เลย 🥰</span>
-      </div>
-      <button class="btn-next" onclick="goToSlide('s_music')">Nuestra canción 🎶</button>
-    </div>
-
-    <!-- SLIDE ANSWER NOT LOVE -->
-    <div class="slide" id="s_not_love">
-      <div class="koala-container"><div class="cute-koala">🐨😜</div></div>
-      <div class="content-box-original">
-        <span class="es-main">¡Mentira cochina! Sé perfectamente que me amas con locura, mi Fan alcahuete 😚 ¡No intentes engañarme!</span>
-        <span class="th-sub">แอบโกหกคำโตแน่ๆ! เค้าดูออกหรอกว่าแฟนคลั่งรักเค้าจะตาย 😜 อย่ามาเนียนแถซะให้ยากเลยนะจ๊ะ!</span>
-      </div>
-      <button class="btn-next" onclick="goToSlide('s_music')">Escuchar canción ✨</button>
-    </div>
-
-    <!-- 🎶 SLIDE 5: YOUTUBE MUSIC -->
-    <div class="slide" id="s_music">
-      <div class="content-box-original" style="margin-bottom: 6px;">
-        <span class="es-main" style="font-size: 0.92rem;">Cada vez que escucho esta canción, cierro los ojos y siempre pienso en ti ♡</span>
-        <span class="th-sub">ทุกครั้งที่เปิดฟังเพลงนี้ทีไร เค้าจะหลับตาลงแล้วก็นึกถึงหน้าแฟนทุกทีเลยนะ ♡</span>
-      </div>
-
-      <div class="music-card-box">
-        <div class="music-header">
-          <div class="cd-spin"><i class="fa-solid fa-compact-disc"></i></div>
-          <div class="music-title-info">
-            <h4>Me gusta esta canción 🎧</h4>
-            <p>เพลงนี้มีความหมายกับเราจัง</p>
-          </div>
-        </div>
-
-        <div class="youtube-container">
-          <iframe 
-            src="https://www.youtube.com/embed/98Akpf1ph2o?enablejsapi=1&rel=0" 
-            title="Nuestra Canción" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-
-      <button class="btn-next" onclick="triggerFinal()" style="font-size: 1rem; padding: 9px 20px;">Ver carta final ✨</button>
-    </div>
-
-    <!-- 💌 SLIDE 6: FINAL CARD SLIDE -->
-    <div class="slide" id="s5">
-      <div class="illustration-box">
-        <div class="couple-friends">
-          <span class="char-koala">🐨</span>
-          <span class="heart-center">💖</span>
-          <span class="char-monkey">🐒</span>
-        </div>
-        <div style="font-size: 0.92rem; color:#ff6b8b; font-weight:500;">Juntos para siempre (จะอยู่เคียงข้างกันตลอดไป) ✨</div>
-      </div>
-
-      <div class="content-box-original" style="text-align: center; margin-bottom: 8px;">
-        <span class="es-main" style="font-size: 0.95rem;">"Gracias por aparecer en mi vida, gracias por elegirnos todos los días, y gracias por ser exactamente tú. Te adoro con el alma. ♡"</span>
-        <span class="th-sub" style="margin-top: 4px;">ขอบคุณที่ก้าวเข้ามาเติมเต็มชีวิต ขอบคุณที่เลือกเราในทุกๆ วัน และขอบคุณที่เป็นตัวเองแบบนี้นะคะ รักที่สุดในดวงใจเลย ♡</span>
-      </div>
-
-      <div class="big-love-text">
-        Te amo, mi Fan ❤️
-      </div>
-
-      <div class="action-buttons">
-        <button class="btn-pill" onclick="openLetter()">
-          <i class="fa-solid fa-envelope-open-text" style="color: #ff4b72;"></i> Leer carta
-        </button>
-        <button class="btn-pill" onclick="popHeartExplosion()">
-          <i class="fa-solid fa-hand-holding-heart" style="color: #ff758c;"></i> Enviar ❤️
-        </button>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Modal Pop-up Letter -->
-  <div class="modal" id="letterModal">
-    <div class="modal-content">
-      <button class="close-modal" onclick="closeLetter()">✕</button>
-      <h3 style="color: #ff4b72; font-family: 'Dancing Script', cursive; font-size: 1.8rem; text-align: center; margin-bottom: 2px;">
-        Para Mi Amor 💌
-      </h3>
-      <div style="text-align: center; font-size: 0.8rem; color: #ff758f; margin-bottom: 8px;">(ถึงแฟนที่รักและคิดถึงที่สุดของเค้า)</div>
-
-      <div class="modal-body">
-        <p style="font-weight: bold; color: #ff4b72;">¡Hola mi Fan! 💖 (สวัสดีค่ะแฟนจ๋าคนดีของเค้า)</p>
-        <p style="margin-top: 6px;">Esta carta está escrita con todo el cariño y amor que tengo guardado para ti. Gracias por estar a mi lado en cada paso, por ser mi refugio seguro y por cuidarme siempre con tanto mimo.</p>
-        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">จดหมายฉบับนี้กลั่นกรองมาจากความรักและหัวใจทั้งหมด ขอบคุณที่คอยอยู่เคียงข้างในทุกๆ ก้าว เป็นพื้นที่ปลอดภัยและดูแลกันอย่างดีเสมอมานะ</p>
-        
-        <p style="margin-top: 8px;">Aunque nos separen muchos kilómetros, quiero que sepas que mi corazón siempre viaja hasta donde tú estás. Te siento cerquita de mí todo el tiempo.</p>
-        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">ถึงจะมีกิโลเมตรมากมายกั้นกลาง แต่ให้อยู่เสมอนะว่าหัวใจของเค้าเดินทางไปหาแฟนตลอดเวลา เค้าสัมผัสได้ว่าแฟนอยู่ใกล้ๆ เสมอเลย</p>
-        
-        <p style="font-weight: bold; color: #ff4b72; margin-top: 10px;">¡Te amo muchísimo! Eres el mejor novio del mundo entero. 🥰✨</p>
-        <p style="font-size: 0.82rem; color: #8c6d73; margin-top: 2px;">รักแฟนมากๆๆๆ นะคะ! แฟนคือแฟนที่ดีที่สุดในโลกเลย 🥰✨</p>
-      </div>
-    </div>
   </div>
 
   <script>
-    let currentSlideId = 's_passcode';
+    let currentId = 's_pass';
+    const PASS = "18022026";
+    let inputVal = "";
 
-    const bgm = document.getElementById('bgmAudio');
-    const musicBtn = document.getElementById('musicBtn');
-    let isBgmPlaying = false;
-    bgm.volume = 0.35;
-
-    function playBgm() {
-      bgm.play().then(() => {
-        isBgmPlaying = true;
-        musicBtn.classList.add('playing');
-      }).catch(e => console.log("Autoplay waiting for click"));
-    }
-
-    function toggleBgm() {
-      if (isBgmPlaying) {
-        bgm.pause();
-        isBgmPlaying = false;
-        musicBtn.classList.remove('playing');
-      } else {
-        playBgm();
-      }
-    }
-
-    const CORRECT_PASS = "18022026";
-    let inputPass = "";
-
-    function pressKey(val) {
-      if (!isBgmPlaying) playBgm();
-      if (inputPass.length < 8) {
-        inputPass += val;
+    function press(n) {
+      if (inputVal.length < 8) {
+        inputVal += n;
         updateDots();
       }
-      if (inputPass.length === 8) {
-        setTimeout(checkPasscode, 200);
+      if (inputVal.length === 8) {
+        setTimeout(checkPass, 150);
       }
     }
 
-    function deleteKey() {
-      if (inputPass.length > 0) {
-        inputPass = inputPass.slice(0, -1);
+    function del() {
+      if (inputVal.length > 0) {
+        inputVal = inputVal.slice(0, -1);
         updateDots();
       }
     }
 
     function updateDots() {
-      const dots = document.querySelectorAll('.passcode-dot');
-      dots.forEach((dot, index) => {
-        if (index < inputPass.length) {
-          dot.classList.add('filled');
-        } else {
-          dot.classList.remove('filled');
-        }
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((d, i) => {
+        if (i < inputVal.length) d.classList.add('filled');
+        else d.classList.remove('filled');
       });
     }
 
-    const poutingMessages = [
-      { es: "¿Cómo que te equivocaste? 😤", th: "ใส่รหัสผิดเหรอ! งอนแล้วนะ 😤 ลองใหม่อีกที!" },
-      { es: "¿¡Olvidaste nuestra fecha!? 😡", th: "ลืมวันสำคัญเหรอ!? 😡 ใส่ใหม่อีกรอบเดี๋ยวนี้เลย!" },
-      { es: "¡Incorrecto! Mi Fan feo 🥺", th: "อุ๊ย ผิดซะงั้น! แฟนใจร้าย 🥺 ตั้งสติแล้วกดใหม่น้า" },
-      { es: "¡No te creo! Inténtalo otra vez 😤", th: "ไม่จริงอะ กดผิดได้ไง! 😤 ลองใหม่อีกรอบนะจ๊ะ" }
-    ];
-
-    const poutIcons = ["😤", "😡", "🥺", "😖", "😠"];
-
-    function checkPasscode() {
-      if (inputPass === CORRECT_PASS) {
-        goToSlide('s_aries');
+    function checkPass() {
+      if (inputVal === PASS) {
+        next('s1');
       } else {
         const card = document.getElementById('cardContainer');
-        const hint = document.getElementById('hintText');
-        const icon = document.getElementById('passIcon');
-        
-        const randomPout = poutingMessages[Math.floor(Math.random() * poutingMessages.length)];
-        const randomIcon = poutIcons[Math.floor(Math.random() * poutIcons.length)];
-
         card.classList.add('shake');
-        icon.innerHTML = randomIcon + "💔";
-        
-        hint.innerHTML = `
-          <div style='color:#ff477e; font-weight:bold; font-size:0.9rem;'>${randomPout.es}</div>
-          <div style='color:#ff85a2; font-size:0.78rem;'>(${randomPout.th})</div>
-        `;
-        
         setTimeout(() => {
           card.classList.remove('shake');
-          inputPass = "";
+          inputVal = "";
           updateDots();
-        }, 600);
+        }, 400);
       }
     }
 
-    function showDukdikMsg() {
-      const dukdik = document.getElementById('dukdikArea');
-      dukdik.style.display = 'block';
-      setTimeout(() => { goToSlide('s1'); }, 1500);
-    }
-
-    function goToSlide(targetId) {
-      const current = document.getElementById(currentSlideId);
+    function next(targetId) {
+      const current = document.getElementById(currentId);
       current.classList.remove('active');
-      
-      if (targetId === 's_music') {
-        bgm.volume = 0.08;
-      } else {
-        bgm.volume = 0.35;
-      }
-
       setTimeout(() => {
         current.style.display = 'none';
-        currentSlideId = targetId;
-        const next = document.getElementById(targetId);
-        next.style.display = 'block';
-        setTimeout(() => next.classList.add('active'), 50);
-      }, 350);
-    }
-
-    const canvas = document.getElementById('starCanvas');
-    const ctx = canvas.getContext('2d');
-    
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    let backgroundStars = [];
-    for(let i=0; i<60; i++){
-      backgroundStars.push({
-        x: Math.random(), y: Math.random(),
-        r: Math.random() * 1.5, alpha: Math.random()
-      });
-    }
-
-    function drawStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      backgroundStars.forEach(s => {
-        s.alpha += (Math.random() - 0.5) * 0.05;
-        if(s.alpha < 0.2) s.alpha = 0.2;
-        if(s.alpha > 0.9) s.alpha = 0.9;
-        ctx.fillStyle = `rgba(255, 209, 220, ${s.alpha})`;
-        ctx.beginPath();
-        ctx.arc(s.x * canvas.width, s.y * canvas.height, s.r, 0, Math.PI*2);
-        ctx.fill();
-      });
-      requestAnimationFrame(drawStars);
-    }
-    drawStars();
-
-    function createHearts() {
-      const container = document.getElementById('heartsBg');
-      container.style.display = 'block';
-      const symbols = ['💖', '🌸', '🐵', '✨', '💕', '💗', '🐨'];
-
-      setInterval(() => {
-        const heart = document.createElement('div');
-        heart.className = 'heart-item';
-        heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
-        heart.style.left = Math.random() * 90 + 5 + 'vw';
-        heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
-        container.appendChild(heart);
-        setTimeout(() => heart.remove(), 4000);
-      }, 250);
-    }
-
-    function triggerFinal() {
-      const current = document.getElementById(currentSlideId);
-      current.classList.remove('active');
-      
-      setTimeout(() => {
-        current.style.display = 'none';
-        currentSlideId = 's5';
-        document.body.classList.add('sunrise-pastel');
-        const finalSlide = document.getElementById('s5');
-        finalSlide.style.display = 'block';
-        
-        setTimeout(() => {
-          finalSlide.classList.add('active');
-          createHearts();
-        }, 200);
-      }, 350);
-    }
-
-    function openLetter() {
-      document.getElementById('letterModal').style.display = 'flex';
-    }
-
-    function closeLetter() {
-      document.getElementById('letterModal').style.display = 'none';
-    }
-
-    function popHeartExplosion() {
-      for(let i = 0; i < 12; i++) {
-        const heart = document.createElement('div');
-        heart.innerHTML = '💖';
-        heart.style.position = 'fixed';
-        heart.style.left = (window.innerWidth / 2 + (Math.random() * 160 - 80)) + 'px';
-        heart.style.top = (window.innerHeight / 2 + (Math.random() * 160 - 80)) + 'px';
-        heart.style.fontSize = '22px';
-        heart.style.zIndex = '999';
-        heart.style.transition = 'all 1s ease-out';
-        heart.style.pointerEvents = 'none';
-        
-        document.body.appendChild(heart);
-        setTimeout(() => {
-          heart.style.transform = `translateY(-90px) scale(1.4)`;
-          heart.style.opacity = '0';
-        }, 50);
-        setTimeout(() => { heart.remove(); }, 1050);
-      }
+        currentId = targetId;
+        const nextSlide = document.getElementById(targetId);
+        nextSlide.style.display = 'block';
+        setTimeout(() => nextSlide.classList.add('active'), 30);
+      }, 300);
     }
   </script>
 </body>
